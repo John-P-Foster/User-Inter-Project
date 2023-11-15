@@ -58,27 +58,45 @@ input[type="submit"], input[type="reset"], button {
     padding: 10px 20px;
 }
 
-
-.floatLabelTop input{
-	display:inline-block;
+.sectionRow{
+	display: flex;
 }
 
-.floatLabelTop label{
+.sectionRow input{
+	display:inline-block;
+	margin: 5px;
+}
+
+.sectionRow label{
 	display:block;
 	font-size: large;
+	margin-left: 5px;
 }
-.floatLabelTop h3{
+.sectionRow h3{
 	display: inline;
 	padding: 0px;
 	margin-bottom: 0px;
 }
 
-.floatDivs{
+.sectionRow select {
+	display: inline-block;
+	margin: 5px;
+	border: 1px;
+	border-color: black;
+	border-width: 1px;
+	border-style: solid;
+	border-radius: 2px;
+	padding: 2px;
+	padding-top: 1px;
+	padding-bottom: 1px;
+}
+
+.sectionColumn{
 	display:inline-block;
 
 }
 
-.floatDivs p {
+.sectionColumn p {
 	width: 100px;
 }
 
@@ -88,5 +106,5 @@ input[type="submit"], input[type="reset"], button {
 	font-size: medium;
 }
 .ageButton {
-	padding-left: 20px;
+	margin-left: 20px;
 }
