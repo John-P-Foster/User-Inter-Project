@@ -45,24 +45,24 @@
                             
                             <div class = "sectionColumn">
                                 <label for="firstName">Full Name</label>
-                                <input type="text" id="firstName" name="firstName" placeholder="First to Last" style="flex:0 1 100%;" required> 
+                                <input type="text" id="firstName" name="firstName" placeholder="First to Last" required> 
                             </div>
                         </div><br>
 
                         <div class = "sectionRow">
                             <div class = "sectionColumn">
                                 <label for="phoneNumber">Phone Number</label>
-                                <input type="phoneNumber" id="phoneNumber" name="phoneNUmber" placeholder="(XXX) - XXX - XXXX" style="width: 142px;" required>
+                                <input type="phoneNumber" id="phoneNumber" name="phoneNUmber" placeholder="(XXX) - XXX - XXXX"  required>
                             </div>
 
                             <div class = "sectionColumn">
                                 <label for="phoneNumber">Alt Phone Number</label>
-                                <input type="phoneNumber" id="phoneNumber" name="phoneNUmber" placeholder="(XXX) - XXX - XXXX" style="width: 142px;">
+                                <input type="phoneNumber" id="phoneNumber" name="phoneNUmber" placeholder="(XXX) - XXX - XXXX">
                             </div>
 
                             <div class = "sectionColumn">
                                 <label for="email">Email</label>
-                                <input type="email" id="email" name="email" placeholder="addess@provider.com" style="width: 142px;">
+                                <input type="email" id="email" name="email" placeholder="addess@provider.com" required>
                             </div>
                         </div><br>
 
@@ -75,12 +75,12 @@
 
                             <div class = "sectionColumn">
                                 <label for="cityAddress">City</label>
-                                <input type="text" id="cityAddress" name="cityAddress" placeholder="City" style="width: 72px;"required>
+                                <input type="text" id="cityAddress" name="cityAddress" placeholder="City" required>
                             </div>
 
                             <div class = "sectionColumn">
                                 <label for="stateAddress">State</label>
-                                <select name="stateAddress" id="StateAddress"  style="width: 110px;" required>
+                                <select name="stateAddress" id="StateAddress" required>
                                     <option value="Select State">Select State</option>
                                     <option value="AL">Alabama</option>
                                     <option value="AK">Alaska</option>
@@ -138,7 +138,7 @@
 
                             <div class = "sectionColumn">
                                 <label for="zipAddress">ZIP</label>
-                                <input type="text" id="zipAddress" name="zipAddress" placeholder="ZIP"  style="width: 96px;" required>
+                                <input type="text" id="zipAddress" name="zipAddress" placeholder="ZIP" required>
                             </div>
                         </div><br>
 
@@ -146,15 +146,15 @@
 
                             <div class = "sectionColumn">
                                 <label for="moveInDate">When did you move to this address? </label>
-                                <input type="month" id="moveInDate" name="moveInDate" value="2023-11" style="width: 450px;" required>
+                                <input type="month" id="moveInDate" name="moveInDate" value="2023-11" required>
                             </div>
                         </div><br>
 
                         <div class = "sectionRow">
                             
-                            <div class="sectionColumn">Are you at least 18 years of age?</div>
+                            <div class="sectionColumn" style="flex: 0 1 60%;">Are you at least 18 years of age?</div>
 
-                            <div class = "sectionColumn" style ="padding-left: 20px;">
+                            <div class = "sectionColumn" style ="flex: 0 1 20%;">
                                 <label class="ageButton"
                                     >Yes
                                     <input
@@ -166,7 +166,7 @@
                                 </label>
                             </div>
                             
-                            <div class = "sectionColumn" >
+                            <div class = "sectionColumn" style="flex: 0 1 20%;" >
                                 <label class="ageButton" 
                                     >No
                                     <input
@@ -182,14 +182,14 @@
                     <div class = "sectionColumn">
                         <div class = "sectionColumn">
                             <label for="positionApply">What Position are you applying for?</label>
-                            <input type="text" id="positionApply" name="positionApply" rows="4" style="width: 450px;" placeholder="ex. Database Administrator" required></textarea>
+                            <input type="text" id="positionApply" name="positionApply" rows="4" placeholder="ex. Database Administrator" required></textarea>
                         </div>
-                    </div><br><br>
+                    </div><br>
 
                     <div class = "sectionRow">
                         <div class = "sectionColumn">
                             <label for="salaryDesired">Desired Salary Range</label>
-                            <select id="salaryDesired" name="salaryDesired" style="width: 455px;" required>
+                            <select id="salaryDesired" name="salaryDesired" required>
                                 <option value="$30 - $40K">$30 - $40K</option>
                                 <option value="$40 - $50K">$40 - $50K</option>
                                 <option value="$50 - $60K">$50 - $60K</option>
@@ -204,15 +204,14 @@
                                 <option value="$140 - $150K">$140 - $150K</option>
                             </select>
                         </div>
-                    </div><br><br>
+                    </div><br>
 
                     <div class = "sectionRow">
                         <div class = "sectionColumn">
                             <label for="SSN"> Social Security Number</label>
-                            <input type="text" id="SSN" name="SSN" placeholder="XXX-XX-XXXX" style="width: 450px;" required> 
+                            <input type="text" id="SSN" name="SSN" placeholder="XXX-XX-XXXX" required> 
                         </div>
                     </div>
-
                 </div>
 
                 
