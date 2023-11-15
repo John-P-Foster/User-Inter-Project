@@ -37,11 +37,13 @@
 .content {
 	padding: 20px;
 	margin-top: 20px;
-	width: 800px; 
+	width: 500px; 
 	margin: 0 auto;
 	text-align: left;
+	font-size: large;
 	padding: 100;
 	list-style-position: inside;
+
 }
 
 .jumpTo {
@@ -56,12 +58,14 @@ input[type="submit"], input[type="reset"], button {
     padding: 10px 20px;
 }
 
+
 .floatLabelTop input{
-	display:block;
+	display:inline-block;
 }
 
 .floatLabelTop label{
 	display:block;
+	font-size: large;
 }
 .floatLabelTop h3{
 	display: inline;
@@ -80,5 +84,9 @@ input[type="submit"], input[type="reset"], button {
 
 .hideP{
 	display: inline;
-	color:#fff;
+	color:#737373;
+	font-size: medium;
+}
+.ageButton {
+	padding-left: 20px;
 }
