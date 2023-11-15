@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Index</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+	
+</head>
+
+    <body>
+    
+        <div class="navbar">
+
+            <ul class="horizontal-list">
+            
+                <li><a href="#general">General Information</a></li>
+                <li><a href="#references">References</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#experience">Work Experience</a></li>
+                <li><a href="#availability">Availability</a></li>
+                <li><a href="#background">Background</a></li>
+                <li><a href="#medical">Medical History</a></li>
+                <li><a href="#criminal">Criminal Background</a></li>
+                <li><a href="#waiver">Waiver</a></li>
+                
+            
+            </ul>
+
+        </div>
+        
+            
+        <div class="content">
+            <h1>UNFinished Employment Application</h1>
+            
+            <form action="submit.php" method="post">
+                
+                <div class ="generalInfoSection">
+                    <p id="general" class="jumpTo"></p>
+                    <h2>General Info</h2>
+                        <div class = "floatLabelTop">
+
+                            <div class = "floatDivs">
+                                <label for="firstName">Name<p class = hideP>First</p></label>
+                                <input type="text" id="firstName" name="firstName" placeholder="First Name"> 
+                            </div>
+            
+                            <div class = "floatDivs">
+                                <label for="middleName"> <p class = hideP>Middle Name</p></label>
+                                <input type="text" id="middleName" name="middelName" placeholder="Middle Name" required>
+                            </div>
+
+                            <div class = "floatDivs">
+                                <label for="lastName"> <p class = hideP>Last Name</p></label>
+                                <input type="text" id="lastName" name="lastName" placeholder="Last Name" required>
+                            </div>
+                        </div><br>
+
+
+                        <div class = "floatLabelTop">
+                            <div class = "floatDivs">
+                                <label for="phoneNumber">Phone Number</label>
+                                <input type="phoneNumber" id="phoneNumber" name="phoneNUmber" placeholder="(XXX) - XXX - XXXX" required>
+                            </div>
+
+                            <div class = "floatDivs">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" placeholder="addess@provider.com" required>
+                            </div>
+                        </div><br>
+
+                        <div class = "floatLabelTop">
+                            
+                            <div class = "floatDivs">
+                                <label for="streetAddress">Address<p class = hideP>Street</p></label>
+                                <input type="text" id="streetAddress" name="streetAddress" placeholder="Street" required>
+                            </div>
+
+                            <div class = "floatDivs">
+                                <label for="cityAddress"><p class = hideP>City</p></label>
+                                <input type="text" id="cityAddress" name="cityAddress" placeholder="City" required>
+                            </div>
+
+                            <div class = "floatDivs">
+                                <label for="stateAddress"><p class = hideP>State</p></label>
+                                <input type="text" id="stateAddress" name="stateAddress" placeholder="State" required>
+                            </div>
+
+                            <div class = "floatDivs">
+                                <label for="zipAddress"><p class = hideP>ZIP</p></label>
+                                <input type="text" id="zipAddress" name="zipAddress" placeholder="ZIP"required>
+                            </div>
+                        </div><br>
+
+                        <div class = "floatLabelTop">
+
+                            <div class = "floatDivs">
+                                How long have you lived at this address? <br>
+                            </div>
+
+                            <div class = "floatDivs">
+                                <label for="timeAtAddressYears"><p class = hideP>Years</p></label>
+                                <input type="text" id="timeAtAddressYears" name="timeAtAddressYears" placeholder="Years" required>
+                            </div>
+
+                            <div class = "floatDivs">
+                                <label for="timeAtAaddressMonths"><p class = hideP>Months</p></label>
+                                <input type="text" id="timeAtAaddressMonths" name="timeAtAaddressMonths" placeholder="Months" required>
+                            </div>
+                        </div><br>
+
+
+                        <div class = "floatLabelTop">
+                            <div class = "floatDivs">
+                                Are you at least 18 years of age?
+                            </div>
+
+                            <div class = "floatDivs" style ="padding-left: 50px;">
+                                <label class="ageButton"
+                                    >Yes
+                                    <input
+                                    type="radio"
+                                    name="over18"
+                                    value="Yes"
+                                    id="over18"
+                                    />
+                                </label>
+                            </div>
+                            
+                            <div class = "floatDivs" >
+                                <label class="ageButton" 
+                                    >No
+                                    <input
+                                    type="radio"
+                                    name="over18"
+                                    value="No"
+                                    id="compactCar"
+                                    /> 
+                                </label>
+                            </div>
+                        </div><br>
+
+                    <div class = "floatLabelTop">
+                        <div class = "floatDivs">
+                            <label for="positionApply">What Position are you applying for?</label><br>
+                            <textarea id="positionApply" name="positionApply" rows="4" style="width: 300px;" required></textarea>
+                        </div>
+                    </div><br>
+
+                    <div class = "floatLabelTop">
+                        <div class = "floatDivs">
+                            <label for="salaryDesired">Desired Salary Range</label>
+                            <select id="salaryDesired" name="salaryDesired" style="width: 150px;" required></select>
+                        </div>
+                    </div><br>
+
+
+                    <div class = "floatLabelTop">
+                        <div class = "floatDivs">
+                            <label for="SSN"> Social Security Number</label>
+                            <input type="text" id="SSN" name="SSN" placeholder="XXX-XX-XXXX"> 
+                        </div>
+                    </div><br>
+
+                </div><br>
+
+                
+                <p id="references" class="jumpTo"></p>
+                <h2>References</h2>
+                
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required><br><br>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required><br><br>
+
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="4" required></textarea><br><br><br><br>
+                
+                <p id="education" class="jumpTo"></p>
+                <h2>Education</h2>
+                
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required><br><br>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required><br><br>
+
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="4" required></textarea><br><br><br><br>
+                
+                <p id="experience" class="jumpTo"></p>
+                <h2>Work Experience</h2>
+                
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required><br><br>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required><br><br>
+
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="4" required></textarea><br><br><br><br>
+                
+                <p id="availability" class="jumpTo"></p>
+                <h2>Availability</h2>
+                
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required><br><br>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required><br><br>
+
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="4" required></textarea><br><br><br><br>
+                
+                <p id="background" class="jumpTo"></p>
+                <h2>Background</h2>
+                
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required><br><br>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required><br><br>
+
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="4" required></textarea><br><br><br><br>
+                
+                <p id="medical" class="jumpTo"></p>
+                <h2>Medical History</h2>
+                
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required><br><br>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required><br><br>
+
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="4" required></textarea><br><br><br><br>
+                
+                <p id="criminal" class="jumpTo"></p>
+                <h2>Criminal Background</h2>
+                
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required><br><br>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required><br><br>
+
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="4" required></textarea><br><br><br><br>
+                
+                <p id="waiver" class="jumpTo"></p>
+                <h2>Waiver</h2>
+                
+                <p>To be considered for employment by Unfinished Business, you must agree that:</p>
+                
+                <ol>
+                
+                    <li>Unfinished Business may terminate your employment without notice or reason.  </li>
+                    <li>The conditions of your employment; such as benefits, policies, and conditions are subject to change at the will of Unfinished Business. </li>
+                    <li>Unfinished Business is authorized to investigate all the content of this application and verify its validity. </li>
+                    <li>Unfinished Business has a zero drug and alcohol policy, and you give them permission to drug test you as a means of pre-employment screening. </li>
+                    <li>You may be asked to take a pre-employment physical to confirm you are capable of the required job-related tasks. </li>
+                    <li>You agree that Unfinished Business has the right to request from a consumer reporting agency an investigative consumer report. Such a report would include information relating to your credit score, character, general reputation, personal characteristics, and mode of living.  </li>
+                    <li>You understand that your employment would begin in a state of probation. The probationary period will last 60 days, during which Unfinished Business retains the right to terminate your employment for any reason.</li>
+                
+                <ol>
+
+                <button type="submit">Submit</button> <button type="resest">Reset</button>
+            </form>
+        </div>
+    </body>
+</html>

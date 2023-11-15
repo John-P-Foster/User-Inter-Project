@@ -1,0 +1,84 @@
+.horizontal-list {
+	list-style: none; 
+	padding: 0; 
+	margin: 0; 
+	display: flex; 
+	justify-content: center;
+	align-items: center;
+}
+
+.horizontal-list li {
+	margin-right: 0px; 
+}
+
+.navbar {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	background-color: #1a1a1a; 
+	color: lightgray; 
+	padding: 10px;
+}
+
+.navbar a:hover {
+	background-color: #737373
+}
+
+.navbar a {
+	color: #ffffff;
+	text-decoration: none;
+	font-weight: bold;
+	padding: 10px;
+	border-left: 1px solid #737373;
+	border-right: 1px solid #737373;
+}
+
+.content {
+	padding: 20px;
+	margin-top: 20px;
+	width: 800px; 
+	margin: 0 auto;
+	text-align: left;
+	padding: 100;
+	list-style-position: inside;
+}
+
+.jumpTo {
+	padding: 20px;
+	border-bottom: 1px solid;
+}
+
+input[type="submit"], input[type="reset"], button {
+    background-color: #0077b6;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+}
+
+.floatLabelTop input{
+	display:block;
+}
+
+.floatLabelTop label{
+	display:block;
+}
+.floatLabelTop h3{
+	display: inline;
+	padding: 0px;
+	margin-bottom: 0px;
+}
+
+.floatDivs{
+	display:inline-block;
+
+}
+
+.floatDivs p {
+	width: 100px;
+}
+
+.hideP{
+	display: inline;
+	color:#fff;
+}
