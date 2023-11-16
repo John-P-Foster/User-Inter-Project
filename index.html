@@ -6,15 +6,14 @@
   <title>Index</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 	
 </head>
 
     <body>
-    
-        <div class="navbar">
-
-            <ul class="horizontal-list">
-            
+        <div class="ourNavBar">
+            <ul class="ourhorizontal-list">
+                <li><a href="#topOfPage">Start</a></li>
                 <li><a href="#general">General Information</a></li>
                 <li><a href="#references">References</a></li>
                 <li><a href="#education">Education</a></li>
@@ -24,64 +23,80 @@
                 <li><a href="#medical">Medical History</a></li>
                 <li><a href="#criminal">Criminal Background</a></li>
                 <li><a href="#waiver">Waiver</a></li>
-                
-            
             </ul>
-
         </div>
+
+        <p id="topOfPage" class="jumpTo"></p>
         
+        <div class="container text-center">
             
-        <div class="content">
-            
-            <form action="submit.php" method="post">
+            <form action="submit.php" method="post" style="max-width: 800px; margin: auto;">
 
-                <h1>UNFinished Employment Application</h1>
-                
+                <div class="row">
+                    <div class="col-md">        
+                        <h1 style="text-align: center;">UNFinished Employment Application</h1>  
+                    </div>
+                </div>
+
                 <div class ="generalInfoSection">
-                    <p id="general" class="jumpTo"></p>
-                    <h2>General Info</h2>
 
-                        <div class = "sectionRow">
-                            
-                            <div class = "sectionColumn">
-                                <label for="firstName">Full Name</label>
-                                <input type="text" id="firstName" name="firstName" placeholder="First to Last" required> 
+                    <p id="general" class="jumpTo" style="margin-top: 20px; padding-top: 20px;"></p>
+
+                    <h2>General Information</h2>
+
+                    <br>
+
+                    <div class="row">
+                        <div class="col-md">
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control" id="firstName" placeholder="Full name">
+                                <label for="firstName">Full Name <span class="exampleText"> (first middle last)</span></label>
                             </div>
-                        </div><br>
+                        </div>
+                    </div>
 
-                        <div class = "sectionRow">
-                            <div class = "sectionColumn">
-                                <label for="phoneNumber">Phone Number</label>
-                                <input type="phoneNumber" id="phoneNumber" name="phoneNUmber" placeholder="(XXX) - XXX - XXXX"  required>
+                    <div class = "row">
+                        <div class = "col-md">
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control" id="phoneNumber" name="phoneNUmber" placeholder="(XXX) - XXX - XXXX"  required>
+                                <label for="phoneNumber">Phone Number <span class="exampleText"> (xxx-xxx-xxxx)</span></label>
                             </div>
+                        </div>
 
-                            <div class = "sectionColumn">
-                                <label for="phoneNumber">Alt Phone Number</label>
-                                <input type="phoneNumber" id="phoneNumber" name="phoneNUmber" placeholder="(XXX) - XXX - XXXX">
+                        <div class = "col-md">
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control" id="altPhoneNumber" name="altPhoneNUmber" placeholder="(XXX) - XXX - XXXX">
+                                <label for="altPhoneNumber">Alt Phone Number <span class="exampleText"> (xxx-xxx-xxxx)</span></label>  
                             </div>
+                        </div>
 
-                            <div class = "sectionColumn">
-                                <label for="email">Email</label>
-                                <input type="email" id="email" name="email" placeholder="addess@provider.com" required>
+                        <div class = "col-md">
+                            <div class="form-floating mb-3">
+                                <input type="email" class="form-control" id="email" name="email" placeholder="addess@provider.com" required>
+                                <label for="email">Email <span class="exampleText"> (email@provider.com)</span></label>
                             </div>
-                        </div><br>
+                        </div>
+                    </div>
 
-                        <div class = "sectionRow">
-                            
-                            <div class = "sectionColumn">
-                                <label for="streetAddress">Address</label>
-                                <input type="text" id="streetAddress" name="streetAddress" placeholder="Street address" required>
+                    <div class = "row">
+                        <div class = "col-md">
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control" id="streetAddress" name="streetAddress" placeholder="Street address" required>
+                                <label for="streetAddress">Address <span class="exampleText"> (street)</span></label>
                             </div>
+                        </div>
 
-                            <div class = "sectionColumn">
+                        <div class = "col-md">
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control" id="cityAddress" name="cityAddress" placeholder="City" required>
                                 <label for="cityAddress">City</label>
-                                <input type="text" id="cityAddress" name="cityAddress" placeholder="City" required>
                             </div>
+                        </div>
 
-                            <div class = "sectionColumn">
-                                <label for="stateAddress">State</label>
-                                <select name="stateAddress" id="StateAddress" required>
-                                    <option value="Select State">Select State</option>
+                        <div class = "col-md">
+                            <div class="form-floating">
+                                <select class="form-select" style="margin-bottom: 20px;" id="stateAddress" name="stateAddress" required>
+                                    <option selected>State</option>
                                     <option value="AL">Alabama</option>
                                     <option value="AK">Alaska</option>
                                     <option value="AZ">Arizona</option>
@@ -133,88 +148,98 @@
                                     <option value="WV">West Virginia</option>
                                     <option value="WI">Wisconsin</option>
                                     <option value="WY">Wyoming</option>
-                                  </select>
-                            </div>
-
-                            <div class = "sectionColumn">
-                                <label for="zipAddress">ZIP</label>
-                                <input type="text" id="zipAddress" name="zipAddress" placeholder="ZIP" required>
-                            </div>
-                        </div><br>
-
-                        <div class = "sectionRow">
-
-                            <div class = "sectionColumn">
-                                <label for="moveInDate">When did you move to this address? </label>
-                                <input type="month" id="moveInDate" name="moveInDate" value="2023-11" required>
-                            </div>
-                        </div><br>
-
-                        <div class = "sectionRow">
-                            
-                            <div class="sectionColumn" style="flex: 0 1 60%;">Are you at least 18 years of age?</div>
-
-                            <div class = "sectionColumn" style ="flex: 0 1 20%;">
-                                <label class="ageButton"
-                                    >Yes
-                                    <input
-                                    type="radio"
-                                    name="over18"
-                                    value="Yes"
-                                    id="over18"
-                                    />
+                                </select>
+                                <label for="stateAddress">
+                                    State
                                 </label>
                             </div>
-                            
-                            <div class = "sectionColumn" style="flex: 0 1 20%;" >
-                                <label class="ageButton" 
-                                    >No
-                                    <input
-                                    type="radio"
-                                    name="over18"
-                                    value="No"
-                                    id="compactCar"
-                                    /> 
-                                </label>
+                        </div>
+              
+                        <div class = "col-md">
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control" id="zipAddress" name="zipAddress" placeholder="ZIP" required>
+                                <label for="zipAddress">ZIP <span class="exampleText"> (xxxxx)</span></label>
                             </div>
-                        </div><br>
+                        </div>
+                    </div>
 
-                    <div class = "sectionColumn">
-                        <div class = "sectionColumn">
-                            <label for="positionApply">What Position are you applying for?</label>
-                            <input type="text" id="positionApply" name="positionApply" rows="4" placeholder="ex. Database Administrator" required></textarea>
+                    <div class = "row">
+                        <div class="col-md">
+                            <div class="form-control" style="text-align: left;">
+                                <label for="moveInDate" style="float: left; margin-right: 50px; padding-top: 5px;">When did you move to this address? </label>
+                                <input type="month" style="text-align: center; width: 200px;" class="form-control" id="moveInDate" name="moveInDate" value="2023-11" required>  
+                            </div>
+                        </div>
+                    </div><br>
+                    
+                    <div class = "row">
+                        <div class="col-md">
+                            <div class="form-control" style="text-align: left;">
+                                <div class="col-md">
+                                    <span> Are you at least 18 years of age?</span>
+            
+                                    <label class="ageButton" style="margin-left: 80px;"
+                                        >Yes
+                                        <input
+                                        type="radio"
+                                        name="over18"
+                                        value="Yes"
+                                        id="over18"
+                                        />
+                                    </label>
+                                    <label class="ageButton" 
+                                        >No
+                                        <input
+                                        type="radio"
+                                        name="over18"
+                                        value="No"
+                                        id="compactCar"
+                                        /> 
+                                    </label>
+                                </div>
+                            </div>
                         </div>
                     </div><br>
 
-                    <div class = "sectionRow">
-                        <div class = "sectionColumn">
-                            <label for="salaryDesired">Desired Salary Range</label>
-                            <select id="salaryDesired" name="salaryDesired" required>
-                                <option value="$30 - $40K">$30 - $40K</option>
-                                <option value="$40 - $50K">$40 - $50K</option>
-                                <option value="$50 - $60K">$50 - $60K</option>
-                                <option value="$60 - $70K">$60 - $70K</option>
-                                <option value="$70 - $80K">$70 - $80K</option>
-                                <option value="$80 - $90K">$80 - $90K</option>
-                                <option value="$90 - $100K">$90 - $100K</option>
-                                <option value="$100 - $110K">$100 - $110K</option>
-                                <option value="$110 - $120K">$110 - $120K</option>
-                                <option value="$120 - $130K">$120 - $130K</option>
-                                <option value="$130 - $140K">$130 - $140K</option>
-                                <option value="$140 - $150K">$140 - $150K</option>
-                            </select>
+                    <div class="row">
+                        <div class="col-md">
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control" id="SSN" name="SSN" placeholder="Social Security Number">
+                                <label for="firstName">Social Security Number <span class="exampleText"> (XXX-XX-XXXX)</span></label>
+                            </div>
                         </div>
-                    </div><br>
+                    </div>
 
-                    <div class = "sectionRow">
-                        <div class = "sectionColumn">
-                            <label for="SSN"> Social Security Number</label>
-                            <input type="text" id="SSN" name="SSN" placeholder="XXX-XX-XXXX" required> 
+                    <div class = "row">  
+                        <div class = "col-md-8">
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control" id="positionApplying" name="positionApplying" placeholder="position" required>
+                                <label for="positionApplying">What position are you applying for? <span class="exampleText"> (ex. Database Administratio)</span></label>
+                            </div>
+                        </div>
+
+                        <div class = "col-md-4">
+                            <div class="form-floating">
+                                <select class="form-select" style="margin-bottom: 20px;" id="salaryDesired" name="salaryDesired" required>
+                                    <option value="$30 - $40K">$30 - $40K</option>
+                                    <option value="$40 - $50K">$40 - $50K</option>
+                                    <option value="$50 - $60K">$50 - $60K</option>
+                                    <option value="$60 - $70K">$60 - $70K</option>
+                                    <option value="$70 - $80K">$70 - $80K</option>
+                                    <option value="$80 - $90K">$80 - $90K</option>
+                                    <option value="$90 - $100K">$90 - $100K</option>
+                                    <option value="$100 - $110K">$100 - $110K</option>
+                                    <option value="$110 - $120K">$110 - $120K</option>
+                                    <option value="$120 - $130K">$120 - $130K</option>
+                                    <option value="$130 - $140K">$130 - $140K</option>
+                                    <option value="$140 - $150K">$140 - $150K</option>
+                                </select>
+                                <label for="salaryDesired">Salary</label>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                
                 <p id="references" class="jumpTo"></p>
                 <h2>References</h2>
                 

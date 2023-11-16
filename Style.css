@@ -1,4 +1,4 @@
-.horizontal-list {
+.ourhorizontal-list {
 	list-style: none; 
 	padding: 0; 
 	margin: 0; 
@@ -7,11 +7,11 @@
 	align-items: center;
 }
 
-.horizontal-list li {
+.ourhorizontal-list li {
 	margin-right: 0px; 
 }
 
-.navbar {
+.ourNavBar {
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -22,15 +22,15 @@
 	color: lightgray; 
 	padding: 10px;
 	width: 100%;
-	
-	;
+	justify-content: center;
+	z-index:10;
 }
 
-.navbar a:hover {
+.ourNavBar a:hover {
 	background-color: #737373
 }
 
-.navbar a {
+.ourNavBar a {
 	color: #ffffff;
 	text-decoration: none;
 	font-weight: bold;
@@ -41,21 +41,23 @@
 
 .content {
 	padding: 20px;
-	margin-top: 20px;
 	width: 500px; 
 	margin: 0 auto;
 	text-align: left;
 	font-size: large;
-	padding: 100;
+	font-family: Arial, Helvetica, sans-serif;
 	list-style-position: inside;
 	display: flex;
+	justify-content: center;
 
 }
 
 .jumpTo {
-	padding: 20px;
+	padding-top: 20px;
+	padding-bottom: 20px;
 	border-bottom: 1px solid;
 }
+
 
 input[type="submit"], input[type="reset"], button {
     background-color: #0077b6;
@@ -64,14 +66,20 @@ input[type="submit"], input[type="reset"], button {
     padding: 10px 20px;
 }
 
+/* Start of John Foster CSS code */
+/* Section Row and section columns creates rows that fills the container. You can add
+	X amount of coulmns to these rows. Coulmns content will stack vertically. */
 .sectionRow{
 	display: flex;
+	
 }
 
 .sectionRow input{
+	margin: 10px;
+}
+
+.sectionRow select{
 	display:inline-block;
-	margin-left: 5px;
-	margin-top: 0px;
 }
 
 .sectionRow label{
@@ -79,6 +87,8 @@ input[type="submit"], input[type="reset"], button {
 	font-size: large;
 	margin-left: 5px;
 }
+
+
 .sectionRow h3{
 	display: inline;
 	padding: 0px;
@@ -89,7 +99,7 @@ input[type="submit"], input[type="reset"], button {
 	display: inline-block;
 	margin: 5px;
 	border: 1px;
-	border-color: black;
+	border-color:#737373;
 	border-width: 1px;
 	border-style: solid;
 	border-radius: 2px;
@@ -97,6 +107,7 @@ input[type="submit"], input[type="reset"], button {
 	padding-top: 1px;
 	padding-bottom: 1px;
 }
+
 
 .sectionColumn{
 	display:flex;
@@ -120,3 +131,9 @@ input[type="submit"], input[type="reset"], button {
 .ageButton {
 	margin-left: 20px;
 }
+.exampleText{
+	color: #737373;
+	font-size: smaller;
+}
+
+/* ENd of John Foster CSS code */
