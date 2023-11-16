@@ -67,67 +67,7 @@ input[type="submit"], input[type="reset"], button {
 }
 
 /* Start of John Foster CSS code */
-/* Section Row and section columns creates rows that fills the container. You can add
-	X amount of coulmns to these rows. Coulmns content will stack vertically. */
-.sectionRow{
-	display: flex;
-	
-}
 
-.sectionRow input{
-	margin: 10px;
-}
-
-.sectionRow select{
-	display:inline-block;
-}
-
-.sectionRow label{
-	display:block;
-	font-size: large;
-	margin-left: 5px;
-}
-
-
-.sectionRow h3{
-	display: inline;
-	padding: 0px;
-	margin-bottom: 0px;
-}
-
-.sectionRow select {
-	display: inline-block;
-	margin: 5px;
-	border: 1px;
-	border-color:#737373;
-	border-width: 1px;
-	border-style: solid;
-	border-radius: 2px;
-	padding: 2px;
-	padding-top: 1px;
-	padding-bottom: 1px;
-}
-
-
-.sectionColumn{
-	display:flex;
-	gap: 2px;
-	flex-direction: column;
-	justify-content: center;
-	flex-wrap: wrap;
-	width: 100%;
-
-}
-
-.sectionColumn p {
-	width: 100%;
-}
-
-.hideP{
-	display: inline;
-	color:#737373;
-	font-size: medium;
-}
 .ageButton {
 	margin-left: 20px;
 }
