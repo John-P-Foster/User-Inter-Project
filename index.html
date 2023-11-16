@@ -13,16 +13,15 @@
     <body>
         <div class="ourNavBar">
             <ul class="ourhorizontal-list">
-                <li><a href="#topOfPage">Start</a></li>
+                <li><a href="#topOfPage" style="border-bottom-left-radius: 25px;border-top-left-radius: 25px;">Start</a></li>
                 <li><a href="#general">General Information</a></li>
                 <li><a href="#references">References</a></li>
                 <li><a href="#education">Education</a></li>
                 <li><a href="#experience">Work Experience</a></li>
-                <li><a href="#availability">Availability</a></li>
                 <li><a href="#background">Background</a></li>
                 <li><a href="#medical">Medical History</a></li>
                 <li><a href="#criminal">Criminal Background</a></li>
-                <li><a href="#waiver">Waiver</a></li>
+                <li><a href="#waiver" style="border-bottom-right-radius: 25px;border-top-right-radius: 25px;">Waiver</a></li>
             </ul>
         </div>
 
@@ -30,7 +29,7 @@
         
         <div class="container text-center">
             
-            <form action="submit.php" method="post" style="max-width: 800px; margin: auto;">
+            <form action="submit.php" method="post" style="max-width: 800px; margin: auto;"><!-- start from section-->
 
                 <div class="row">
                     <div class="col-md">        
@@ -38,7 +37,7 @@
                     </div>
                 </div>
 
-                <div class ="generalInfoSection">
+                <div class ="generalInfoSection"><!-- start General Infromation section-->
 
                     <p id="general" class="jumpTo" style="margin-top: 20px; padding-top: 20px;"></p>
 
@@ -46,16 +45,17 @@
 
                     <br>
 
-                    <div class="row">
+                   
+                    <div class="row"><!-- start name section-->
                         <div class="col-md">
                             <div class="form-floating mb-3">
                                 <input type="text" class="form-control" id="firstName" placeholder="Full name">
                                 <label for="firstName">Full Name <span class="exampleText"> (first middle last)</span></label>
                             </div>
                         </div>
-                    </div>
+                    </div><!-- end name section-->
 
-                    <div class = "row">
+                    <div class = "row"><!-- start contact information section-->
                         <div class = "col-md">
                             <div class="form-floating mb-3">
                                 <input type="text" class="form-control" id="phoneNumber" name="phoneNUmber" placeholder="(XXX) - XXX - XXXX"  required>
@@ -76,24 +76,24 @@
                                 <label for="email">Email <span class="exampleText"> (email@provider.com)</span></label>
                             </div>
                         </div>
-                    </div>
+                    </div><!-- End contact infromation Section-->
 
-                    <div class = "row">
-                        <div class = "col-md">
+                    <div class = "row"><!-- start address section-->
+                        <div class = "col-md-4">
                             <div class="form-floating mb-3">
                                 <input type="text" class="form-control" id="streetAddress" name="streetAddress" placeholder="Street address" required>
                                 <label for="streetAddress">Address <span class="exampleText"> (street)</span></label>
                             </div>
                         </div>
 
-                        <div class = "col-md">
+                        <div class = "col-md-3">
                             <div class="form-floating mb-3">
                                 <input type="text" class="form-control" id="cityAddress" name="cityAddress" placeholder="City" required>
                                 <label for="cityAddress">City</label>
                             </div>
                         </div>
 
-                        <div class = "col-md">
+                        <div class = "col-md-3">
                             <div class="form-floating">
                                 <select class="form-select" style="margin-bottom: 20px;" id="stateAddress" name="stateAddress" required>
                                     <option selected>State</option>
@@ -155,28 +155,28 @@
                             </div>
                         </div>
               
-                        <div class = "col-md">
+                        <div class = "col-md-2">
                             <div class="form-floating mb-3">
                                 <input type="text" class="form-control" id="zipAddress" name="zipAddress" placeholder="ZIP" required>
                                 <label for="zipAddress">ZIP <span class="exampleText"> (xxxxx)</span></label>
                             </div>
                         </div>
-                    </div>
+                    </div><!-- End address Section-->
 
-                    <div class = "row">
+                    <div class = "row"><!-- start move in date section-->
                         <div class="col-md">
                             <div class="form-control" style="text-align: left;">
                                 <label for="moveInDate" style="float: left; margin-right: 50px; padding-top: 5px;">When did you move to this address? </label>
                                 <input type="month" style="text-align: center; width: 200px;" class="form-control" id="moveInDate" name="moveInDate" value="2023-11" required>  
                             </div>
                         </div>
-                    </div><br>
+                    </div><br><!-- Move in date section-->
                     
-                    <div class = "row">
+                    <div class = "row"><!-- start over 18 section-->
                         <div class="col-md">
                             <div class="form-control" style="text-align: left;">
                                 <div class="col-md">
-                                    <span> Are you at least 18 years of age?</span>
+                                    <span class="standardRowHieght"> Are you at least 18 years of age?</span>
             
                                     <label class="ageButton" style="margin-left: 80px;"
                                         >Yes
@@ -199,18 +199,18 @@
                                 </div>
                             </div>
                         </div>
-                    </div><br>
+                    </div><br><!-- End over 18 Section-->
 
-                    <div class="row">
+                    <div class="row"><!-- start SSN section-->
                         <div class="col-md">
                             <div class="form-floating mb-3">
                                 <input type="text" class="form-control" id="SSN" name="SSN" placeholder="Social Security Number">
                                 <label for="firstName">Social Security Number <span class="exampleText"> (XXX-XX-XXXX)</span></label>
                             </div>
                         </div>
-                    </div>
+                    </div><!-- End SSN Section-->
 
-                    <div class = "row">  
+                    <div class = "row"><!-- start position and salary section-->
                         <div class = "col-md-8">
                             <div class="form-floating mb-3">
                                 <input type="text" class="form-control" id="positionApplying" name="positionApplying" placeholder="position" required>
@@ -234,25 +234,25 @@
                                     <option value="$130 - $140K">$130 - $140K</option>
                                     <option value="$140 - $150K">$140 - $150K</option>
                                 </select>
-                                <label for="salaryDesired">Salary</label>
+                                <label for="salaryDesired">Desired Salary Range</label>
                             </div>
                         </div>
-                    </div>
+                    </div><!-- End Posistion and salary Section-->
 
-                    <div class = "row">
+                    <div class = "row"><!-- start start date section-->
                         <div class="col-md">
                             <div class="form-control" style="text-align: left;">
                                 <label for="dateAvailable" style="float: left; margin-right: 50px; padding-top: 5px;">When are available to start working? </label>
                                 <input type="date" style="text-align: center; width: 200px;" class="form-control" id="dateAvailable" name="dateAvailable" value="2023-11-01" required>  
                             </div>
                         </div>
-                    </div><br>
+                    </div><br><!-- End start date Section-->
 
-                    <div class = "row">
+                    <div class = "row"><!-- start works nights section-->
                         <div class="col-md">
                             <div class="form-control" style="text-align: left;">
                                 <div class="col-md">
-                                    <span> Are you able to work nights?</span>
+                                    <span class="standardRowHieght"> Are you able to work nights?</span>
             
                                     <label class="ageButton" style="margin-left: 100px;"
                                         >Yes
@@ -275,7 +275,79 @@
                                 </div>
                             </div>
                         </div>
-                    </div><br>
+                    </div><br><!-- End work nights Section-->
+
+                    <div class = "row"><!-- start employment types section-->
+                        <div class="col-md">
+                            <div class="form-control" style="text-align: left;">
+                                <div class="col-md">
+                                    <span class="standardRowHieght"> What type of employment are you looking for?</span>
+            
+                                    <label class="ageButton" style="margin-left: 100px;"
+                                        >Part Time
+                                        <input
+                                        type="radio"
+                                        name="employmentType"
+                                        value="Part Time"
+                                        id="employmentType"
+                                        />
+                                    </label>
+                                    <label class="ageButton" 
+                                        >Full Time
+                                        <input
+                                        type="radio"
+                                        name="employmentType"
+                                        value="Full Time"
+                                        id="employmentType"
+                                        /> 
+                                    </label>
+                                    <label class="ageButton" 
+                                        >Either
+                                        <input
+                                        type="radio"
+                                        name="wemploymentType"
+                                        value="either"
+                                        id="employmentType"
+                                        /> 
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div><br><!-- End Employment type Section-->
+
+                    <div class = "row"><!-- start hours per week section-->
+                        <div class="col-md-8">
+                            <div class="form-control" style="text-align: left;">
+                                <div class="col-md">
+                                    <label for="hoursPerWeek">
+                                        <span class="standardRowHieght">
+                                             About how many hours per week do you wish to work?
+                                        </span>
+                                    </label>      
+                                </div>
+                            </div>
+                        </div>
+                        <div class = "col-md-4">
+                            <div class="form-floating">
+                                <select class="form-select" style="margin-bottom: 20px;" id="hoursPerWeek" name="hoursPerWeek" required>
+                                    <option value="0 - 5hrs">0 - 5hrs</option>
+                                    <option value="5 - 10hrs">5 - 10hrs</option>
+                                    <option value="10 - 15hrs">10 - 15hrs</option>
+                                    <option value="15 - 20hrs">15 - 20hrs</option>
+                                    <option value="20 - 25hrs">20 - 25hrs</option>
+                                    <option value="25 - 30hrs">25 - 30hrs</option>
+                                    <option value="30 - 35hrs">30 - 35hrs</option>
+                                    <option value="35 - 40hrs">35 - 40hrs</option>
+                                    <option value="45 - 45hrs">40 - 45hrs</option>
+                                    <option value="45 - 50hrs">45 - 50hrs</option>
+                                    <option value="50 - 60hrs">50 - 60hrs</option>
+                                    <option value="60 - 70+hrs">60 - 70+hrs</option>
+                                </select>
+                                <label for="hoursPerWeek">Desired Hours Per Week</label>
+                            </div>
+                        </div>
+                    </div><br><!-- End hours per week Section-->
+      
                 </div><!-- End General Information section-->
 
                 <p id="references" class="jumpTo"></p>
@@ -304,18 +376,6 @@
                 
                 <p id="experience" class="jumpTo"></p>
                 <h2>Work Experience</h2>
-                
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required><br><br>
-
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required><br><br>
-
-                <label for="message">Message:</label>
-                <textarea id="message" name="message" rows="4" required></textarea><br><br><br><br>
-                
-                <p id="availability" class="jumpTo"></p>
-                <h2>Availability</h2>
                 
                 <label for="name">Name:</label>
                 <input type="text" id="name" name="name" required><br><br>

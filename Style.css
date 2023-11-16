@@ -75,5 +75,10 @@ input[type="submit"], input[type="reset"], button {
 	color: #737373;
 	font-size: smaller;
 }
+.standardRowHieght{
+	display: inline-block;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
 
 /* ENd of John Foster CSS code */
