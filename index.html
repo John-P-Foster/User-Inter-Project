@@ -25,7 +25,7 @@
             <button type="reset" form="ourForm" class="btn btn-danger" value="Reset" style="margin-left: 100px; position: fixed; top:10px; right: 5%;">Reset Application</button>
         </div><!-- End Nav Bar Section-->
 
-        <p id="topOfPage" class="jumpTo"></p>
+        <p id="topOfPage" class="jumpTo" style="border-style: none;"></p>
         
         <div class="container text-center"><!-- Main Flex container-->
             
@@ -94,7 +94,7 @@
                         <div class="col-md-4" style="text-align: left;">
                             <div class="form-floating mb-3">
                                 <input type="text" class="form-control" id="streetAddress" name="streetAddress" placeholder="Street address" required>
-                                <label for="streetAddress">Current Addres <span class="exampleText"> (street)</span></label>
+                                <label for="streetAddress">Current Address <span class="exampleText"> (street)</span></label>
                             </div>
                         </div>
 
@@ -387,7 +387,7 @@
                                         <option value="No">No</option>
                                         <option value="Unsure">Unsure</option>
                                     </select>
-                                    <label for="meetRequirements">Meet Requirements</label>
+                                    <label for="meetRequirements">Meets Requirements</label>
                                 </div>
                             </div>
                         </div>
@@ -398,16 +398,16 @@
                         <div class="row">
                             <div class="col-md-12" style="text-align: left;">
                                 <div class="row">
-                                    <label for="workMonday" style="margin-top: 15px;">
-                                        <span style="margin-left: 100px;">
-                                            What days do you expect to work each week?
-                                        </span>
-                                    </label>
-                                </div>
+                                <label for="workMonday" style="margin-top: 15px;">
+                                    <span style="margin-left: 100px;">
+                                        What days do you expect to work each week? <span class="exampleText">(check all that apply)</span>
+                                    </span>
+                                </label>
+                            </div>
                                 <div class="row">
                                     <ul style="display: flex;">
                                         <li class="list-group-item" style="margin-right: 10px;">
-                                            <label class="form-check-label" for="workMonday"><span class="exampleText">Check all <br>that apply</span></label>
+                                            <label class="form-check-label" for="workMonday"><span class="exampleText"> <br></span></label>
                                         </li>
                                         <li class="list-group-item" style="padding-top:15px">
                                             <input class="form-check-input me-1" type="checkbox" value="" id="workMonday" style="margin-left: 10px;">
