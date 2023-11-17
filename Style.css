@@ -30,6 +30,7 @@
 	text-align: center;
 	background-color:rgb(222, 233, 242); 
 	padding: 10px;
+	padding-bottom: 0px;
 	width: 100%;
 	justify-content: center;
 	z-index:10;
