@@ -9,8 +9,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 	
 </head>
-
-    <body class="ourBody" style="background-color:aliceblue;">
+    <body class="ourBody" style="background-color:rgb(222, 233, 242);">
         <div class="ourNavBar">
             <ul class="ourhorizontal-list">
                 <li><a href="#topOfPage" style="border-bottom-left-radius: 25px;border-top-left-radius: 25px;">Start</a></li>
@@ -84,27 +83,24 @@
                         </div>
                     </div><!-- End contact infromation Section-->
 
-                    <div class="form-control" style="padding: 5px;">
-                        <div class = "row"><!-- start address section-->
+                  <!-- start address section-->
+                        <div class = "row">
                             <div class = "col-md-4" style="text-align: left;">
-                                <label for="streetAddress">
-                                    <span style="margin-left: 10px;"> Current Address</span>
-                                </label>
                                 <div class="form-floating">
                                     <input type="text" class="form-control" id="streetAddress" name="streetAddress" placeholder="Street address" required>
-                                    <label for="streetAddress">Street</label>
+                                    <label for="streetAddress">Current Addres <span class="exampleText"> (street)</span></label>
                                 </div>
                             </div>
 
                             <div class = "col-md-3">
-                                <div class="form-floating" style="margin-top: 24px; margin-bottom: 5px;">
+                                <div class="form-floating">
                                     <input type="text" class="form-control" id="cityAddress" name="cityAddress" placeholder="City" required>
                                     <label for="cityAddress">City</label>
                                 </div>
                             </div>
 
                             <div class = "col-md-3">
-                                <div class="form-floating" style="margin-top: 24px;">
+                                <div class="form-floating">
                                     <select class="form-select" id="stateAddress" name="stateAddress" required>
                                         <option selected>State</option>
                                         <option value="AL">Alabama</option>
@@ -166,13 +162,13 @@
                             </div>
                 
                             <div class = "col-md-2">
-                                <div class="form-floating" style="margin-top: 24px;">
+                                <div class="form-floating">
                                     <input type="text" class="form-control" id="zipAddress" name="zipAddress" placeholder="ZIP" required>
                                     <label for="zipAddress">ZIP <span class="exampleText"> (xxxxx)</span></label>
                                 </div>
                             </div>
-                        </div><!-- End address Section-->
-                    </div><br>
+                        </div><br><!-- End address Section-->
+          
 
                     <div class="form-control"><!-- start move in date section-->
                         <div class = "row">
