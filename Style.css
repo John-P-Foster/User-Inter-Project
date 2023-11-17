@@ -47,6 +47,7 @@
 	padding: 10px;
 	border-left: 1px solid #737373;
 	border-right: 1px solid #737373;
+	z-index: 0;
 }
 
 .content {
@@ -90,7 +91,7 @@ input[type="submit"], input[type="reset"], button {
 	display: inline-block;
 	margin-top: 15px;
 	margin-bottom: 15px;
-	justify-content: center;
+	margin-left: 100px;
 }
 
 .columnPadding{
