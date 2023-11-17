@@ -19,17 +19,17 @@
                 <li><a href="#education">Education</a></li>
                 <li><a href="#experience">Work Experience</a></li>
                 <li><a href="#background">Background</a></li>
-                <li><a href="#medical">Medical History</a></li>
-                <li><a href="#criminal">Criminal Background</a></li>
-                <li><a href="#waiver" style="border-bottom-right-radius: 25px;border-top-right-radius: 25px;">Waiver</a></li>
+                <li><a href="#waiver">Waiver</a></li>
+                <li><button type="submit" form="ourForm" class="btn btn-primary" style="border-bottom-right-radius: 25px;border-top-right-radius: 25px; border-top-left-radius: 0px; border-bottom-left-radius: 0px; padding:6px;">Submit Application</button>
             </ul>
+            <button type="reset" form="ourForm" class="btn btn-danger" value="Reset" style="margin-left: 100px; position: fixed; top:10px; right: 5%;">Reset Application</button>
         </div><!-- End Nav Bar Section-->
 
         <p id="topOfPage" class="jumpTo"></p>
         
         <div class="container text-center"><!-- Main Flex container-->
             
-            <form action="submit.php" method="post" class="ourForm" ><!-- start form section-->
+            <form action="submit.php" method="post" class="ourForm" id="ourForm" name="ourForm"><!-- start form section-->
 
                 <div class="row"><!--Start header-->
                     <div class="col-md">        
@@ -49,13 +49,13 @@
                     <div class="row"><!-- start name section-->
                         <div class="col-md-8">
                             <div class="form-floating mb-3">
-                                <input type="text" class="form-control" id="firstName" placeholder="Full name">
+                                <input type="text" class="form-control" id="firstName" placeholder="Full name" required>
                                 <label for="firstName">Full Name <span class="exampleText"> (first middle last)</span></label>
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div class="form-floating mb-3">
-                                <input type="text" class="form-control" id="SSN" name="SSN" placeholder="Social Security Number">
+                                <input type="text" class="form-control" id="SSN" name="SSN" placeholder="Social Security Number" required>
                                 <label for="firstName">SSN # <span class="exampleText"> (XXX-XX-XXXX)</span></label>
                             </div>
                         </div>
@@ -230,7 +230,7 @@
                             <div class = "col-md-12" style="padding-right: 5px;">
                                 <div class="form-floating">
                                     <textarea class="form-control" placeholder="Description here" id="firedFromJobDescription"></textarea>
-                                    <label for="firedFromJobDescription"> If Yes, please describe all situations here.<span class="exampleText"> (include dates)</span></label>
+                                    <label for="firedFromJobDescription" style="margin-left: 80px;"> If Yes, please describe all situations here.<span class="exampleText"> (include dates)</span></label>
                                 </div>
                             </div>
                         </div>
@@ -259,11 +259,11 @@
                             <div class = "col-md-12" style="padding-right: 5px;">
                                 <div class="form-floating">
                                     <textarea class="form-control" placeholder="Felony Disctription" id="FelonyDiscritption"></textarea>
-                                    <label for="FelonyDiscritption"> If Yes, please describe all situations here.<span class="exampleText"> (include dates)</span></label>
+                                    <label for="FelonyDiscritption" style="margin-left: 80px;"> If Yes, please describe all situations here.<span class="exampleText"> (include dates)</span></label>
                                 </div>
                             </div>
                         </div>
-                    </div><br><!--End fired from job section-->
+                    </div><!--End Convicted of a felony section-->
 
                 </div><!-- End General info section-->
 
@@ -379,16 +379,18 @@
 
                     <div class="form-control"><!--Start days available to work section-->
                         <div class="row">
-                            <div class="col-md" style="text-align: center;">
-                                <label for="daysPerWeek">
-                                    <span>
-                                        What days do you expect to work?
+                            <div class="col-md-12" style="text-align: left;">
+                                <div class="row">
+                                <label for="workMonday" style="margin-top: 15px;">
+                                    <span style="margin-left: 100px;">
+                                        What days do you expect to work each week?
                                     </span>
-                                </label><br>
+                                </label>
+                            </div>
                                 <div class="row">
                                     <ul style="display: flex;">
                                         <li class="list-group-item" style="margin-right: 10px;">
-                                            <label class="form-check-label" for="workSaturday"><span class="exampleText">Check all <br>that apply</span></label>
+                                            <label class="form-check-label" for="workMonday"><span class="exampleText">Check all <br>that apply</span></label>
                                         </li>
                                         <li class="list-group-item" style="padding-top:15px">
                                             <input class="form-check-input me-1" type="checkbox" value="" id="workMonday" style="margin-left: 10px;" >
@@ -489,7 +491,7 @@
                                     <input type="date" class="form-control" style="padding-top: 15px; padding-bottom: 15px;" id="startDate" name="startDate" value="2023-11-01" required>  
                             </div>   
                         </div>
-                    </div><br><!-- end start date section-->
+                    </div><!-- end start date section-->
       
                 </div><!-- End job specifications section-->
 
@@ -541,30 +543,6 @@
                 <label for="message">Message:</label>
                 <textarea id="message" name="message" rows="4" required></textarea><br><br><br><br>
                 
-                <p id="medical" class="jumpTo"></p>
-                <h2>Medical History</h2>
-                
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required><br><br>
-
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required><br><br>
-
-                <label for="message">Message:</label>
-                <textarea id="message" name="message" rows="4" required></textarea><br><br><br><br>
-                
-                <p id="criminal" class="jumpTo"></p>
-                <h2>Criminal Background</h2>
-                
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required><br><br>
-
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required><br><br>
-
-                <label for="message">Message:</label>
-                <textarea id="message" name="message" rows="4" required></textarea><br><br><br><br>
-                
                 <p id="waiver" class="jumpTo"></p>
                 <h2>Waiver</h2>
                 
@@ -581,8 +559,6 @@
                     <li>You understand that your employment would begin in a state of probation. The probationary period will last 60 days, during which Unfinished Business retains the right to terminate your employment for any reason.</li>
                 
                 <ol>
-
-                <button type="submit">Submit</button> <button type="resest">Reset</button>
             </form><!--End Form Section -->
         </div><br><br><br><br><!--End Main Container-->
     </body>
