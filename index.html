@@ -250,50 +250,14 @@
                                 </div>
                             </div>
                         </div>
-                    </div><br><!-- End Posistion and salary Section-->
-
-                    <div class="form-control"><!-- start start date section-->
-                        <div class = "row">
-                            <div class="col-md-8" style="text-align: left;">
-                                <label for="startDate">
-                                    <span class="standardRowHieght">
-                                        When are you available to start working? 
-                                    </span>
-                                </label>
-                            </div>
-                            <div class="col-md-4" style="padding-right: 5px;">
-                                    <input type="date" class="form-control" style="padding-top: 15px; padding-bottom: 15px;" id="startDate" name="startDate" value="2023-11-01" required>  
-                            </div>   
-                        </div>
-                    </div><br><!-- end start date section-->
-
-                    <div class="form-control"><!-- start work nights section-->
-                        <div class = "row">       
-                            <div class="col-md-8" style="text-align: left;">      
-                                <label for="workNights">
-                                    <span class="standardRowHieght">
-                                        Are you able to work nights?
-                                    </span>
-                                </label>       
-                            </div>
-                            <div class = "col-md-4" style="padding-right: 5px;">
-                                <div class="form-floating">
-                                    <select class="form-select" id="workNights" name="workNights" required>
-                                        <option value="Yes">Yes</option>
-                                        <option value="No">No</option>
-                                    </select>
-                                    <label for="workNights">Work Nights</label>
-                                </div>
-                            </div>
-                        </div>
-                    </div><br><!-- End employment type Section-->
+                    </div><br><!-- End salary Section-->
 
                     <div class="form-control"><!-- start employment type section-->
                         <div class = "row">
                             <div class="col-md-8" style="text-align: left;">      
                                 <label for="employmentType">
                                     <span class="standardRowHieght">
-                                        What type of employment are you looking for?
+                                        Are you looking to fill this position full time or part time?
                                     </span>
                                 </label>       
                             </div>
@@ -309,6 +273,53 @@
                             </div>
                         </div>
                     </div><br><!-- End employment type Section-->
+
+                    <div class="form-control"><!--Start days available to work section-->
+                        <div class="row">
+                            <div class="col-md" style="text-align: center;">
+                                <label for="daysPerWeek">
+                                    <span>
+                                        What days do you expect off?
+                                    </span>
+                                </label><br>
+                                <div class="row">
+                                    <ul style="display: flex;">
+                                        <li class="list-group-item" style="margin-right: 10px;">
+                                            <label class="form-check-label" for="workSaturday"><span class="exampleText">Check all <br>that apply</span></label>
+                                        </li>
+                                        <li class="list-group-item" style="padding-top:15px">
+                                            <input class="form-check-input me-1" type="checkbox" value="" id="workSaturday" style="margin-left: 10px;" >
+                                            <label class="form-check-label" for="workSaturday">Saturday</label>
+                                        </li>
+                                        <li class="list-group-item" style="padding-top:15px">
+                                            <input class="form-check-input me-1" type="checkbox" value="" id="workSunday" style="margin-left: 10px;" >
+                                            <label class="form-check-label" for="workSunday">Sundary</label>
+                                        </li>
+                                        <li class="list-group-item" style="padding-top:15px">
+                                            <input class="form-check-input me-1" type="checkbox" value="" id="workMonday" style="margin-left: 10px;" >
+                                            <label class="form-check-label" for="workMonday">Monday</label>
+                                        </li>
+                                        <li class="list-group-item" style="padding-top:15px">
+                                            <input class="form-check-input me-1" type="checkbox" value="" id="workTuesday" style="margin-left: 10px;" >
+                                            <label class="form-check-label" for="workTuesday">Tuesday</label>
+                                        </li>
+                                        <li class="list-group-item" style="padding-top:15px">
+                                            <input class="form-check-input me-1" type="checkbox" value="" id="workWednesday" style="margin-left: 10px;" >
+                                            <label class="form-check-label" for="workWednesday">Wednesday</label>
+                                        </li>
+                                        <li class="list-group-item" style="padding-top:15px">
+                                            <input class="form-check-input me-1" type="checkbox" value="" id="workThursday" style="margin-left: 10px;" >
+                                            <label class="form-check-label" for="workThursday">Thursday</label>
+                                        </li>
+                                        <li class="list-group-item" style="padding-top:15px">
+                                            <input class="form-check-input me-1" type="checkbox" value="" id="workFriday" style="margin-left: 10px;" >
+                                            <label class="form-check-label" for="workFriday">Friday</label>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div><br><!--- End days available to work section-->
 
                     <div class="form-control"><!-- start hours per week section-->
                         <div class = "row">
@@ -339,7 +350,43 @@
                                 </div>
                             </div>
                         </div>
-                    </div><!-- End hours per week Section-->
+                    </div><br><!-- End hours per week Section-->
+
+                    <div class="form-control"><!-- start work nights section-->
+                        <div class = "row">       
+                            <div class="col-md-8" style="text-align: left;">      
+                                <label for="workNights">
+                                    <span class="standardRowHieght">
+                                        Are you able to work nights?
+                                    </span>
+                                </label>       
+                            </div>
+                            <div class = "col-md-4" style="padding-right: 5px;">
+                                <div class="form-floating">
+                                    <select class="form-select" id="workNights" name="workNights" required>
+                                        <option value="Yes">Yes</option>
+                                        <option value="No">No</option>
+                                    </select>
+                                    <label for="workNights">Work Nights</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div><br><!-- End employment type Section-->
+
+                    <div class="form-control"><!-- start start date section-->
+                        <div class = "row">
+                            <div class="col-md-8" style="text-align: left;">
+                                <label for="startDate">
+                                    <span class="standardRowHieght">
+                                        When are you available to start working? 
+                                    </span>
+                                </label>
+                            </div>
+                            <div class="col-md-4" style="padding-right: 5px;">
+                                    <input type="date" class="form-control" style="padding-top: 15px; padding-bottom: 15px;" id="startDate" name="startDate" value="2023-11-01" required>  
+                            </div>   
+                        </div>
+                    </div><br><!-- end start date section-->
       
                 </div><!-- End work Expectations section-->
 
