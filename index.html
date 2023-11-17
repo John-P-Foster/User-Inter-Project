@@ -10,7 +10,7 @@
 	
 </head>
 
-    <body>
+    <body class="ourBody" style="background-color:aliceblue;">
         <div class="ourNavBar">
             <ul class="ourhorizontal-list">
                 <li><a href="#topOfPage" style="border-bottom-left-radius: 25px;border-top-left-radius: 25px;">Start</a></li>
@@ -29,17 +29,17 @@
         
         <div class="container text-center">
             
-            <form action="submit.php" method="post" style="max-width: 800px; margin: auto;"><!-- start from section-->
+            <form action="submit.php" method="post" class="ourForm" ><!-- start from section-->
 
                 <div class="row">
                     <div class="col-md">        
-                        <h1 style="text-align: center;">UNFinished Employment Application</h1>  
+                        <h1 style="text-align: center; padding-top: 20px;">UNFinished Employment Application</h1>  
                     </div>
                 </div>
 
                 <div class ="generalInfoSection"><!-- start General Infromation section-->
 
-                    <p id="general" class="jumpTo" style="margin-top: 20px; padding-top: 20px;"></p>
+                    <h1 id="general" class="jumpTo" style="margin-top: 0px; padding-bottom: 20px;"></h1>
 
                     <h2>General Information</h2>
 
@@ -47,10 +47,16 @@
 
                    
                     <div class="row"><!-- start name section-->
-                        <div class="col-md">
+                        <div class="col-md-8">
                             <div class="form-floating mb-3">
                                 <input type="text" class="form-control" id="firstName" placeholder="Full name">
                                 <label for="firstName">Full Name <span class="exampleText"> (first middle last)</span></label>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control" id="SSN" name="SSN" placeholder="Social Security Number">
+                                <label for="firstName">SSN # <span class="exampleText"> (XXX-XX-XXXX)</span></label>
                             </div>
                         </div>
                     </div><!-- end name section-->
@@ -78,137 +84,131 @@
                         </div>
                     </div><!-- End contact infromation Section-->
 
-                    <div class = "row"><!-- start address section-->
-                        <div class = "col-md-4">
-                            <div class="form-floating mb-3">
-                                <input type="text" class="form-control" id="streetAddress" name="streetAddress" placeholder="Street address" required>
-                                <label for="streetAddress">Address <span class="exampleText"> (street)</span></label>
-                            </div>
-                        </div>
-
-                        <div class = "col-md-3">
-                            <div class="form-floating mb-3">
-                                <input type="text" class="form-control" id="cityAddress" name="cityAddress" placeholder="City" required>
-                                <label for="cityAddress">City</label>
-                            </div>
-                        </div>
-
-                        <div class = "col-md-3">
-                            <div class="form-floating">
-                                <select class="form-select" style="margin-bottom: 20px;" id="stateAddress" name="stateAddress" required>
-                                    <option selected>State</option>
-                                    <option value="AL">Alabama</option>
-                                    <option value="AK">Alaska</option>
-                                    <option value="AZ">Arizona</option>
-                                    <option value="AR">Arkansas</option>
-                                    <option value="CA">California</option>
-                                    <option value="CO">Colorado</option>
-                                    <option value="CT">Connecticut</option>
-                                    <option value="DE">Delaware</option>
-                                    <option value="DC">District Of Columbia</option>
-                                    <option value="FL">Florida</option>
-                                    <option value="GA">Georgia</option>
-                                    <option value="HI">Hawaii</option>
-                                    <option value="ID">Idaho</option>
-                                    <option value="IL">Illinois</option>
-                                    <option value="IN">Indiana</option>
-                                    <option value="IA">Iowa</option>
-                                    <option value="KS">Kansas</option>
-                                    <option value="KY">Kentucky</option>
-                                    <option value="LA">Louisiana</option>
-                                    <option value="ME">Maine</option>
-                                    <option value="MD">Maryland</option>
-                                    <option value="MA">Massachusetts</option>
-                                    <option value="MI">Michigan</option>
-                                    <option value="MN">Minnesota</option>
-                                    <option value="MS">Mississippi</option>
-                                    <option value="MO">Missouri</option>
-                                    <option value="MT">Montana</option>
-                                    <option value="NE">Nebraska</option>
-                                    <option value="NV">Nevada</option>
-                                    <option value="NH">New Hampshire</option>
-                                    <option value="NJ">New Jersey</option>
-                                    <option value="NM">New Mexico</option>
-                                    <option value="NY">New York</option>
-                                    <option value="NC">North Carolina</option>
-                                    <option value="ND">North Dakota</option>
-                                    <option value="OH">Ohio</option>
-                                    <option value="OK">Oklahoma</option>
-                                    <option value="OR">Oregon</option>
-                                    <option value="PA">Pennsylvania</option>
-                                    <option value="RI">Rhode Island</option>
-                                    <option value="SC">South Carolina</option>
-                                    <option value="SD">South Dakota</option>
-                                    <option value="TN">Tennessee</option>
-                                    <option value="TX">Texas</option>
-                                    <option value="UT">Utah</option>
-                                    <option value="VT">Vermont</option>
-                                    <option value="VA">Virginia</option>
-                                    <option value="WA">Washington</option>
-                                    <option value="WV">West Virginia</option>
-                                    <option value="WI">Wisconsin</option>
-                                    <option value="WY">Wyoming</option>
-                                </select>
-                                <label for="stateAddress">
-                                    State
+                    <div class="form-control" style="padding: 5px;">
+                        <div class = "row"><!-- start address section-->
+                            <div class = "col-md-4" style="text-align: left;">
+                                <label for="streetAddress">
+                                    <span style="margin-left: 10px;"> Current Address</span>
                                 </label>
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" id="streetAddress" name="streetAddress" placeholder="Street address" required>
+                                    <label for="streetAddress">Street</label>
+                                </div>
                             </div>
-                        </div>
-              
-                        <div class = "col-md-2">
-                            <div class="form-floating mb-3">
-                                <input type="text" class="form-control" id="zipAddress" name="zipAddress" placeholder="ZIP" required>
-                                <label for="zipAddress">ZIP <span class="exampleText"> (xxxxx)</span></label>
-                            </div>
-                        </div>
-                    </div><!-- End address Section-->
 
-                    <div class = "row"><!-- start move in date section-->
-                        <div class="col-md">
-                            <div class="form-control" style="text-align: left;">
-                                <label for="moveInDate" style="float: left; margin-right: 50px; padding-top: 5px;">When did you move to this address? </label>
-                                <input type="month" style="text-align: center; width: 200px;" class="form-control" id="moveInDate" name="moveInDate" value="2023-11" required>  
+                            <div class = "col-md-3">
+                                <div class="form-floating" style="margin-top: 24px; margin-bottom: 5px;">
+                                    <input type="text" class="form-control" id="cityAddress" name="cityAddress" placeholder="City" required>
+                                    <label for="cityAddress">City</label>
+                                </div>
                             </div>
-                        </div>
-                    </div><br><!-- Move in date section-->
-                    
-                    <div class = "row"><!-- start over 18 section-->
-                        <div class="col-md">
-                            <div class="form-control" style="text-align: left;">
-                                <div class="col-md">
-                                    <span class="standardRowHieght"> Are you at least 18 years of age?</span>
-            
-                                    <label class="ageButton" style="margin-left: 80px;"
-                                        >Yes
-                                        <input
-                                        type="radio"
-                                        name="over18"
-                                        value="Yes"
-                                        id="over18"
-                                        />
-                                    </label>
-                                    <label class="ageButton" 
-                                        >No
-                                        <input
-                                        type="radio"
-                                        name="over18"
-                                        value="No"
-                                        id="compactCar"
-                                        /> 
+
+                            <div class = "col-md-3">
+                                <div class="form-floating" style="margin-top: 24px;">
+                                    <select class="form-select" id="stateAddress" name="stateAddress" required>
+                                        <option selected>State</option>
+                                        <option value="AL">Alabama</option>
+                                        <option value="AK">Alaska</option>
+                                        <option value="AZ">Arizona</option>
+                                        <option value="AR">Arkansas</option>
+                                        <option value="CA">California</option>
+                                        <option value="CO">Colorado</option>
+                                        <option value="CT">Connecticut</option>
+                                        <option value="DE">Delaware</option>
+                                        <option value="DC">District Of Columbia</option>
+                                        <option value="FL">Florida</option>
+                                        <option value="GA">Georgia</option>
+                                        <option value="HI">Hawaii</option>
+                                        <option value="ID">Idaho</option>
+                                        <option value="IL">Illinois</option>
+                                        <option value="IN">Indiana</option>
+                                        <option value="IA">Iowa</option>
+                                        <option value="KS">Kansas</option>
+                                        <option value="KY">Kentucky</option>
+                                        <option value="LA">Louisiana</option>
+                                        <option value="ME">Maine</option>
+                                        <option value="MD">Maryland</option>
+                                        <option value="MA">Massachusetts</option>
+                                        <option value="MI">Michigan</option>
+                                        <option value="MN">Minnesota</option>
+                                        <option value="MS">Mississippi</option>
+                                        <option value="MO">Missouri</option>
+                                        <option value="MT">Montana</option>
+                                        <option value="NE">Nebraska</option>
+                                        <option value="NV">Nevada</option>
+                                        <option value="NH">New Hampshire</option>
+                                        <option value="NJ">New Jersey</option>
+                                        <option value="NM">New Mexico</option>
+                                        <option value="NY">New York</option>
+                                        <option value="NC">North Carolina</option>
+                                        <option value="ND">North Dakota</option>
+                                        <option value="OH">Ohio</option>
+                                        <option value="OK">Oklahoma</option>
+                                        <option value="OR">Oregon</option>
+                                        <option value="PA">Pennsylvania</option>
+                                        <option value="RI">Rhode Island</option>
+                                        <option value="SC">South Carolina</option>
+                                        <option value="SD">South Dakota</option>
+                                        <option value="TN">Tennessee</option>
+                                        <option value="TX">Texas</option>
+                                        <option value="UT">Utah</option>
+                                        <option value="VT">Vermont</option>
+                                        <option value="VA">Virginia</option>
+                                        <option value="WA">Washington</option>
+                                        <option value="WV">West Virginia</option>
+                                        <option value="WI">Wisconsin</option>
+                                        <option value="WY">Wyoming</option>
+                                    </select>
+                                    <label for="stateAddress">
+                                        State
                                     </label>
                                 </div>
                             </div>
-                        </div>
-                    </div><br><!-- End over 18 Section-->
+                
+                            <div class = "col-md-2">
+                                <div class="form-floating" style="margin-top: 24px;">
+                                    <input type="text" class="form-control" id="zipAddress" name="zipAddress" placeholder="ZIP" required>
+                                    <label for="zipAddress">ZIP <span class="exampleText"> (xxxxx)</span></label>
+                                </div>
+                            </div>
+                        </div><!-- End address Section-->
+                    </div><br>
 
-                    <div class="row"><!-- start SSN section-->
-                        <div class="col-md">
-                            <div class="form-floating mb-3">
-                                <input type="text" class="form-control" id="SSN" name="SSN" placeholder="Social Security Number">
-                                <label for="firstName">Social Security Number <span class="exampleText"> (XXX-XX-XXXX)</span></label>
+                    <div class="form-control"><!-- start move in date section-->
+                        <div class = "row">
+                            <div class="col-md-8">
+                                <label for="moveInDate">
+                                    <span class="standardRowHieght">
+                                        When did you move to this address? 
+                                    </span>
+                                </label>
+                            </div>
+                            <div class="col-md-4" style="padding-right: 5px;">
+                                    <input type="month" class="form-control" style="padding-top: 15px; padding-bottom: 15px;" id="moveInDate" name="moveInDate" value="2023-11" required>  
+                            </div>   
+                        </div>
+                    </div><br><!-- Move in date section-->
+
+                    <div class="form-control"><!-- start over 18 section-->
+                        <div class = "row">
+                            <div class="col-md-8">      
+                                <label for="over18">
+                                    <span class="standardRowHieght">
+                                        Are you over the age of 18?
+                                    </span>
+                                </label>       
+                            </div>
+                            <div class = "col-md-4" style="padding-right: 5px;">
+                                <div class="form-floating">
+                                    <select class="form-select" id="over18" name="over18" required>
+                                        <option value="Yes">Yes</option>
+                                        <option value="No">No</option>
+                                    </select>
+                                    <label for="over18"> Age 18+</label>
+                                </div>
                             </div>
                         </div>
-                    </div><!-- End SSN Section-->
+                    </div><br><!-- End over 18 type Section-->
 
                     <div class = "row"><!-- start position and salary section-->
                         <div class = "col-md-8">
@@ -239,114 +239,94 @@
                         </div>
                     </div><!-- End Posistion and salary Section-->
 
-                    <div class = "row"><!-- start start date section-->
-                        <div class="col-md">
-                            <div class="form-control" style="text-align: left;">
-                                <label for="dateAvailable" style="float: left; margin-right: 50px; padding-top: 5px;">When are available to start working? </label>
-                                <input type="date" style="text-align: center; width: 200px;" class="form-control" id="dateAvailable" name="dateAvailable" value="2023-11-01" required>  
+                    <div class="form-control"><!-- start start date section-->
+                        <div class = "row">
+                            <div class="col-md-8">
+                                <label for="startDate">
+                                    <span class="standardRowHieght">
+                                        When are you available to start working? 
+                                    </span>
+                                </label>
                             </div>
+                            <div class="col-md-4" style="padding-right: 5px;">
+                                    <input type="date" class="form-control" style="padding-top: 15px; padding-bottom: 15px;" id="startDate" name="startDate" value="2023-11-01" required>  
+                            </div>   
                         </div>
-                    </div><br><!-- End start date Section-->
+                    </div><br><!-- Move start date section-->
 
-                    <div class = "row"><!-- start works nights section-->
-                        <div class="col-md">
-                            <div class="form-control" style="text-align: left;">
-                                <div class="col-md">
-                                    <span class="standardRowHieght"> Are you able to work nights?</span>
-            
-                                    <label class="ageButton" style="margin-left: 100px;"
-                                        >Yes
-                                        <input
-                                        type="radio"
-                                        name="workNights"
-                                        value="Yes"
-                                        id="workNights"
-                                        />
-                                    </label>
-                                    <label class="ageButton" 
-                                        >No
-                                        <input
-                                        type="radio"
-                                        name="workNights"
-                                        value="No"
-                                        id="workNights"
-                                        /> 
-                                    </label>
+                    <div class="form-control"><!-- start work nights section-->
+                        <div class = "row">       
+                            <div class="col-md-8">      
+                                <label for="workNights">
+                                    <span class="standardRowHieght">
+                                        Are you able to work nights?
+                                    </span>
+                                </label>       
+                            </div>
+                            <div class = "col-md-4" style="padding-right: 5px;">
+                                <div class="form-floating">
+                                    <select class="form-select" id="workNights" name="workNights" required>
+                                        <option value="Yes">Yes</option>
+                                        <option value="No">No</option>
+                                    </select>
+                                    <label for="workNights">Work Nights</label>
                                 </div>
                             </div>
                         </div>
-                    </div><br><!-- End work nights Section-->
+                    </div><br><!-- End employment type Section-->
 
-                    <div class = "row"><!-- start employment types section-->
-                        <div class="col-md">
-                            <div class="form-control" style="text-align: left;">
-                                <div class="col-md">
-                                    <span class="standardRowHieght"> What type of employment are you looking for?</span>
-            
-                                    <label class="ageButton" style="margin-left: 100px;"
-                                        >Part Time
-                                        <input
-                                        type="radio"
-                                        name="employmentType"
-                                        value="Part Time"
-                                        id="employmentType"
-                                        />
-                                    </label>
-                                    <label class="ageButton" 
-                                        >Full Time
-                                        <input
-                                        type="radio"
-                                        name="employmentType"
-                                        value="Full Time"
-                                        id="employmentType"
-                                        /> 
-                                    </label>
-                                    <label class="ageButton" 
-                                        >Either
-                                        <input
-                                        type="radio"
-                                        name="wemploymentType"
-                                        value="either"
-                                        id="employmentType"
-                                        /> 
-                                    </label>
+                    <div class="form-control"><!-- start employment type section-->
+                        <div class = "row">
+                            <div class="col-md-8">      
+                                <label for="employmentType">
+                                    <span class="standardRowHieght">
+                                        What type of employment are you looking for?
+                                    </span>
+                                </label>       
+                            </div>
+                            <div class = "col-md-4" style="padding-right: 5px;">
+                                <div class="form-floating">
+                                    <select class="form-select" id="employmentType" name="employmentType" required>
+                                        <option value="Full Time">Full Time</option>
+                                        <option value="Part Time">Part Time</option>
+                                        <option value="Either">Either</option>
+                                    </select>
+                                    <label for="employmentType">Desired Employment Type</label>
                                 </div>
                             </div>
                         </div>
-                    </div><br><!-- End Employment type Section-->
+                    </div><br><!-- End employment type Section-->
 
-                    <div class = "row"><!-- start hours per week section-->
-                        <div class="col-md-8">
-                            <div class="form-control" style="text-align: left;">
-                                <div class="col-md">
-                                    <label for="hoursPerWeek">
-                                        <span class="standardRowHieght">
-                                             About how many hours per week do you wish to work?
-                                        </span>
-                                    </label>      
+                    <div class="form-control"><!-- start hours per week section-->
+                        <div class = "row">
+                            <div class="col-md-8">      
+                                <label for="hoursPerWeek">
+                                    <span class="standardRowHieght">
+                                            About how many hours per week do you wish to work?
+                                    </span>
+                                </label>       
+                            </div>
+                            <div class = "col-md-4" style="padding-right: 5px;">
+                                <div class="form-floating">
+                                    <select class="form-select" id="hoursPerWeek" name="hoursPerWeek" required>
+                                        <option value="0 - 5hrs">0 - 5hrs</option>
+                                        <option value="5 - 10hrs">5 - 10hrs</option>
+                                        <option value="10 - 15hrs">10 - 15hrs</option>
+                                        <option value="15 - 20hrs">15 - 20hrs</option>
+                                        <option value="20 - 25hrs">20 - 25hrs</option>
+                                        <option value="25 - 30hrs">25 - 30hrs</option>
+                                        <option value="30 - 35hrs">30 - 35hrs</option>
+                                        <option value="35 - 40hrs">35 - 40hrs</option>
+                                        <option value="45 - 45hrs">40 - 45hrs</option>
+                                        <option value="45 - 50hrs">45 - 50hrs</option>
+                                        <option value="50 - 60hrs">50 - 60hrs</option>
+                                        <option value="60 - 70+hrs">60 - 70+hrs</option>
+                                    </select>
+                                    <label for="hoursPerWeek">Desired Hours Per Week</label>
                                 </div>
                             </div>
                         </div>
-                        <div class = "col-md-4">
-                            <div class="form-floating">
-                                <select class="form-select" style="margin-bottom: 20px;" id="hoursPerWeek" name="hoursPerWeek" required>
-                                    <option value="0 - 5hrs">0 - 5hrs</option>
-                                    <option value="5 - 10hrs">5 - 10hrs</option>
-                                    <option value="10 - 15hrs">10 - 15hrs</option>
-                                    <option value="15 - 20hrs">15 - 20hrs</option>
-                                    <option value="20 - 25hrs">20 - 25hrs</option>
-                                    <option value="25 - 30hrs">25 - 30hrs</option>
-                                    <option value="30 - 35hrs">30 - 35hrs</option>
-                                    <option value="35 - 40hrs">35 - 40hrs</option>
-                                    <option value="45 - 45hrs">40 - 45hrs</option>
-                                    <option value="45 - 50hrs">45 - 50hrs</option>
-                                    <option value="50 - 60hrs">50 - 60hrs</option>
-                                    <option value="60 - 70+hrs">60 - 70+hrs</option>
-                                </select>
-                                <label for="hoursPerWeek">Desired Hours Per Week</label>
-                            </div>
-                        </div>
-                    </div><br><!-- End hours per week Section-->
+                    </div><!-- End hours per week Section-->
       
                 </div><!-- End General Information section-->
 
