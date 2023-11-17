@@ -14,7 +14,7 @@
             <ul class="ourhorizontal-list">
                 <li><a href="#topOfPage" style="border-bottom-left-radius: 25px;border-top-left-radius: 25px;">Start</a></li>
                 <li><a href="#general">General Information</a></li>
-                <li><a href="#Expectations">Expectations</a></li>
+                <li><a href="#Expectations">Job Specifications</a></li>
                 <li><a href="#references">References</a></li>
                 <li><a href="#education">Education</a></li>
                 <li><a href="#experience">Work Experience</a></li>
@@ -182,7 +182,7 @@
                                     <input type="month" class="form-control" style="padding-top: 15px; padding-bottom: 15px;" id="moveInDate" name="moveInDate" value="2023-11" required>  
                             </div>   
                         </div>
-                    </div><br><!-- Move in date section-->
+                    </div><br><!-- End Move in date section-->
 
                     <div class="form-control"><!-- start over 18 section-->
                         <div class = "row">
@@ -205,12 +205,72 @@
                         </div>
                     </div><br><!-- End over 18 type Section-->
 
+                    <div class="form-control"><!--Start fired from job section-->
+                        <div class = "row">       
+                            <div class="col-md-8" style="text-align: left;">      
+                                <label for="firedFromJob">
+                                    <span class="standardRowHieght">
+                                       Have you ever been fired from a job?
+                                    </span>
+                                </label>       
+                            </div>
+                            <div class = "col-md-4" style="padding-right: 5px;">
+                                <div class="form-floating">
+                                    <select class="form-select" id="firedFromJob" name="firedFromJob" required>
+                                        <option value="Yes">Yes</option>
+                                        <option value="No">No</option>
+                                    </select>
+                                    <label for="firedFromJob">Fired Before</label>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="row" style="margin-top: 5px;">
+                            <div class = "col-md-12" style="padding-right: 5px;">
+                                <div class="form-floating">
+                                    <textarea class="form-control" placeholder="Description here" id="firedFromJobDescription"></textarea>
+                                    <label for="firedFromJobDescription"> If Yes, please describe all situations here.<span class="exampleText"> (include dates)</span></label>
+                                </div>
+                            </div>
+                        </div>
+                    </div><br><!--End fired from job section-->
+
+                    <div class="form-control"><!--Start Convicted of a felony section-->
+                        <div class = "row">       
+                            <div class="col-md-8" style="text-align: left;">      
+                                <label for="felonyConviction">
+                                    <span class="standardRowHieght">
+                                       Do you have any felony convictins?
+                                    </span>
+                                </label>       
+                            </div>
+                            <div class = "col-md-4" style="padding-right: 5px;">
+                                <div class="form-floating">
+                                    <select class="form-select" id="felonyConviction" name="felonyConviction" required>
+                                        <option value="Yes">Yes</option>
+                                        <option value="No">No</option>
+                                    </select>
+                                    <label for="felonyConviction">Any Felony Convictions</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row" style="margin-top: 5px;">
+                            <div class = "col-md-12" style="padding-right: 5px;">
+                                <div class="form-floating">
+                                    <textarea class="form-control" placeholder="Felony Disctription" id="FelonyDiscritption"></textarea>
+                                    <label for="FelonyDiscritption"> If Yes, please describe all situations here.<span class="exampleText"> (include dates)</span></label>
+                                </div>
+                            </div>
+                        </div>
+                    </div><br><!--End fired from job section-->
+
                 </div><!-- End General info section-->
 
-                <div class="WorkExpections sections"><!--Begina Work Expectations section-->
+                <div class="jobSpecifications sections"><!--Begin Job Specifications section-->
 
                     <p id="Expectations" class="jumpTo"></p>
-                    <h2>Work Expectations</h2><br>
+                    <h2>Job Specifications</h2><br>
 
                     <div class = "row"><!-- start position  section-->
                         <div class = "col-md-12">
@@ -274,26 +334,61 @@
                         </div>
                     </div><br><!-- End employment type Section-->
 
+                    <div class="form-control"><!-- start work requirements section-->
+                        <div class = "row">       
+                            <div class="col-md-8" style="text-align: left;">      
+                                <label for="requirementsExplained">
+                                    <span class="standardRowHieght" style="margin-bottom: 0px; margin-top: 0px;">
+                                        Have the requirements of this position been explained in an understandable manner to you?
+                                    </span>
+                                </label>       
+                            </div>
+                            <div class = "col-md-4" >
+                                <div class="form-floating">
+                                    <select class="form-select" id="requirementsExplained" name="requirementsExplained" required>
+                                        <option value="Yes">Yes</option>
+                                        <option value="No">No</option>
+                                    </select>
+                                    <label for="requirementsExplained">Requirements Explained</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div><br><!-- End work requirements Section-->
+
+                    <div class="form-control"><!-- start meets requirements section-->
+                        <div class = "row">       
+                            <div class="col-md-8" style="text-align: left;">      
+                                <label for="meetRequirements">
+                                    <span class="standardRowHieght">
+                                        Can you meet these requirements?
+                                    </span>
+                                </label>       
+                            </div>
+                            <div class = "col-md-4" style="padding-right: 5px;">
+                                <div class="form-floating">
+                                    <select class="form-select" id="meetRequirements" name="meetRequirements" required>
+                                        <option value="Yes">Yes</option>
+                                        <option value="No">No</option>
+                                        <option value="Unsure">Unsure</option>
+                                    </select>
+                                    <label for="meetRequirements">Meet Requirements</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div><br><!-- End meets requirements Section-->
+
                     <div class="form-control"><!--Start days available to work section-->
                         <div class="row">
                             <div class="col-md" style="text-align: center;">
                                 <label for="daysPerWeek">
                                     <span>
-                                        What days do you expect off?
+                                        What days do you expect to work?
                                     </span>
                                 </label><br>
                                 <div class="row">
                                     <ul style="display: flex;">
                                         <li class="list-group-item" style="margin-right: 10px;">
                                             <label class="form-check-label" for="workSaturday"><span class="exampleText">Check all <br>that apply</span></label>
-                                        </li>
-                                        <li class="list-group-item" style="padding-top:15px">
-                                            <input class="form-check-input me-1" type="checkbox" value="" id="workSaturday" style="margin-left: 10px;" >
-                                            <label class="form-check-label" for="workSaturday">Saturday</label>
-                                        </li>
-                                        <li class="list-group-item" style="padding-top:15px">
-                                            <input class="form-check-input me-1" type="checkbox" value="" id="workSunday" style="margin-left: 10px;" >
-                                            <label class="form-check-label" for="workSunday">Sundary</label>
                                         </li>
                                         <li class="list-group-item" style="padding-top:15px">
                                             <input class="form-check-input me-1" type="checkbox" value="" id="workMonday" style="margin-left: 10px;" >
@@ -314,6 +409,14 @@
                                         <li class="list-group-item" style="padding-top:15px">
                                             <input class="form-check-input me-1" type="checkbox" value="" id="workFriday" style="margin-left: 10px;" >
                                             <label class="form-check-label" for="workFriday">Friday</label>
+                                        </li>
+                                        <li class="list-group-item" style="padding-top:15px">
+                                            <input class="form-check-input me-1" type="checkbox" value="" id="workSaturday" style="margin-left: 10px;" >
+                                            <label class="form-check-label" for="workSaturday">Saturday</label>
+                                        </li>
+                                        <li class="list-group-item" style="padding-top:15px">
+                                            <input class="form-check-input me-1" type="checkbox" value="" id="workSunday" style="margin-left: 10px;" >
+                                            <label class="form-check-label" for="workSunday">Sundary</label>
                                         </li>
                                     </ul>
                                 </div>
@@ -371,7 +474,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div><br><!-- End employment type Section-->
+                    </div><br><!-- End works nights Section-->
 
                     <div class="form-control"><!-- start start date section-->
                         <div class = "row">
@@ -388,7 +491,7 @@
                         </div>
                     </div><br><!-- end start date section-->
       
-                </div><!-- End work Expectations section-->
+                </div><!-- End job specifications section-->
 
                 <p id="references" class="jumpTo"></p>
                 <h2>References</h2>
