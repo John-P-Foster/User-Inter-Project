@@ -29,15 +29,18 @@
         
         <div class="container text-center"><!-- Main Flex container-->
             
-            <form action="submit.php" method="post" class="ourForm" id="ourForm" name="ourForm"><!-- start form section-->
+            <form action="submit.php" method="post" class="ourForm" id="ourForm" name="ourForm">
+                <!-- start form section-->
 
-                <div class="row"><!--Start header-->
-                    <div class="col-md">        
-                        <h1 style="text-align: center; padding-top: 20px;">UNFinished Employment Application</h1>  
+                <div class="row">
+                    <!--Start header-->
+                    <div class="col-md">
+                        <h1 style="text-align: center; padding-top: 20px;">UNFinished Employment Application</h1>
                     </div>
                 </div><!--End header-->
 
-                <div class ="generalInfoSection"><!-- start General Infromation section-->
+                <div class="generalInfoSection">
+                    <!-- start General Infromation section-->
 
                     <h1 id="general" class="jumpTo" style="margin-top: 0px; padding-bottom: 20px;"></h1>
 
@@ -45,8 +48,9 @@
 
                     <br>
 
-                   
-                    <div class="row"><!-- start name section-->
+
+                    <div class="row">
+                        <!-- start name section-->
                         <div class="col-md-8">
                             <div class="form-floating mb-3">
                                 <input type="text" class="form-control" id="firstName" placeholder="Full name" required>
@@ -61,45 +65,47 @@
                         </div>
                     </div><!-- end name section-->
 
-                    <div class = "row"><!-- start contact information section-->
-                        <div class = "col-md">
+                    <div class="row">
+                        <!-- start contact information section-->
+                        <div class="col-md">
                             <div class="form-floating mb-3">
-                                <input type="text" class="form-control" id="phoneNumber" name="phoneNUmber" placeholder="(XXX) - XXX - XXXX"  required>
+                                <input type="text" class="form-control" id="phoneNumber" name="phoneNUmber" placeholder="(XXX) - XXX - XXXX" required>
                                 <label for="phoneNumber">Phone Number <span class="exampleText"> (xxx-xxx-xxxx)</span></label>
                             </div>
                         </div>
 
-                        <div class = "col-md">
+                        <div class="col-md">
                             <div class="form-floating mb-3">
                                 <input type="text" class="form-control" id="altPhoneNumber" name="altPhoneNUmber" placeholder="(XXX) - XXX - XXXX">
-                                <label for="altPhoneNumber">Alt Phone Number <span class="exampleText"> (xxx-xxx-xxxx)</span></label>  
+                                <label for="altPhoneNumber">Alt Phone Number <span class="exampleText"> (xxx-xxx-xxxx)</span></label>
                             </div>
                         </div>
 
-                        <div class = "col-md">
+                        <div class="col-md">
                             <div class="form-floating mb-3">
                                 <input type="email" class="form-control" id="email" name="email" placeholder="addess@provider.com" required>
                                 <label for="email">Email <span class="exampleText"> (email@provider.com)</span></label>
                             </div>
                         </div>
                     </div><!-- End contact infromation Section-->
-                 
-                    <div class = "row"> <!-- start address section-->
-                        <div class = "col-md-4" style="text-align: left;">
+
+                    <div class="row">
+                        <!-- start address section-->
+                        <div class="col-md-4" style="text-align: left;">
                             <div class="form-floating mb-3">
                                 <input type="text" class="form-control" id="streetAddress" name="streetAddress" placeholder="Street address" required>
                                 <label for="streetAddress">Current Addres <span class="exampleText"> (street)</span></label>
                             </div>
                         </div>
 
-                        <div class = "col-md-3">
+                        <div class="col-md-3">
                             <div class="form-floating mb-3">
                                 <input type="text" class="form-control" id="cityAddress" name="cityAddress" placeholder="City" required>
                                 <label for="cityAddress">City</label>
                             </div>
                         </div>
 
-                        <div class = "col-md-3">
+                        <div class="col-md-3">
                             <div class="form-floating mb-3">
                                 <select class="form-select" id="stateAddress" name="stateAddress" required>
                                     <option selected>State</option>
@@ -160,40 +166,42 @@
                                 </label>
                             </div>
                         </div>
-            
-                        <div class = "col-md-2">
+
+                        <div class="col-md-2">
                             <div class="form-floating mb-3">
                                 <input type="text" class="form-control" id="zipAddress" name="zipAddress" placeholder="ZIP" required>
                                 <label for="zipAddress">ZIP <span class="exampleText"> (xxxxx)</span></label>
                             </div>
                         </div>
                     </div><!-- End address Section-->
-          
-                    <div class="form-control"><!-- start move in date section-->
-                        <div class = "row">
+
+                    <div class="form-control">
+                        <!-- start move in date section-->
+                        <div class="row">
                             <div class="col-md-8" style="text-align: left;">
                                 <label for="moveInDate">
                                     <span class="standardRowHieght">
-                                        When did you move to this address? 
+                                        When did you move to this address?
                                     </span>
                                 </label>
                             </div>
                             <div class="col-md-4" style="padding-right: 5px;">
-                                    <input type="month" class="form-control" style="padding-top: 15px; padding-bottom: 15px;" id="moveInDate" name="moveInDate" value="2023-11" required>  
-                            </div>   
+                                <input type="month" class="form-control" style="padding-top: 15px; padding-bottom: 15px;" id="moveInDate" name="moveInDate" value="2023-11" required>
+                            </div>
                         </div>
                     </div><br><!-- End Move in date section-->
 
-                    <div class="form-control"><!-- start over 18 section-->
-                        <div class = "row">
-                            <div class="col-md-8" style="text-align: left;">      
+                    <div class="form-control">
+                        <!-- start over 18 section-->
+                        <div class="row">
+                            <div class="col-md-8" style="text-align: left;">
                                 <label for="over18">
                                     <span class="standardRowHieght">
                                         Are you over the age of 18?
                                     </span>
-                                </label>       
+                                </label>
                             </div>
-                            <div class = "col-md-4" style="padding-right: 5px;">
+                            <div class="col-md-4" style="padding-right: 5px;">
                                 <div class="form-floating">
                                     <select class="form-select" id="over18" name="over18" required>
                                         <option value="Yes">Yes</option>
@@ -205,16 +213,17 @@
                         </div>
                     </div><br><!-- End over 18 type Section-->
 
-                    <div class="form-control"><!--Start fired from job section-->
-                        <div class = "row">       
-                            <div class="col-md-8" style="text-align: left;">      
+                    <div class="form-control">
+                        <!--Start fired from job section-->
+                        <div class="row">
+                            <div class="col-md-8" style="text-align: left;">
                                 <label for="firedFromJob">
                                     <span class="standardRowHieght">
-                                       Have you ever been fired from a job?
+                                        Have you ever been fired from a job?
                                     </span>
-                                </label>       
+                                </label>
                             </div>
-                            <div class = "col-md-4" style="padding-right: 5px;">
+                            <div class="col-md-4" style="padding-right: 5px;">
                                 <div class="form-floating">
                                     <select class="form-select" id="firedFromJob" name="firedFromJob" required>
                                         <option value="Yes">Yes</option>
@@ -227,7 +236,7 @@
 
 
                         <div class="row" style="margin-top: 5px;">
-                            <div class = "col-md-12" style="padding-right: 5px;">
+                            <div class="col-md-12" style="padding-right: 5px;">
                                 <div class="form-floating">
                                     <textarea class="form-control" placeholder="Description here" id="firedFromJobDescription"></textarea>
                                     <label for="firedFromJobDescription" style="margin-left: 80px;"> If Yes, please describe all situations here.<span class="exampleText"> (include dates)</span></label>
@@ -236,16 +245,17 @@
                         </div>
                     </div><br><!--End fired from job section-->
 
-                    <div class="form-control"><!--Start Convicted of a felony section-->
-                        <div class = "row">       
-                            <div class="col-md-8" style="text-align: left;">      
+                    <div class="form-control">
+                        <!--Start Convicted of a felony section-->
+                        <div class="row">
+                            <div class="col-md-8" style="text-align: left;">
                                 <label for="felonyConviction">
                                     <span class="standardRowHieght">
-                                       Do you have any felony convictions?
+                                        Do you have any felony convictions?
                                     </span>
-                                </label>       
+                                </label>
                             </div>
-                            <div class = "col-md-4" style="padding-right: 5px;">
+                            <div class="col-md-4" style="padding-right: 5px;">
                                 <div class="form-floating">
                                     <select class="form-select" id="felonyConviction" name="felonyConviction" required>
                                         <option value="Yes">Yes</option>
@@ -256,7 +266,7 @@
                             </div>
                         </div>
                         <div class="row" style="margin-top: 5px;">
-                            <div class = "col-md-12" style="padding-right: 5px;">
+                            <div class="col-md-12" style="padding-right: 5px;">
                                 <div class="form-floating">
                                     <textarea class="form-control" placeholder="Felony Disctription" id="FelonyDiscritption"></textarea>
                                     <label for="FelonyDiscritption" style="margin-left: 80px;"> If Yes, please describe all situations here.<span class="exampleText"> (include dates)</span></label>
@@ -267,13 +277,15 @@
 
                 </div><!-- End General info section-->
 
-                <div class="jobSpecifications sections"><!--Begin Job Specifications section-->
+                <div class="jobSpecifications sections">
+                    <!--Begin Job Specifications section-->
 
                     <p id="Expectations" class="jumpTo"></p>
                     <h2>Job Specifications</h2><br>
 
-                    <div class = "row"><!-- start position  section-->
-                        <div class = "col-md-12">
+                    <div class="row">
+                        <!-- start position  section-->
+                        <div class="col-md-12">
                             <div class="form-floating mb-3">
                                 <input type="text" class="form-control" id="positionApplying" name="positionApplying" placeholder="position" required>
                                 <label for="positionApplying" style="display: inline-block;margin-left: 100px;">What position are you applying for? <span class="exampleText"> (ex. Database Administratio)</span></label>
@@ -281,12 +293,13 @@
                         </div>
                     </div><!-- end position  section-->
 
-                    <div class="form-control"><!-- start salary section-->
-                        <div class = "row">
+                    <div class="form-control">
+                        <!-- start salary section-->
+                        <div class="row">
                             <div class="col-md-8" style="text-align: left;">
                                 <label for="salaryDesired">
                                     <span class="standardRowHieght">
-                                        What is your desired salary range? 
+                                        What is your desired salary range?
                                     </span>
                                 </label>
                             </div>
@@ -312,16 +325,17 @@
                         </div>
                     </div><br><!-- End salary Section-->
 
-                    <div class="form-control"><!-- start employment type section-->
-                        <div class = "row">
-                            <div class="col-md-8" style="text-align: left;">      
+                    <div class="form-control">
+                        <!-- start employment type section-->
+                        <div class="row">
+                            <div class="col-md-8" style="text-align: left;">
                                 <label for="employmentType">
                                     <span class="standardRowHieght">
                                         Are you looking to fill this position full time or part time?
                                     </span>
-                                </label>       
+                                </label>
                             </div>
-                            <div class = "col-md-4" style="padding-right: 5px;">
+                            <div class="col-md-4" style="padding-right: 5px;">
                                 <div class="form-floating">
                                     <select class="form-select" id="employmentType" name="employmentType" required>
                                         <option value="Full Time">Full Time</option>
@@ -334,16 +348,17 @@
                         </div>
                     </div><br><!-- End employment type Section-->
 
-                    <div class="form-control"><!-- start work requirements section-->
-                        <div class = "row">       
-                            <div class="col-md-8" style="text-align: left;">      
+                    <div class="form-control">
+                        <!-- start work requirements section-->
+                        <div class="row">
+                            <div class="col-md-8" style="text-align: left;">
                                 <label for="requirementsExplained">
                                     <span class="standardRowHieght" style="margin-bottom: 0px; margin-top: 0px;">
                                         Have the requirements of this position been explained in an understandable manner to you?
                                     </span>
-                                </label>       
+                                </label>
                             </div>
-                            <div class = "col-md-4" >
+                            <div class="col-md-4">
                                 <div class="form-floating">
                                     <select class="form-select" id="requirementsExplained" name="requirementsExplained" required>
                                         <option value="Yes">Yes</option>
@@ -355,16 +370,17 @@
                         </div>
                     </div><br><!-- End work requirements Section-->
 
-                    <div class="form-control"><!-- start meets requirements section-->
-                        <div class = "row">       
-                            <div class="col-md-8" style="text-align: left;">      
+                    <div class="form-control">
+                        <!-- start meets requirements section-->
+                        <div class="row">
+                            <div class="col-md-8" style="text-align: left;">
                                 <label for="meetRequirements">
                                     <span class="standardRowHieght">
                                         Can you meet these requirements?
                                     </span>
-                                </label>       
+                                </label>
                             </div>
-                            <div class = "col-md-4" style="padding-right: 5px;">
+                            <div class="col-md-4" style="padding-right: 5px;">
                                 <div class="form-floating">
                                     <select class="form-select" id="meetRequirements" name="meetRequirements" required>
                                         <option value="Yes">Yes</option>
@@ -377,47 +393,48 @@
                         </div>
                     </div><br><!-- End meets requirements Section-->
 
-                    <div class="form-control"><!--Start days available to work section-->
+                    <div class="form-control">
+                        <!--Start days available to work section-->
                         <div class="row">
                             <div class="col-md-12" style="text-align: left;">
                                 <div class="row">
-                                <label for="workMonday" style="margin-top: 15px;">
-                                    <span style="margin-left: 100px;">
-                                        What days do you expect to work each week?
-                                    </span>
-                                </label>
-                            </div>
+                                    <label for="workMonday" style="margin-top: 15px;">
+                                        <span style="margin-left: 100px;">
+                                            What days do you expect to work each week?
+                                        </span>
+                                    </label>
+                                </div>
                                 <div class="row">
                                     <ul style="display: flex;">
                                         <li class="list-group-item" style="margin-right: 10px;">
                                             <label class="form-check-label" for="workMonday"><span class="exampleText">Check all <br>that apply</span></label>
                                         </li>
                                         <li class="list-group-item" style="padding-top:15px">
-                                            <input class="form-check-input me-1" type="checkbox" value="" id="workMonday" style="margin-left: 10px;" >
+                                            <input class="form-check-input me-1" type="checkbox" value="" id="workMonday" style="margin-left: 10px;">
                                             <label class="form-check-label" for="workMonday">Monday</label>
                                         </li>
                                         <li class="list-group-item" style="padding-top:15px">
-                                            <input class="form-check-input me-1" type="checkbox" value="" id="workTuesday" style="margin-left: 10px;" >
+                                            <input class="form-check-input me-1" type="checkbox" value="" id="workTuesday" style="margin-left: 10px;">
                                             <label class="form-check-label" for="workTuesday">Tuesday</label>
                                         </li>
                                         <li class="list-group-item" style="padding-top:15px">
-                                            <input class="form-check-input me-1" type="checkbox" value="" id="workWednesday" style="margin-left: 10px;" >
+                                            <input class="form-check-input me-1" type="checkbox" value="" id="workWednesday" style="margin-left: 10px;">
                                             <label class="form-check-label" for="workWednesday">Wednesday</label>
                                         </li>
                                         <li class="list-group-item" style="padding-top:15px">
-                                            <input class="form-check-input me-1" type="checkbox" value="" id="workThursday" style="margin-left: 10px;" >
+                                            <input class="form-check-input me-1" type="checkbox" value="" id="workThursday" style="margin-left: 10px;">
                                             <label class="form-check-label" for="workThursday">Thursday</label>
                                         </li>
                                         <li class="list-group-item" style="padding-top:15px">
-                                            <input class="form-check-input me-1" type="checkbox" value="" id="workFriday" style="margin-left: 10px;" >
+                                            <input class="form-check-input me-1" type="checkbox" value="" id="workFriday" style="margin-left: 10px;">
                                             <label class="form-check-label" for="workFriday">Friday</label>
                                         </li>
                                         <li class="list-group-item" style="padding-top:15px">
-                                            <input class="form-check-input me-1" type="checkbox" value="" id="workSaturday" style="margin-left: 10px;" >
+                                            <input class="form-check-input me-1" type="checkbox" value="" id="workSaturday" style="margin-left: 10px;">
                                             <label class="form-check-label" for="workSaturday">Saturday</label>
                                         </li>
                                         <li class="list-group-item" style="padding-top:15px">
-                                            <input class="form-check-input me-1" type="checkbox" value="" id="workSunday" style="margin-left: 10px;" >
+                                            <input class="form-check-input me-1" type="checkbox" value="" id="workSunday" style="margin-left: 10px;">
                                             <label class="form-check-label" for="workSunday">Sundary</label>
                                         </li>
                                     </ul>
@@ -426,16 +443,17 @@
                         </div>
                     </div><br><!--- End days available to work section-->
 
-                    <div class="form-control"><!-- start hours per week section-->
-                        <div class = "row">
-                            <div class="col-md-8" style="text-align: left;">      
+                    <div class="form-control">
+                        <!-- start hours per week section-->
+                        <div class="row">
+                            <div class="col-md-8" style="text-align: left;">
                                 <label for="hoursPerWeek">
                                     <span class="standardRowHieght">
-                                            About how many hours per week do you wish to work?
+                                        About how many hours per week do you wish to work?
                                     </span>
-                                </label>       
+                                </label>
                             </div>
-                            <div class = "col-md-4" style="padding-right: 5px;">
+                            <div class="col-md-4" style="padding-right: 5px;">
                                 <div class="form-floating">
                                     <select class="form-select" id="hoursPerWeek" name="hoursPerWeek" required>
                                         <option value="0 - 5hrs">0 - 5hrs</option>
@@ -457,16 +475,17 @@
                         </div>
                     </div><br><!-- End hours per week Section-->
 
-                    <div class="form-control"><!-- start work nights section-->
-                        <div class = "row">       
-                            <div class="col-md-8" style="text-align: left;">      
+                    <div class="form-control">
+                        <!-- start work nights section-->
+                        <div class="row">
+                            <div class="col-md-8" style="text-align: left;">
                                 <label for="workNights">
                                     <span class="standardRowHieght">
                                         Are you able to work nights?
                                     </span>
-                                </label>       
+                                </label>
                             </div>
-                            <div class = "col-md-4" style="padding-right: 5px;">
+                            <div class="col-md-4" style="padding-right: 5px;">
                                 <div class="form-floating">
                                     <select class="form-select" id="workNights" name="workNights" required>
                                         <option value="Yes">Yes</option>
@@ -478,50 +497,155 @@
                         </div>
                     </div><br><!-- End works nights Section-->
 
-                    <div class="form-control"><!-- start start date section-->
-                        <div class = "row">
+                    <div class="form-control">
+                        <!-- start start date section-->
+                        <div class="row">
                             <div class="col-md-8" style="text-align: left;">
                                 <label for="startDate">
                                     <span class="standardRowHieght">
-                                        When are you available to start working? 
+                                        When are you available to start working?
                                     </span>
                                 </label>
                             </div>
                             <div class="col-md-4" style="padding-right: 5px;">
-                                    <input type="date" class="form-control" style="padding-top: 15px; padding-bottom: 15px;" id="startDate" name="startDate" value="2023-11-01" required>  
-                            </div>   
+                                <input type="date" class="form-control" style="padding-top: 15px; padding-bottom: 15px;" id="startDate" name="startDate" value="2023-11-01" required>
+                            </div>
                         </div>
                     </div><!-- end start date section-->
-      
+
                 </div><!-- End job specifications section-->
 
-                <p id="references" class="jumpTo"></p>
-                <h2>References</h2>
-                
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required><br><br>
+                <p id="references" class="jumpTo"></p><!-- Start References-->
 
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required><br><br>
 
-                <label for="message">Message:</label>
-                <textarea id="message" name="message" rows="4" required></textarea><br><br><br><br>
-                
-                <p id="education" class="jumpTo"></p>
-                <h2>Education</h2>
-                
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required><br><br>
+                <div class="container mt-4">
+                    <h2>References</h2>
+                    <table class="table table-bordered" id="referenceTable">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th>Name</th>
+                                <th>Title</th>
+                                <th>Company</th>
+                                <th>Phone</th>
+                                <th>Email</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Initial row -->
+                            <tr>
+                                <td class="align-middle"><input type="text" class="form-control mx-auto"></td>
+                                <td class="align-middle"><input type="text" class="form-control mx-auto"></td>
+                                <td class="align-middle"><input type="text" class="form-control mx-auto"></td>
+                                <td class="align-middle"><input type="text" class="form-control mx-auto"></td>
+                                <td class="align-middle"><input type="email" class="form-control mx-auto"></td>
+                                <td class="align-middle"><textarea style="resize:none" class="form-control mx-auto"></textarea></td>
+                            </tr>
+                        </tbody>
+                    </table>
 
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required><br><br>
+                    <button type="button" class="btn btn-primary" id="addRow">Add Row</button>
+                </div>
 
-                <label for="message">Message:</label>
-                <textarea id="message" name="message" rows="4" required></textarea><br><br><br><br>
-                
+                <script>
+                    // Add row dynamically
+                    document.getElementById('addRow').addEventListener('click', function () {
+                        var table = document.getElementById('referenceTable').getElementsByTagName('tbody')[0];
+                        var newRow = table.insertRow(table.rows.length);
+
+                        var cell1 = newRow.insertCell(0);
+                        var cell2 = newRow.insertCell(1);
+                        var cell3 = newRow.insertCell(2);
+                        var cell4 = newRow.insertCell(3);
+                        var cell5 = newRow.insertCell(4);
+                        var cell6 = newRow.insertCell(5);
+
+                        cell1.innerHTML = '<input type="text" class="form-control" name="name[]">';
+                        cell2.innerHTML = '<input type="text" class="form-control" name="title[]">';
+                        cell3.innerHTML = '<input type="text" class="form-control" name="company[]">';
+                        cell4.innerHTML = '<input type="text" class="form-control" name="phone[]">';
+                        cell5.innerHTML = '<input type="email" class="form-control" name="email[]">';
+                        cell6.innerHTML = '<textarea style ="resize:none" class="form-control" name="description[]"></textarea>';
+                    });
+                </script>
+
+                <!-- End References-->
+
+
+                <p id="education" class="jumpTo"></p> <!-- Start Education-->
+
+                <div class="container mt-4">
+                    <h2>Education Information</h2>
+
+                    <!-- Container for School Entries -->
+                    <div id="schoolContainer">
+                        <!-- Initial School Entry -->
+                        <div class="school-entry form-row">
+                            <div class="col-md mb-3">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" name="school" required>
+                                    <label for="school">School</label>
+                                </div>
+                            </div>
+                            <div class="col-md mb-3">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" name="location" required>
+                                    <label for="location">Location</label>
+                                </div>
+                            </div>
+                            <div class="col-md mb-3">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" name="degree" required>
+                                    <label for="degree">Degree/Diploma</label>
+                                </div>
+                            </div>
+                        </div>
+                        <hr> <!-- Separator -->
+                    </div>
+
+                    <!-- Add School Button -->
+                    <button type="button" class="btn btn-primary" id="addSchool">Add School</button>
+
+                    <!-- Miscellaneous Qualifications -->
+                    <div class="form-group mt-4">
+                        <label for="miscQualifications">Miscellaneous Qualifications</label>
+                        <textarea style="resize:none"class="form-control" id="miscQualifications" name="miscQualifications" rows="4"></textarea>
+                    </div>
+
+
+                </div>
+                <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+                <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+                <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+                <script>
+                    document.addEventListener("DOMContentLoaded", function () {
+                        document.getElementById("addSchool").addEventListener("click", function () {
+                            var newEntry = document.querySelector(".school-entry").cloneNode(true);
+
+                            // Clear the input values in the cloned entry
+                            var inputFields = newEntry.querySelectorAll("input");
+                            inputFields.forEach(function (input) {
+                                input.value = "";
+                            });
+
+                            // Append the new entry to the container
+                            var schoolContainer = document.getElementById("schoolContainer");
+                            schoolContainer.appendChild(newEntry);
+
+                            // Append a separator (hr) to the container
+                            var separator = document.createElement("hr");
+                            schoolContainer.appendChild(separator);
+                        });
+                    });
+                </script>
+                <!--End Education-->
+
+
+
                 <p id="experience" class="jumpTo"></p>
                 <h2>Work Experience</h2>
-                
+
                 <label for="name">Name:</label>
                 <input type="text" id="name" name="name" required><br><br>
 
@@ -530,10 +654,10 @@
 
                 <label for="message">Message:</label>
                 <textarea id="message" name="message" rows="4" required></textarea><br><br><br><br>
-                
+
                 <p id="background" class="jumpTo"></p>
                 <h2>Background</h2>
-                
+
                 <label for="name">Name:</label>
                 <input type="text" id="name" name="name" required><br><br>
 
@@ -542,14 +666,14 @@
 
                 <label for="message">Message:</label>
                 <textarea id="message" name="message" rows="4" required></textarea><br><br><br><br>
-                
+
                 <p id="waiver" class="jumpTo"></p>
                 <h2>Waiver</h2>
-                
+
                 <p>To be considered for employment by Unfinished Business, you must agree that:</p>
-                
+
                 <ol>
-                
+
                     <li>Unfinished Business may terminate your employment without notice or reason.  </li>
                     <li>The conditions of your employment; such as benefits, policies, and conditions are subject to change at the will of Unfinished Business. </li>
                     <li>Unfinished Business is authorized to investigate all the content of this application and verify its validity. </li>
@@ -557,8 +681,8 @@
                     <li>You may be asked to take a pre-employment physical to confirm you are capable of the required job-related tasks. </li>
                     <li>You agree that Unfinished Business has the right to request from a consumer reporting agency an investigative consumer report. Such a report would include information relating to your credit score, character, general reputation, personal characteristics, and mode of living.  </li>
                     <li>You understand that your employment would begin in a state of probation. The probationary period will last 60 days, during which Unfinished Business retains the right to terminate your employment for any reason.</li>
-                
-                <ol>
+
+                    <ol>
             </form><!--End Form Section -->
         </div><br><br><br><br><!--End Main Container-->
     </body>

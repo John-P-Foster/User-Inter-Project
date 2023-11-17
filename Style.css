@@ -96,3 +96,18 @@ input[type="submit"], input[type="reset"], button {
 
 
 /* End of John Foster CSS code */
+
+/* Start of Hayden's CSS*/
+#referenceTable th {
+	font-weight: normal;
+}
+#referenceTable td,
+#referenceTable th {
+	text-align: center;
+}
+#referenceTable input,
+#referenceTablerea {
+	margin: 0 auto;
+	text-align: left; 
+}
+/* End of Hayden's CSS*/
