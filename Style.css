@@ -7,6 +7,13 @@
 	align-items: center;
 }
 
+body{
+	background-image: linear-gradient(to bottom,rgb(222, 233, 242),rgb(181, 177, 177));
+	background-attachment: fixed;
+	
+
+}
+
 .ourForm{
 	max-width: 830px; 
 	margin: auto;
@@ -28,7 +35,7 @@
 	display: flex;
 	flex-basis: 100px;
 	text-align: center;
-	background-color:rgb(222, 233, 242); 
+	background-color:rgb(222, 233, 242,.0); 
 	padding: 10px;
 	padding-bottom: 0px;
 	width: 100%;
@@ -72,12 +79,7 @@
 }
 
 
-input[type="submit"], input[type="reset"], button {
-    background-color: #0077b6;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-}
+
 
 /* Start of John Foster CSS code */
 
