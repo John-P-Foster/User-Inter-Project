@@ -680,6 +680,41 @@
                 <h2>Background</h2>
 
 				<!--Row #1-->
+                
+                <!-- start driver license reformat section-->
+
+                <br>
+                <div class="row">
+                    <div class=" col-md-6">
+                        <div class="row form-control" style="display: inline-flex;">
+                            <div class="col-md" style="text-align: left; margin-left: 5px;">
+                                <label for="driverLicense">
+                                    <span>
+                                        Do you have a valid Driver License?
+                                    </span>
+                                </label>
+                            </div>
+                        <div class="col-md" style="padding-right: 5px;">
+                            <div class="form-floating">
+                                <select class="form-select" id="driverLicense" name="driverLicense" required>
+                                    <option value="Yes">Yes</option>
+                                    <option value="No">No</option>
+                                </select>
+                                <label for="driverLicense">Driver License</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                    <div class="col-md-6">
+                        <div class="form-floating mb-3" >
+                            <input type="text" class="form-control" id="dlnum" placeholder="Full name" style="height: 72px;" required>
+                            <label for="dlnum">Driver's License#: <span class="exampleText"> (############)</span></label>
+                        </div>
+                    </div>
+                </div>
+            <br><!-- end driver license reformat section-->
+
+            
 				<div class="row">
 
 					<!--Radio button group for Driver's license-->
