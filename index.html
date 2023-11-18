@@ -191,8 +191,7 @@
                         </div>
                     </div><br><!-- End Move in date section-->
 
-                    <div class="form-control">
-                        <!-- start over 18 section-->
+                    <div class="form-control"><!-- start over 18 section-->
                         <div class="row">
                             <div class="col-md-8" style="text-align: left;">
                                 <label for="over18">
@@ -212,6 +211,27 @@
                             </div>
                         </div>
                     </div><br><!-- End over 18 type Section-->
+
+                    <div class="form-control"><!-- start military section-->
+                        <div class="row">
+                            <div class="col-md-8" style="text-align: left;">
+                                <label for="militaryService">
+                                    <span class="standardRowHieght">
+                                        Have you served in the military?
+                                    </span>
+                                </label>
+                            </div>
+                            <div class="col-md-4" style="padding-right: 5px;">
+                                <div class="form-floating">
+                                    <select class="form-select" id="militaryService" name="militaryService" required>
+                                        <option value="Yes">Yes</option>
+                                        <option value="No">No</option>
+                                    </select>
+                                    <label for="militaryService"> Prior Military Service</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div><br><!-- End military section Section-->
 
                     <div class="form-control">
                         <!--Start fired from job section-->
@@ -580,25 +600,26 @@
                     <!-- Container for School Entries -->
                     <div id="schoolContainer">
                         <!-- Initial School Entry -->
-                        <div class="school-entry form-row">
-                            <div class="col-md mb-3">
-                                <div class="form-floating">
-                                    <input type="text" class="form-control" name="school" required>
-                                    <label for="school">School</label>
-                                </div>
-                            </div>
-                            <div class="col-md mb-3">
-                                <div class="form-floating">
-                                    <input type="text" class="form-control" name="location" required>
-                                    <label for="location">Location</label>
-                                </div>
-                            </div>
-                            <div class="col-md mb-3">
-                                <div class="form-floating">
-                                    <input type="text" class="form-control" name="degree" required>
+                        <div class="school-entry row">
+                            <div class="col-md-4">
+                                <div class="form-floating mb-3">
+                                    <input type="text" class="form-control" name="degree" placeholder="Degree/Diploma" required>
                                     <label for="degree">Degree/Diploma</label>
                                 </div>
                             </div>
+                            <div class="col-md-4">
+                                <div class="form-floating mb-3">
+                                    <input type="text" class="form-control" name="school" placeholder="School" required>
+                                    <label for="school">School</label>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-floating mb-3">
+                                    <input type="text" class="form-control" name="location" placeholder="Location" required>
+                                    <label for="location">Location</label>
+                                </div>
+                            </div>
+
                         </div>
                         <hr> <!-- Separator -->
                     </div>
