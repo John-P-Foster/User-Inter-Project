@@ -7,10 +7,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="style.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-	
+  <script src="script.js"></script> 
 </head>
     <body class="ourBody" style="background-color:rgb(222, 233, 242);">
-        <div class="ourNavBar"><!-- Nav Bar Section-->
+        <!-- Nav Bar Section-->
+        <div class="ourNavBar">
             <ul class="ourhorizontal-list">
                 <li><a href="#topOfPage" style="border-bottom-left-radius: 25px;border-top-left-radius: 25px;">Start</a></li>
                 <li><a href="#general">General Information</a></li>
@@ -27,46 +28,41 @@
 
         <p id="topOfPage" class="jumpTo" style="border-style: none;"></p>
         
-        <div class="container text-center"><!-- Main Flex container-->
-            
-            <form action="submit.php" method="post" class="ourForm" id="ourForm" name="ourForm">
-                <!-- start form section-->
-
+        <!-- Main Flex container-->
+        <div class="container text-center">
+            <!--Application Form Section-->
+            <form class="ourForm" id="ourForm" name="ourForm"> <!-- start form section-->
+               
+                <!--Start header-->
                 <div class="row">
-                    <!--Start header-->
                     <div class="col-md">
                         <h1 style="text-align: center; padding-top: 20px;">UNFinished Employment Application</h1>
                     </div>
                 </div><!--End header-->
 
+                <!-- start General Infromation section-->
                 <div class="generalInfoSection">
-                    <!-- start General Infromation section-->
-
                     <h1 id="general" class="jumpTo" style="margin-top: 0px; padding-bottom: 20px;"></h1>
-
                     <h2>General Information</h2>
-
                     <br>
 
-
+                    <!-- start name section-->
                     <div class="row">
-                        <!-- start name section-->
                         <div class="col-md-8">
-                            <div class="form-floating mb-3">
-                                <input type="text" class="form-control" id="firstName" placeholder="Full name" required>
+                            <div class="form-floating mb-3" id="nameValid">
+                                <input type="text" class="form-control" name="firstName" id="firstName" placeholder="Full name" required>
                                 <label for="firstName">Full Name <span class="exampleText"> (first middle last)</span></label>
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div class="form-floating mb-3">
                                 <input type="text" class="form-control" id="SSN" name="SSN" placeholder="Social Security Number" required>
-                                <label for="firstName">SSN # <span class="exampleText"> (XXX-XX-XXXX)</span></label>
+                                <label for="SSN">SSN # <span class="exampleText"> (XXX-XX-XXXX)</span></label>
                             </div>
                         </div>
                     </div><!-- end name section-->
-
+               <!-- start contact information section-->
                     <div class="row">
-                        <!-- start contact information section-->
                         <div class="col-md">
                             <div class="form-floating mb-3">
                                 <input type="text" class="form-control" id="phoneNumber" name="phoneNUmber" placeholder="(XXX) - XXX - XXXX" required>
@@ -89,8 +85,7 @@
                         </div>
                     </div><!-- End contact infromation Section-->
 
-                    <div class="row">
-                        <!-- start address section-->
+                    <div class="row"><!-- start address section-->
                         <div class="col-md-4" style="text-align: left;">
                             <div class="form-floating mb-3">
                                 <input type="text" class="form-control" id="streetAddress" name="streetAddress" placeholder="Street address" required>
@@ -175,8 +170,7 @@
                         </div>
                     </div><!-- End address Section-->
 
-                    <div class="form-control">
-                        <!-- start move in date section-->
+                    <div class="form-control"> <!-- start move in date section-->
                         <div class="row">
                             <div class="col-md-8" style="text-align: left;">
                                 <label for="moveInDate">
@@ -233,8 +227,7 @@
                         </div>
                     </div><br><!-- End military section Section-->
 
-                    <div class="form-control">
-                        <!--Start fired from job section-->
+                    <div class="form-control"><!--Start fired from job section-->
                         <div class="row">
                             <div class="col-md-8" style="text-align: left;">
                                 <label for="firedFromJob">
@@ -265,8 +258,7 @@
                         </div>
                     </div><br><!--End fired from job section-->
 
-                    <div class="form-control">
-                        <!--Start Convicted of a felony section-->
+                    <div class="form-control"><!--Start Convicted of a felony section-->
                         <div class="row">
                             <div class="col-md-8" style="text-align: left;">
                                 <label for="felonyConviction">
@@ -681,9 +673,8 @@
 
 				<!--Row #1-->
                 
-                <!-- start driver license reformat section-->
-
-                <br>
+              
+            <br>  <!-- start driver license reformat section-->
                 <div class="row">
                     <div class=" col-md-6">
                         <div class="row form-control" style="display: inline-flex;">
@@ -755,7 +746,7 @@
 
 					<div class="col-md-3" style="padding-right: 5px;">
 
-						<input type="date" class="form-control" style="padding-top: 15px; padding-bottom: 15px;" id="exp" name="exp" value="2023-11">
+						<input type="date" class="form-control" style="padding-top: 15px; padding-bottom: 15px;" id="exp" name="exp" value="2023-11-01">
 
 					</div>
 
@@ -921,4 +912,5 @@
             </form><!--End Form Section -->
         </div><br><br><br><br><!--End Main Container-->
     </body>
-</html>
+</html>]
+    
