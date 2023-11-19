@@ -64,21 +64,21 @@
                <!-- start contact information section-->
                     <div class="row">
                         <div class="col-md">
-                            <div class="form-floating mb-3">
+                            <div class="form-floating mb-3" id="phoneValid">
                                 <input type="text" class="form-control" id="phoneNumber" name="phoneNUmber" placeholder="(XXX) - XXX - XXXX" required>
                                 <label for="phoneNumber">Phone Number <span class="exampleText"> (xxx-xxx-xxxx)</span></label>
                             </div>
                         </div>
 
                         <div class="col-md">
-                            <div class="form-floating mb-3">
+                            <div class="form-floating mb-3" id="altPhoneValid">
                                 <input type="text" class="form-control" id="altPhoneNumber" name="altPhoneNUmber" placeholder="(XXX) - XXX - XXXX">
                                 <label for="altPhoneNumber">Alt Phone Number <span class="exampleText"> (xxx-xxx-xxxx)</span></label>
                             </div>
                         </div>
 
                         <div class="col-md">
-                            <div class="form-floating mb-3">
+                            <div class="form-floating mb-3" id="emailValid">
                                 <input type="email" class="form-control" id="email" name="email" placeholder="addess@provider.com" required>
                                 <label for="email">Email <span class="exampleText"> (email@provider.com)</span></label>
                             </div>
@@ -87,21 +87,21 @@
 
                     <div class="row"><!-- start address section-->
                         <div class="col-md-4" style="text-align: left;">
-                            <div class="form-floating mb-3">
+                            <div class="form-floating mb-3" id="streetAddressValid">
                                 <input type="text" class="form-control" id="streetAddress" name="streetAddress" placeholder="Street address" required>
                                 <label for="streetAddress">Current Address <span class="exampleText"> (street)</span></label>
                             </div>
                         </div>
 
                         <div class="col-md-3">
-                            <div class="form-floating mb-3">
+                            <div class="form-floating mb-3" id="cityAddressValid">
                                 <input type="text" class="form-control" id="cityAddress" name="cityAddress" placeholder="City" required>
                                 <label for="cityAddress">City</label>
                             </div>
                         </div>
 
                         <div class="col-md-3">
-                            <div class="form-floating mb-3">
+                            <div class="form-floating mb-3" id="stateAddressValid">
                                 <select class="form-select" id="stateAddress" name="stateAddress" required>
                                     <option selected>State</option>
                                     <option value="AL">Alabama</option>
@@ -180,7 +180,7 @@
                                 </label>
                             </div>
                             <div class="col-md-4" style="padding-right: 5px;">
-                                <input type="month" class="form-control" style="padding-top: 15px; padding-bottom: 15px;" id="moveInDate" name="moveInDate" value="2023-11" required>
+                                <input type="month" class="form-control" style="padding-top: 15px; padding-bottom: 15px;" id="moveInDate" name="moveInDate" required>
                             </div>
                         </div>
                     </div><br><!-- End Move in date section-->
