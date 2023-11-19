@@ -1,0 +1,156 @@
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: "Roboto", sans-serif;
+    background-image: linear-gradient(to bottom right, #cc2b5e, #ff5858);
+    min-height: 100vh;
+  }
+
+  .container {
+    width: 100%;
+    max-width: 414px;
+    margin: 15px auto;
+    background-color: #232734;
+    padding: 25px 15px;
+
+    h1 {
+      color: #fff;
+      font-size: 18px;
+      font-weight: 500;
+      margin-bottom: 15px;
+      opacity: 0.7;
+    }
+
+    form {
+      margin: 0px -15px;
+
+      .form-group {
+        width: 100%;
+        padding: 0px 15px;
+        background-image: linear-gradient(to right, #33344c, #232734);
+        border-bottom: 1px solid #414141;
+
+        &:last-of-type {
+          border-bottom: none;
+          margin-bottom: 15px;
+        }
+
+        .input-field {
+          display: block;
+          width: 100%;
+          border: none;
+          outline: none;
+          background: none;
+          padding: 15px 0px;
+
+          color: #fff;
+          font-size: 18px;
+
+          &.valid {
+            color: #44e444;
+          }
+
+          &.invalid {
+            color: #ff0000;
+          }
+
+          &:placeholder {
+            color: #53565a;
+          }
+        }
+      }
+
+      .login-btn {
+        margin: 0px 15px;
+        display: inline-block;
+        padding: 10px 40px;
+
+        color: #cc2b5e;
+        font-size: 20px;
+        background: none;
+        border: 2px solid #cc2b5e;
+        border-radius: 999px;
+        transition: 0.4s;
+        cursor: pointer;
+
+        &:hover {
+          color: #fff;
+          background-color: #cc2b5e;
+        }
+      }
+    }
+  }
+</style>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const form = document.querySelector("#login-form");
+    const pass_reg = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/;
+
+    let username = form.elements.namedItem("username");
+    let password = form.elements.namedItem("password");
+
+    username.addEventListener("input", validate);
+    password.addEventListener("input", validate);
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      alert("SUBMITTED");
+      return true;
+    });
+
+    function validate(e) {
+      if (e.target.name == "password") {
+        if (pass_reg.test(e.target.value)) {
+          e.target.classList.add("valid");
+          e.target.classList.remove("invalid");
+        } else {
+          e.target.classList.add("invalid");
+          e.target.classList.remove("valid");
+        }
+        console.log("FFf");
+      }
+
+      if (e.target.name == "username") {
+        if (e.target.value.length > 3) {
+          e.target.classList.add("valid");
+          e.target.classList.remove("invalid");
+        } else {
+          e.target.classList.add("invalid");
+          e.target.classList.remove("valid");
+        }
+        console.log("username");
+      }
+      console.log("wtf");
+    }
+  });
+</script>
+<div class="container">
+  <h1>Login to your account</h1>
+  <form id="login-form" name="login-form">
+    <div class="form-group">
+      <input
+        type="text"
+        name="username"
+        id="username"
+        placeholder="Username"
+        class="input-field"
+      />
+    </div>
+    <div class="form-group">
+      <input
+        type="password"
+        name="password"
+        id="password"
+        placeholder="Password"
+        class="input-field"
+      />
+    </div>
+    <input type="submit" value="LOG IN" class="login-btn" />
+  </form>
+</div>
