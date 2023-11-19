@@ -96,6 +96,18 @@ body{
 	margin-bottom: 15px;
 	margin-left: 100px;
 }
+.is-incorrect{
+	border-style: outset;
+	border-width: 5px;
+	border-radius: 10px;
+	border-color: red;
+	opacity: 60%;
+	
+	.exampleText{
+		color: red;
+		font-size: medium;
+	}
+}
 
 /* End of John Foster CSS code */
 
