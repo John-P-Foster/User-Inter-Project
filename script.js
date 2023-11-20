@@ -32,12 +32,13 @@ document.addEventListener("DOMContentLoaded", function () {
     checkSelection("stateAddress","stateAddressValid","stateAddressVaildBool","change");
 
     var zipValidBool = false;
-   checkRegXInput("zipAddress","zipAddressValid","zipValidBool","input",regZIP);
+    checkRegXInput("zipAddress","zipAddressValid","zipValidBool","input",regZIP);
 
-   var over18ValidBool = false;
-   checkSelection("over18","over18Valid","over18VaildBool","change");
+    var moveInDateValidBool =false;
+    checkDateMonth("moveInDate","moveInDateValid","moveInDateValidBool","change");
 
-
+    var over18ValidBool = false;
+    checkSelection("over18","over18Valid","over18VaildBool","change");
 
 
 
@@ -60,9 +61,20 @@ document.addEventListener("DOMContentLoaded", function () {
         input.addEventListener(kind,function(e){validateSelection(e,BooleanName,controlForm)})
     }
 
+    function checkDate(inputId,controlFormId,BooleanName,kind){
+        var input = document.getElementById(inputId);
+        var controlForm = document.getElementById(controlFormId);
+        input.addEventListener(kind,function(e){validateDate(e,BooleanName,controlForm)})
+    }
+
+    function checkDateMonth(inputId,controlFormId,BooleanName,kind){
+        var input = document.getElementById(inputId);
+        var controlForm = document.getElementById(controlFormId);
+        input.addEventListener(kind,function(e){validateDateMonth(e,BooleanName,controlForm)})
+    }
+
     function validateInput(e,valueBool,inputVaild){
-        console.log(window[valueBool]);
-        if(e.target.value.length > 2){
+        if(e.target.value.length > 1){
             inputVaild.classList.add('was-validated');
             inputVaild.classList.remove('is-incorrect');
             window[valueBool] = true;
@@ -75,8 +87,45 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function validateSelection(e,valueBool,inputVaild){
-        console.log(window[valueBool]);
         if(e.target.value != ""){
+            inputVaild.classList.add('was-validated');
+            inputVaild.classList.remove('is-incorrect');
+            window[valueBool] = true;
+        }
+        else{
+            inputVaild.classList.remove('was-validated');
+            inputVaild.classList.add('is-incorrect');
+            window[valueBool] = false;
+        }
+    }
+
+    function validateDate(e,valueBool,inputVaild){
+        let today = new Date();
+
+        console.log(today);
+        console.log(e.target.value)
+        if(e.target.value < today ){
+            inputVaild.classList.add('was-validated');
+            inputVaild.classList.remove('is-incorrect');
+            window[valueBool] = true;
+        }
+        else{
+            inputVaild.classList.remove('was-validated');
+            inputVaild.classList.add('is-incorrect');
+            window[valueBool] = false;
+        }
+    }
+
+    function validateDateMonth(e,valueBool,inputVaild){
+        let today = new Date();
+        let mm = String(today.getMonth() + 1).padStart(2, '0');
+        let yyyy = today.getFullYear();
+        today = yyyy + '-' + mm;
+
+
+        console.log(today);
+        console.log(e.target.value)
+        if(e.target.value < today ){
             inputVaild.classList.add('was-validated');
             inputVaild.classList.remove('is-incorrect');
             window[valueBool] = true;
@@ -89,9 +138,8 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     
     function validateReg(e,valueBool,inputVaild, regX){
-        let reg = regX
-
-        if( reg.test(e.target.value)){
+ 
+        if( regX.test(e.target.value)){
             inputVaild.classList.add('was-validated');
             inputVaild.classList.remove('is-incorrect');
             window[valueBool] = true;
@@ -105,15 +153,18 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // Listens to changes and updates the progress bar at the top.
         ['keyup', 'change'].forEach((type) => {
-            // add the listeners to the form
+            
             ourForm.addEventListener(type, (event) => {
-              //check if each section is good to go here. 
+              
                 let submitbttn = document.getElementById("submitFormBtn");
+
+                //check each sections function
                 let generalInfoComplete = false;
                 generalInfoComplete = checkGeneralInfo();
-                console.log(generalInfoComplete);
+     
 
-             if(generalInfoComplete){
+            // If all sections are complete reable submit button.
+            if(generalInfoComplete){
                 submitbttn.removeAttribute("disabled");
                 submitbttn.classList.remove('btn-secondary');
                 submitbttn.classList.add('btn-success');
@@ -126,6 +177,7 @@ document.addEventListener("DOMContentLoaded", function () {
             })
           })
 
+
     function checkGeneralInfo(){
         let general = document.getElementById("generalNav");
 
@@ -133,7 +185,8 @@ document.addEventListener("DOMContentLoaded", function () {
             window["nameValidBool"] & window["SSNValidBool"] 
             & window["phoneValidBool"] & window["altphoneValidBool"]
             &window["emailValidBool"] & window["streetAddressValidBool"] 
-            & window["cityAddressValidBool"] & window["stateAddressVaildBool"]){
+            & window["cityAddressValidBool"] & window["stateAddressVaildBool"]
+            & window["zipValidBool"] & window["over18VaildBool"]){
           
            general.classList.remove('incomplete');
            general.classList.add('complete');
