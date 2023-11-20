@@ -40,6 +40,18 @@ document.addEventListener("DOMContentLoaded", function () {
     var over18ValidBool = false;
     checkSelection("over18","over18Valid","over18VaildBool","change");
 
+    var militaryServiceValidBool = false;
+    checkSelection("militaryService","militaryServiceValid","militaryServiceValidBool","change");
+
+    var firedFromJobValidBool = false;
+    checkSelection("firedFromJob","firedFromJobValid","firedFromJobValidBool","change");
+
+    var felonyConvictionValidBool = false;
+    var FelonyDiscritptionValidBool = true;
+    checkSelectionWithSubsection("felonyConviction","felonyConvictionValid","felonyConvictionValidBool","FelonyDiscritption","FelonyDiscritptionValid","FelonyDiscritptionValidBool","change");
+
+
+
 
 
     
@@ -55,7 +67,7 @@ document.addEventListener("DOMContentLoaded", function () {
         input.addEventListener(kind,function(e){validateReg(e,BooleanName,controlForm,regX)})
     }
 
-    function checkSelection(inputId,controlFormId,BooleanName,kind,regX){
+    function checkSelection(inputId,controlFormId,BooleanName,kind){
         var input = document.getElementById(inputId);
         var controlForm = document.getElementById(controlFormId);
         input.addEventListener(kind,function(e){validateSelection(e,BooleanName,controlForm)})
@@ -71,6 +83,12 @@ document.addEventListener("DOMContentLoaded", function () {
         var input = document.getElementById(inputId);
         var controlForm = document.getElementById(controlFormId);
         input.addEventListener(kind,function(e){validateDateMonth(e,BooleanName,controlForm)})
+    }
+
+    function checkSelectionWithSubsection(inputId,controlFormId,BooleanName,subInputID,subControlID,subBoolean,kind){
+        var input = document.getElementById(inputId);
+        var controlForm = document.getElementById(controlFormId);
+        input.addEventListener(kind,function(e){validateSelectionWithSubsection(e,BooleanName,controlForm,subInputID,subControlID,subBoolean)})
     }
 
     function validateInput(e,valueBool,inputVaild){
@@ -96,6 +114,36 @@ document.addEventListener("DOMContentLoaded", function () {
             inputVaild.classList.remove('was-validated');
             inputVaild.classList.add('is-incorrect');
             window[valueBool] = false;
+        }
+    }
+
+    function validateSelectionWithSubsection(e,valueBool,inputVaild, subInputID,subControlID,subBoolean){
+        let input = document.getElementById(subInputID);
+        let formControl = document.getElementById(subControlID)
+        if(e.target.value != ""){
+            inputVaild.classList.add('was-validated');
+            inputVaild.classList.remove('is-incorrect');
+            window[valueBool] = true;
+        }
+        else{
+            inputVaild.classList.remove('was-validated');
+            inputVaild.classList.add('is-incorrect');
+            window[valueBool] = false;
+        }
+        if(e.target.value === "Yes"){
+            window[subBoolean] = false;
+            input.removeAttribute("disabled");
+            
+            checkInput(subInputID,subControlID,subBoolean);
+            
+        }
+        else{
+            window[subBoolean] = true;
+            input.setAttribute("disabled","");
+            input.value = "";
+            formControl.classList.remove('was-validated')
+            formControl.classList.remove('is-coorect')
+            formControl.classList.remove('is-incrorect')
         }
     }
 
@@ -186,7 +234,10 @@ document.addEventListener("DOMContentLoaded", function () {
             & window["phoneValidBool"] & window["altphoneValidBool"]
             &window["emailValidBool"] & window["streetAddressValidBool"] 
             & window["cityAddressValidBool"] & window["stateAddressVaildBool"]
-            & window["zipValidBool"] & window["over18VaildBool"]){
+            & window["zipValidBool"] & window["moveInDateValidBool"]
+            & window["over18VaildBool"] & window["militaryServiceValidBool"]
+            & window["firedFromJobValidBool"] & window["felonyConvictionValidBool"]
+            &window["FelonyDiscritptionValidBool"]){
           
            general.classList.remove('incomplete');
            general.classList.add('complete');

@@ -217,8 +217,9 @@
                                 </label>
                             </div>
                             <div class="col-md-4" style="padding-right: 5px;">
-                                <div class="form-floating">
+                                <div class="form-floating" id="militaryServiceValid">
                                     <select class="form-select" id="militaryService" name="militaryService" required>
+                                        <option value=""></option>
                                         <option value="Yes">Yes</option>
                                         <option value="No">No</option>
                                     </select>
@@ -238,8 +239,9 @@
                                 </label>
                             </div>
                             <div class="col-md-4" style="padding-right: 5px;">
-                                <div class="form-floating">
+                                <div class="form-floating" id="firedFromJobValid">
                                     <select class="form-select" id="firedFromJob" name="firedFromJob" required>
+                                        <option value=""></option>
                                         <option value="Yes">Yes</option>
                                         <option value="No">No</option>
                                     </select>
@@ -269,8 +271,9 @@
                                 </label>
                             </div>
                             <div class="col-md-4" style="padding-right: 5px;">
-                                <div class="form-floating">
+                                <div class="form-floating" id="felonyConvictionValid">
                                     <select class="form-select" id="felonyConviction" name="felonyConviction" required>
+                                        <option value=""></option>
                                         <option value="Yes">Yes</option>
                                         <option value="No">No</option>
                                     </select>
@@ -280,13 +283,14 @@
                         </div>
                         <div class="row" style="margin-top: 5px;">
                             <div class="col-md-12" style="padding-right: 5px;">
-                                <div class="form-floating">
-                                    <textarea class="form-control" placeholder="Felony Disctription" id="FelonyDiscritption"></textarea>
-                                    <label for="FelonyDiscritption" style="margin-left: 80px;"> If Yes, please describe all situations here.<span class="exampleText"> (include dates)</span></label>
+                                <div class="form-floating" id="FelonyDiscritptionValid">
+                                    <textarea class="form-control" placeholder="Felony Disctription" id="FelonyDiscritption" disabled></textarea>
+                                    <label for="FelonyDiscritption" style="margin-left: 80px;"> Please describe all situations here.<span class="exampleText"> (include dates)</span></label>
                                 </div>
                             </div>
                         </div>
                     </div><!--End Convicted of a felony section-->
+                    
 
                 </div><!-- End General info section-->
 
