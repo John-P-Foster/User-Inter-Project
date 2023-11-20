@@ -103,7 +103,7 @@
                         <div class="col-md-3">
                             <div class="form-floating mb-3" id="stateAddressValid">
                                 <select class="form-select" id="stateAddress" name="stateAddress" required>
-                                    <option selected>State</option>
+                                    <option selected value="">State</option>
                                     <option value="AL">Alabama</option>
                                     <option value="AK">Alaska</option>
                                     <option value="AZ">Arizona</option>
@@ -163,7 +163,7 @@
                         </div>
 
                         <div class="col-md-2">
-                            <div class="form-floating mb-3">
+                            <div class="form-floating mb-3" id=zipAddressValid>
                                 <input type="text" class="form-control" id="zipAddress" name="zipAddress" placeholder="ZIP" required>
                                 <label for="zipAddress">ZIP <span class="exampleText"> (xxxxx)</span></label>
                             </div>
@@ -195,8 +195,9 @@
                                 </label>
                             </div>
                             <div class="col-md-4" style="padding-right: 5px;">
-                                <div class="form-floating">
-                                    <select class="form-select" id="over18" name="over18" required>
+                                <div class="form-floating" id="over18Valid">
+                                    <select class="form-select" id="over18" name="over18"required>
+                                        <option value=""> </option>
                                         <option value="Yes">Yes</option>
                                         <option value="No">No</option>
                                     </select>
