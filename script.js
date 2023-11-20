@@ -44,7 +44,8 @@ document.addEventListener("DOMContentLoaded", function () {
     checkSelection("militaryService","militaryServiceValid","militaryServiceValidBool","change");
 
     var firedFromJobValidBool = false;
-    checkSelection("firedFromJob","firedFromJobValid","firedFromJobValidBool","change");
+    var firedFromJobDescriptionValidBool = true;
+    checkSelectionWithSubsection("firedFromJob","firedFromJobValid","firedFromJobValidBool","firedFromJobDescription","firedFromJobDescriptionValid","firedFromJobDescriptionValidBool","change");
 
     var felonyConvictionValidBool = false;
     var FelonyDiscritptionValidBool = true;
@@ -132,7 +133,22 @@ document.addEventListener("DOMContentLoaded", function () {
         }
         if(e.target.value === "Yes"){
             window[subBoolean] = false;
-            input.removeAttribute("disabled");
+            //input.removeAttribute("disabled");
+
+
+            newTextArea = document.createElement("textarea");
+            newTextArea.setAttribute("placeholder","Description");
+            newTextArea.setAttribute("id",subInputID);
+            newTextArea.setAttribute("class","form-control");
+            formControl.appendChild(newTextArea);
+
+            newLabel = document.createElement("label");
+            newLabel.setAttribute("for",subInputID);
+            newLabel.setAttribute("style","margin-left: 80px;");
+            newLabel.setAttribute("id","label"+subInputID);
+            text = document.createTextNode(" Please describe all situations here. (include dates)");
+            newLabel.appendChild(text);
+            formControl.appendChild(newLabel);
             
             checkInput(subInputID,subControlID,subBoolean);
             
@@ -141,9 +157,10 @@ document.addEventListener("DOMContentLoaded", function () {
             window[subBoolean] = true;
             input.setAttribute("disabled","");
             input.value = "";
-            formControl.classList.remove('was-validated')
-            formControl.classList.remove('is-coorect')
-            formControl.classList.remove('is-incrorect')
+            let label = document.getElementById("label"+subInputID);
+            let textArea =document.getElementById(subInputID);
+            label.remove();
+            textArea.remove();
         }
     }
 
@@ -237,7 +254,7 @@ document.addEventListener("DOMContentLoaded", function () {
             & window["zipValidBool"] & window["moveInDateValidBool"]
             & window["over18VaildBool"] & window["militaryServiceValidBool"]
             & window["firedFromJobValidBool"] & window["felonyConvictionValidBool"]
-            &window["FelonyDiscritptionValidBool"]){
+            &window["FelonyDiscritptionValidBool"] & window["firedFromJobDescriptionValidBool"]){
           
            general.classList.remove('incomplete');
            general.classList.add('complete');
