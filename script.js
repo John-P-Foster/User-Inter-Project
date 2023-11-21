@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const regEmail = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
     
 
+    //start checks for General info section
     var nameValidBool = false;
     checkInput("firstName","nameValid","nameValidBool");
 
@@ -50,7 +51,32 @@ document.addEventListener("DOMContentLoaded", function () {
     var felonyConvictionValidBool = false;
     var FelonyDiscritptionValidBool = true;
     checkSelectionWithSubsection("felonyConviction","felonyConvictionValid","felonyConvictionValidBool","FelonyDiscritption","FelonyDiscritptionValid","FelonyDiscritptionValidBool","change");
+    //end checks for General info section
 
+    //start checks for Job Specifications
+    var positionApplyingValidBool = false;
+    checkInput("positionApplying","positionApplyingValid", "positionApplyingValidBool");
+
+    var salaryDesiredValidBool = false;
+    checkSelection("salaryDesired","salaryDesiredValid","salaryDesiredVaildBool","change");
+
+    var employmentTypeVaildBool = false;
+    checkSelection("employmentType","employmentTypeValid","employmentTypeVaildBool","change");
+
+    var requirementsExplainedVaildBool = false;
+    checkSelection("requirementsExplained","requirementsExplainedValid","requirementsExplainedVaildBool","change");
+
+    var meetRequirementsVaildBool = false;
+    checkSelection("meetRequirements","meetRequirementsValid","meetRequirementsVaildBool","change");
+
+    var hoursPerWeekVaildBool = false;
+    checkSelection("hoursPerWeek","hoursPerWeekValid","hoursPerWeekVaildBool","change");
+
+    var workNightsVaildBool = false;
+    checkSelection("workNights","workNightsValid","workNightsVaildBool","change");
+
+    var startDateValidBool =false;
+    checkDate("startDate","startDateValid","startDateValidBool","change");
 
 
 
@@ -165,11 +191,16 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function validateDate(e,valueBool,inputVaild){
+    
         let today = new Date();
+        let dd = String(today.getDate()).padStart(2, '0');
+        let mm = String(today.getMonth() + 1).padStart(2, '0');
+        let yyyy = today.getFullYear();
+        today = yyyy + '-' + mm + '-' + dd;
 
         console.log(today);
         console.log(e.target.value)
-        if(e.target.value < today ){
+        if(e.target.value > today ){
             inputVaild.classList.add('was-validated');
             inputVaild.classList.remove('is-incorrect');
             window[valueBool] = true;
@@ -226,10 +257,14 @@ document.addEventListener("DOMContentLoaded", function () {
                 //check each sections function
                 let generalInfoComplete = false;
                 generalInfoComplete = checkGeneralInfo();
+
+                let JobSpecificationsComplete = false;
+                JobSpecificationsComplete = checkJobSpecifications();
+                
      
 
             // If all sections are complete reable submit button.
-            if(generalInfoComplete){
+            if(generalInfoComplete & JobSpecificationsComplete){
                 submitbttn.removeAttribute("disabled");
                 submitbttn.classList.remove('btn-secondary');
                 submitbttn.classList.add('btn-success');
@@ -263,6 +298,26 @@ document.addEventListener("DOMContentLoaded", function () {
         else{
             general.classList.add('incomplete');
             general.classList.remove('complete');
+            return false;
+        }
+    }
+
+    function checkJobSpecifications(){
+        let jobspecNav = document.getElementById("jobspecificationsNav");
+
+        if(
+            window["positionApplyingValidBool"] & window["salaryDesiredVaildBool"]
+            & window["employmentTypeVaildBool"] & window["requirementsExplainedVaildBool"]
+            & window["meetRequirementsVaildBool"] & window["hoursPerWeekVaildBool"]
+            & window["workNightsVaildBool"] & window["startDateValidBool"]){
+          
+                jobspecNav.classList.remove('incomplete');
+                jobspecNav.classList.add('complete');
+                return true;
+        }
+        else{
+            jobspecNav.classList.add('incomplete');
+            jobspecNav.classList.remove('complete');
             return false;
         }
     }
