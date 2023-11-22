@@ -78,6 +78,8 @@ document.addEventListener("DOMContentLoaded", function () {
     var startDateValidBool =false;
     checkDate("startDate","startDateValid","startDateValidBool","change");
 
+    //end checks for Job Specifications info section
+
 
 
 
@@ -247,6 +249,151 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
+
+    //reset button action
+    document.getElementById("resetButton").addEventListener("click", function (){
+
+        let submitbttn = document.getElementById("submitFormBtn");
+        submitbttn.setAttribute("disabled","");
+        submitbttn.classList.remove('btn-success');
+        submitbttn.classList.add('btn-secondary');
+
+        let general = document.getElementById("generalNav");
+        general.classList.add('incomplete');
+        general.classList.remove('complete');
+
+        let jobspecNav = document.getElementById("jobspecificationsNav");
+        jobspecNav.classList.add('incomplete');
+        jobspecNav.classList.remove('complete');
+        
+        window["nameValidBool"] = false;
+
+        window["SSNValidBool"] = false;
+
+        window["phoneValidBool"] = false;
+
+        window["altphoneValidBool"] = false;
+
+        window["emailValidBool"] = false;
+    
+        window["streetAddressValidBool"] = false;
+    
+        window["cityAddressValidBool"] = false;
+    
+        window["stateAddressVaildBool"] = false;
+    
+        window["zipValidBool"] = false;
+    
+        window["moveInDateValidBool"] = false;
+    
+        window["over18ValidBool"] = false;
+    
+        window["militaryServiceValidBool"] = false;
+    
+        window["firedFromJobValidBool"] = false;
+
+        window["firedFromJobDescriptionValidBool"] = false;
+    
+        window["felonyConvictionValidBool"] = false;
+
+        window["FelonyDiscritptionValidBool"] = false;
+
+        window["positionApplyingValidBool"] = false;
+    
+        window["salaryDesiredValidBool"] = false; 
+
+        window["employmentTypeVaildBool"] = false;
+    
+        window["requirementsExplainedVaildBool"] = false;
+    
+        window["meetRequirementsVaildBool"] = false;
+    
+        window["hoursPerWeekVaildBool"] = false;
+
+        window["workNightsVaildBool"] = false;
+        
+        window["startDateValidBool"] = false;
+    });
+
+
+    //start Degree input secript
+ 
+    
+    var degreeForms = 3;
+    var completedEducation = 0;
+    function checkEducationSection(){
+        let educationNav = document.getElementById("educationNav");
+        if(degreeForms == completedEducation)
+        {
+            educationNav.classList.remove('incomplete');
+            educationNav.classList.add('complete');
+            return true;
+        }
+     else{
+            educationNav.classList.add('incomplete');
+            educationNav.classList.remove('complete');
+            return false;
+        }
+       
+    }
+
+    // Loop over them and prevent submission
+    function checkDegrees(){
+        let degrees = document.querySelectorAll(".degree-needs-validation")
+
+        Array.from(degrees).forEach(degree => {
+            degree.addEventListener('input', event => {
+            if (event.target.value.length <= 1) {
+                //degree.preventDefault()
+                //degree.stopPropagation()
+                degree.classList.remove('was-validated')
+                degree.classList.add('is-incorrect')
+                
+                
+            }
+            else{
+            degree.classList.add('was-validated')
+            degree.classList.remove('is-incorrect')
+           
+            }
+            let newEntry = document.getElementById("schoolContainer")
+            let correctFields = newEntry.querySelectorAll(".was-validated");
+            let count = 0;
+            correctFields.forEach(function (input) {
+                count ++;
+                console.log("Plus" + count);
+            });
+            completedEducation = count;
+        }, false)
+        })
+    }
+
+    document.getElementById("addSchool").addEventListener("click", function () {
+        var newEntry = document.querySelector(".school-entry").cloneNode(true);
+
+        // Clear the input values in the cloned entry
+        var inputFields = newEntry.querySelectorAll("input");
+        inputFields.forEach(function (input) {
+            input.value = "";
+        });
+        var editFields = newEntry.querySelectorAll(".was-validated");
+        editFields.forEach(function (input) {
+            input.classList.remove("was-validated");
+            input.classList.add("is-incorrect");
+        });
+
+        // Append the new entry to the container
+        var schoolContainer = document.getElementById("schoolContainer");
+        schoolContainer.appendChild(newEntry);
+
+        // Append a separator (hr) to the container
+        var separator = document.createElement("hr");
+        schoolContainer.appendChild(separator);
+        degreeForms += 3;
+        
+    });
+
+
         // Listens to changes and updates the progress bar at the top.
         ['keyup', 'change'].forEach((type) => {
             
@@ -255,16 +402,19 @@ document.addEventListener("DOMContentLoaded", function () {
                 let submitbttn = document.getElementById("submitFormBtn");
 
                 //check each sections function
+                checkDegrees();
                 let generalInfoComplete = false;
                 generalInfoComplete = checkGeneralInfo();
 
                 let JobSpecificationsComplete = false;
                 JobSpecificationsComplete = checkJobSpecifications();
+
+                let EducationSectionComplete = checkEducationSection();
                 
      
 
             // If all sections are complete reable submit button.
-            if(generalInfoComplete & JobSpecificationsComplete){
+            if(generalInfoComplete & JobSpecificationsComplete & EducationSectionComplete ){
                 submitbttn.removeAttribute("disabled");
                 submitbttn.classList.remove('btn-secondary');
                 submitbttn.classList.add('btn-success');

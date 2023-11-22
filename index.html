@@ -17,13 +17,13 @@
                 <li><a href="#general" id="generalNav" class="incomplete">General Information</a></li>
                 <li><a href="#Expectations" id="jobspecificationsNav" class="incomplete">Job Specifications</a></li>
                 <li><a href="#references" class="incomplete">References</a></li>
-                <li><a href="#education" class="incomplete">Education</a></li>
+                <li><a href="#education" id="educationNav" class="incomplete">Education</a></li>
                 <li><a href="#experience" class="incomplete">Work Experience</a></li>
                 <li><a href="#background" class="incomplete">Background</a></li>
                 <li><a href="#waiver" class="incomplete">Waiver</a></li>
                 <li><button type="submit" form="ourForm" class="btn btn-secondary" id="submitFormBtn" style="border-bottom-right-radius: 25px;border-top-right-radius: 25px; border-top-left-radius: 0px; border-bottom-left-radius: 0px; padding:6px;" disabled >Submit Application</button>
             </ul>
-            <button type="reset" form="ourForm" class="btn btn-danger" value="Reset" style="margin-left: 100px; position: fixed; top:10px; right: 5%;">Reset Application</button>
+            <button type="reset" form="ourForm" id="resetButton" class="btn btn-danger" value="Reset" style="margin-left: 100px; position: fixed; top:10px; right: 5%;">Reset Application</button>
         </div><!-- End Nav Bar Section-->
 
         <p id="topOfPage" class="jumpTo" style="border-style: none;"></p>
@@ -600,19 +600,19 @@
                         <!-- Initial School Entry -->
                         <div class="school-entry row">
                             <div class="col-md-4">
-                                <div class="form-floating mb-3">
+                                <div class="form-floating mb-3 degree-needs-validation">
                                     <input type="text" class="form-control" name="degree" placeholder="Degree/Diploma" required>
                                     <label for="degree">Degree/Diploma</label>
                                 </div>
                             </div>
                             <div class="col-md-4">
-                                <div class="form-floating mb-3">
+                                <div class="form-floating mb-3 degree-needs-validation">
                                     <input type="text" class="form-control" name="school" placeholder="School" required>
                                     <label for="school">School</label>
                                 </div>
                             </div>
                             <div class="col-md-4">
-                                <div class="form-floating mb-3">
+                                <div class="form-floating mb-3 degree-needs-validation">
                                     <input type="text" class="form-control" name="location" placeholder="Location" required>
                                     <label for="location">Location</label>
                                 </div>
@@ -633,31 +633,8 @@
 
 
                 </div>
-                <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-                <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-                <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+                
 
-                <script>
-                    document.addEventListener("DOMContentLoaded", function () {
-                        document.getElementById("addSchool").addEventListener("click", function () {
-                            var newEntry = document.querySelector(".school-entry").cloneNode(true);
-
-                            // Clear the input values in the cloned entry
-                            var inputFields = newEntry.querySelectorAll("input");
-                            inputFields.forEach(function (input) {
-                                input.value = "";
-                            });
-
-                            // Append the new entry to the container
-                            var schoolContainer = document.getElementById("schoolContainer");
-                            schoolContainer.appendChild(newEntry);
-
-                            // Append a separator (hr) to the container
-                            var separator = document.createElement("hr");
-                            schoolContainer.appendChild(separator);
-                        });
-                    });
-                </script>
                 <!--End Education-->
 
 

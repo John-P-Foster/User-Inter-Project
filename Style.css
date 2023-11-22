@@ -41,10 +41,12 @@ body{
 	width: 100%;
 	justify-content: center;
 	z-index:10;
+	transition: 0.2s;
 }
 
 .ourNavBar a:hover {
-	background-color: #737373
+	background-color: #737373;
+	transition: 0.2s;
 }
 
 .ourNavBar a {
@@ -96,10 +98,9 @@ body{
 	margin-left: 100px;
 }
 .is-incorrect{
-	border-style: outset;
-	border-width: 5px;
-	border-radius: 10px;
-	border-color: red;
+	outline: 2px solid;
+	outline-width: 5px;
+	outline-color: rgb(243, 117, 117);
 	opacity: 60%;
 	
 	.exampleText{
@@ -110,12 +111,16 @@ body{
 
 .complete{
 	background-color: green;
+	transition: 0.2s;
 }
 .incomplete{
 	background-color: black;
+	transition: 0.2s;
+
 }
 .submitIncomplete{
 	background-color: #737373;
+	transition: 0.2s;
 }
 
 /* End of John Foster CSS code */
