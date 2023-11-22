@@ -265,6 +265,14 @@ document.addEventListener("DOMContentLoaded", function () {
         let jobspecNav = document.getElementById("jobspecificationsNav");
         jobspecNav.classList.add('incomplete');
         jobspecNav.classList.remove('complete');
+
+        let educationNav = document.getElementById("educationNav");
+        educationNav.classList.add('incomplete');
+        educationNav.classList.remove('complete');
+
+        let workExNav = document.getElementById("workExNav");
+        workExNav.classList.add('incomplete');
+        workExNav.classList.remove('complete');
         
         window["nameValidBool"] = false;
 
@@ -313,11 +321,37 @@ document.addEventListener("DOMContentLoaded", function () {
         window["workNightsVaildBool"] = false;
         
         window["startDateValidBool"] = false;
+
+
     });
 
 
     //start Degree input secript
  
+    document.getElementById("addSchool").addEventListener("click", function () {
+        var newEntry = document.querySelector(".school-entry").cloneNode(true);
+
+        // Clear the input values in the cloned entry
+        var inputFields = newEntry.querySelectorAll("input");
+        inputFields.forEach(function (input) {
+            input.value = "";
+        });
+        var editFields = newEntry.querySelectorAll(".was-validated");
+        editFields.forEach(function (input) {
+            input.classList.remove("was-validated");
+            input.classList.add("is-incorrect");
+        });
+
+        // Append the new entry to the container
+        var schoolContainer = document.getElementById("schoolContainer");
+        schoolContainer.appendChild(newEntry);
+
+        // Append a separator (hr) to the container
+        var separator = document.createElement("hr");
+        schoolContainer.appendChild(separator);
+        degreeForms += 3;
+        
+    });
     
     var degreeForms = 3;
     var completedEducation = 0;
@@ -368,30 +402,75 @@ document.addEventListener("DOMContentLoaded", function () {
         })
     }
 
-    document.getElementById("addSchool").addEventListener("click", function () {
-        var newEntry = document.querySelector(".school-entry").cloneNode(true);
+    //start work EX sections
+
+    document.getElementById("addWorkExperience").addEventListener("click", function () {
+        var newEntry = document.querySelector(".work-experience-entry").cloneNode(true);
 
         // Clear the input values in the cloned entry
         var inputFields = newEntry.querySelectorAll("input");
         inputFields.forEach(function (input) {
             input.value = "";
         });
-        var editFields = newEntry.querySelectorAll(".was-validated");
-        editFields.forEach(function (input) {
-            input.classList.remove("was-validated");
-            input.classList.add("is-incorrect");
-        });
 
         // Append the new entry to the container
-        var schoolContainer = document.getElementById("schoolContainer");
-        schoolContainer.appendChild(newEntry);
+        var workExperienceContainer = document.getElementById("workExperienceContainer");
+        workExperienceContainer.appendChild(newEntry);
 
         // Append a separator (hr) to the container
         var separator = document.createElement("hr");
-        schoolContainer.appendChild(separator);
-        degreeForms += 3;
-        
+        workExperienceContainer.appendChild(separator);
     });
+
+    function checkWorkEx(){
+        let forms = document.querySelectorAll(".workNeedsValidation")
+
+        Array.from(forms).forEach(form => {
+            form.addEventListener('input', event => {
+            if (event.target.value.length <= 1) {
+                //degree.preventDefault()
+                //degree.stopPropagation()
+                form.classList.remove('was-validated')
+                form.classList.add('is-incorrect')
+                
+                
+            }
+            else{
+                form.classList.add('was-validated')
+                form.classList.remove('is-incorrect')
+           
+            }
+            let newEntry = document.getElementById("workExperienceContainer")
+            let correctFields = newEntry.querySelectorAll(".was-validated");
+            let count = 0;
+            correctFields.forEach(function (input) {
+                count ++;
+                console.log("Plus" + count);
+            });
+            completedWorkEx = count;
+        }, false)
+        })
+    }
+
+    var workEPForms = 13;
+    var completedWorkEx = 0;
+    function checkWorkExSection(){
+        let workExNav = document.getElementById("workExNav");
+        if(workEPForms == completedWorkEx)
+        {
+            workExNav.classList.remove('incomplete');
+            workExNav.classList.add('complete');
+            return true;
+        }
+     else{
+            workExNav.classList.add('incomplete');
+            workExNav.classList.remove('complete');
+            return false;
+        }
+       
+    }
+
+
 
 
         // Listens to changes and updates the progress bar at the top.
@@ -403,6 +482,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 //check each sections function
                 checkDegrees();
+                checkWorkEx();
                 let generalInfoComplete = false;
                 generalInfoComplete = checkGeneralInfo();
 
@@ -410,11 +490,13 @@ document.addEventListener("DOMContentLoaded", function () {
                 JobSpecificationsComplete = checkJobSpecifications();
 
                 let EducationSectionComplete = checkEducationSection();
+
+                let checkWorkExSectinComplete = checkWorkExSection();
                 
      
 
             // If all sections are complete reable submit button.
-            if(generalInfoComplete & JobSpecificationsComplete & EducationSectionComplete ){
+            if(generalInfoComplete & JobSpecificationsComplete & EducationSectionComplete & checkWorkExSectinComplete ){
                 submitbttn.removeAttribute("disabled");
                 submitbttn.classList.remove('btn-secondary');
                 submitbttn.classList.add('btn-success');
