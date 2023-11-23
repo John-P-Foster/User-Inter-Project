@@ -178,8 +178,7 @@ document.addEventListener("DOMContentLoaded", function () {
             newLabel.appendChild(text);
             formControl.appendChild(newLabel);
             
-            checkInput(subInputID,subControlID,subBoolean);
-            
+            checkInput(subInputID,subControlID,subBoolean);   
         }
         else{
             window[subBoolean] = true;
@@ -200,8 +199,6 @@ document.addEventListener("DOMContentLoaded", function () {
         let yyyy = today.getFullYear();
         today = yyyy + '-' + mm + '-' + dd;
 
-        console.log(today);
-        console.log(e.target.value)
         if(e.target.value > today ){
             inputVaild.classList.add('was-validated');
             inputVaild.classList.remove('is-incorrect');
@@ -248,6 +245,8 @@ document.addEventListener("DOMContentLoaded", function () {
             window[valueBool] = false;
         }
     }
+
+    
 
 
     //reset button action

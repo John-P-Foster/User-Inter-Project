@@ -197,7 +197,7 @@
                             <div class="col-md-4" style="padding-right: 5px;">
                                 <div class="form-floating" id="over18Valid">
                                     <select class="form-select" id="over18" name="over18"required>
-                                        <option value=""> </option>
+                                        <option selected value="" disabled> </option>
                                         <option value="Yes">Yes</option>
                                         <option value="No">No</option>
                                     </select>
@@ -219,7 +219,7 @@
                             <div class="col-md-4" style="padding-right: 5px;">
                                 <div class="form-floating" id="militaryServiceValid">
                                     <select class="form-select" id="militaryService" name="militaryService" required>
-                                        <option value=""></option>
+                                        <option selected value="" disabled></option>
                                         <option value="Yes">Yes</option>
                                         <option value="No">No</option>
                                     </select>
@@ -241,7 +241,7 @@
                             <div class="col-md-4" style="padding-right: 5px;">
                                 <div class="form-floating" id="firedFromJobValid">
                                     <select class="form-select" id="firedFromJob" name="firedFromJob" required>
-                                        <option value=""></option>
+                                        <option selected value="" disabled></option>
                                         <option value="Yes">Yes</option>
                                         <option value="No">No</option>
                                     </select>
@@ -268,8 +268,8 @@
                             </div>
                             <div class="col-md-4" style="padding-right: 5px;">
                                 <div class="form-floating" id="felonyConvictionValid">
-                                    <select class="form-select" id="felonyConviction" name="felonyConviction" required>
-                                        <option value=""></option>
+                                    <select  class="form-select" id="felonyConviction" name="felonyConviction" required>
+                                        <option selected value=""disabled></option>
                                         <option value="Yes">Yes</option>
                                         <option value="No">No</option>
                                     </select>
@@ -318,7 +318,7 @@
                             <div class="col-md-4">
                                 <div class="form-floating" id="salaryDesiredValid">
                                     <select class="form-select" id="salaryDesired" name="salaryDesired" required>
-                                        <option value=""></option>
+                                        <option selected value="" disabled></option>
                                         <option value="$30 - $40K">$30 - $40K</option>
                                         <option value="$40 - $50K">$40 - $50K</option>
                                         <option value="$50 - $60K">$50 - $60K</option>
@@ -351,7 +351,7 @@
                             <div class="col-md-4" style="padding-right: 5px;">
                                 <div class="form-floating" id="employmentTypeValid">
                                     <select class="form-select" id="employmentType" name="employmentType" required>
-                                        <option value=""></option>
+                                        <option selected value=""disabled></option>
                                         <option value="Full Time">Full Time</option>
                                         <option value="Part Time">Part Time</option>
                                         <option value="Either">Either</option>
@@ -375,7 +375,7 @@
                             <div class="col-md-4">
                                 <div class="form-floating" id="requirementsExplainedValid">
                                     <select class="form-select" id="requirementsExplained" name="requirementsExplained" required>
-                                        <option value=""></option>
+                                        <option selected value="" disabled></option>
                                         <option value="Yes">Yes</option>
                                         <option value="No">No</option>
                                     </select>
@@ -398,7 +398,7 @@
                             <div class="col-md-4" style="padding-right: 5px;">
                                 <div class="form-floating" id="meetRequirementsValid">
                                     <select class="form-select" id="meetRequirements" name="meetRequirements" required>
-                                        <option value=""></option>
+                                        <option selected value="" disabled></option>
                                         <option value="Yes">Yes</option>
                                         <option value="No">No</option>
                                         <option value="Unsure">Unsure</option>
@@ -472,7 +472,7 @@
                             <div class="col-md-4" style="padding-right: 5px;">
                                 <div class="form-floating" id="hoursPerWeekValid">
                                     <select class="form-select" id="hoursPerWeek" name="hoursPerWeek" required>
-                                        <option value=""></option>
+                                        <option selected value="" disabled></option>
                                         <option value="0 - 5hrs">0 - 5hrs</option>
                                         <option value="5 - 10hrs">5 - 10hrs</option>
                                         <option value="10 - 15hrs">10 - 15hrs</option>
@@ -505,7 +505,7 @@
                             <div class="col-md-4" style="padding-right: 5px;">
                                 <div class="form-floating" id="workNightsValid">
                                     <select class="form-select" id="workNights" name="workNights" required>
-                                        <option value=""></option>
+                                        <option selected value="" disabled></option>
                                         <option value="Yes">Yes</option>
                                         <option value="No">No</option>
                                     </select>
@@ -802,88 +802,82 @@
 				<!--Row #1-->
                 
               
-            <br>  <!-- start driver license reformat section-->
+            <br>  
+
+            <div class="form-control"><!-- start reliable section-->
+                <div class="row">
+                    <div class="col-md-8" style="text-align: left;">
+                        <label for="transport">
+                            <span class="standardRowHieght">
+                                Do you have access to reliable transportion?
+                            </span>
+                        </label>
+                    </div>
+                    <div class="col-md-4" style="padding-right: 5px;">
+                        <div class="form-floating" id="transport">
+                            <select class="form-select" id="transport" name="transport"required>
+                                <option selected disabled=""> </option>
+                                <option value="Yes">Yes</option>
+                                <option value="No">No</option>
+                            </select>
+                            <label for="transport"> reliable transportion</label>
+                        </div>
+                    </div>
+                </div>
+            </div><br>
+
+            <div class="form-control"><!-- start driver license reformat section-->
+                <div class="row">
+                    <div class="col-md-8" style="text-align: left;">
+                        <label for="driverL">
+                            <span class="standardRowHieght">
+                                Do you have a valid Driver License?
+                            </span>
+                        </label>
+                    </div>
+                    <div class="col-md-4" style="padding-right: 5px;">
+                        <div class="form-floating" id="driverL">
+                            <select class="form-select" id="driverL" name="driverL"required>
+                                <option selected value disabled=""> </option>
+                                <option value="Yes">Yes</option>
+                                <option value="No">No</option>
+                            </select>
+                            <label for="driverL"> valid license</label>
+                        </div>
+                    </div>
+                </div>
+            </div><br><!-- end driver license reformat section-->
+
+
+				<!--Start of Row 2-->
+
                 <div class="row">
                     <div class=" col-md-6">
                         <div class="row form-control" style="display: inline-flex;">
                             <div class="col-md" style="text-align: left; margin-left: 5px;">
-                                <label for="driverLicense">
+                                <label for="exp" style="display: inline-block;">
                                     <span>
-                                        Do you have a valid Driver License?
+                                        Expirationd Date
                                     </span>
                                 </label>
                             </div>
                         <div class="col-md" style="padding-right: 5px;">
                             <div class="form-floating">
-                                <select class="form-select" id="driverLicense" name="driverLicense" required>
-                                    <option value="Yes">Yes</option>
-                                    <option value="No">No</option>
-                                </select>
-                                <label for="driverLicense">Driver License</label>
+                                <input type="date" class="form-control" style="padding-top: 15px; padding-bottom: 15px; display: inline-block;" id="exp" name="exp" value="2023-11-01">
                             </div>
                         </div>
                     </div>
                 </div>
-                    <div class="col-md-6">
+                    <div class="col-md-3">
                         <div class="form-floating mb-3" >
                             <input type="text" class="form-control" id="dlnum" placeholder="Full name" style="height: 72px;" required>
-                            <label for="dlnum">Driver's License#: <span class="exampleText"> (############)</span></label>
+                            <label for="dlnum">Driver's License#:</label>
                         </div>
                     </div>
-                </div>
-            <br><!-- end driver license reformat section-->
-
-            
-				<div class="row">
-
-					<!--Radio button group for Driver's license-->
-					<div class="col-md-3">
-
-						<p>Do you have a valid Driver's License?</p>
-
-					</div>
-
-					<div class="col-md-3">
-						<br>
-						<input type="radio" id="yes" name="dl" value="y">
-						<label for="yes">Yes</label>
-
-						<input type="radio" id="no" name="dl" value="n">
-						<label for="no">No</label>
-
-					</div>
-
-					<!--DL# question-->
-					<div class="col-md-6">
-
-						<div class="form-floating mb-3">
-                                <input type="text" class="form-control" id="dlnum" placeholder="Full name" required>
-                                <label for="dlnum">Driver's License#: <span class="exampleText"> (############)</span></label>
-                        </div>
-
-					</div>
-
-				</div>
-
-				<!--Start of Row 2-->
-				<div class="row">
-
-					<div class="col-md-3">
-						<label for="exp" style="text-align: left">Expiration Date:</label>
-					</div>
-
-					<div class="col-md-3" style="padding-right: 5px;">
-
-						<input type="date" class="form-control" style="padding-top: 15px; padding-bottom: 15px;" id="exp" name="exp" value="2023-11-01">
-
-					</div>
-
-					<div class="col-md-6">
-
-						<div class="form-floating mb-3">
-
-							<select class="form-select" id="dlstate" name="soi">
-								<option selected>State</option>
+                    <div class="col-md-3">
+                        <div class="form-floating mb-3" >
+                            <select class="form-select" id="dlstate" name="soi" style="height: 72px;">
+								<option selected value="" disabled>State</option>
 								<option value="AL">Alabama</option>
 								<option value="AK">Alaska</option>
 								<option value="AZ">Arizona</option>
@@ -937,31 +931,58 @@
 								<option value="WY">Wyoming</option>
 							</select>
 							<label for="soi">State of issuance</label>
-						</div>
+                        </div>
+                    </div>
+                </div>
 
-					</div>
+                <div class="form-control"><!-- start currently insured section-->
+                    <div class="row">
+                        <div class="col-md-8" style="text-align: left;">
+                            <label for="insured">
+                                <span class="standardRowHieght">
+                                    Are you currently insured?
+                                </span>
+                            </label>
+                        </div>
+                        <div class="col-md-4" style="padding-right: 5px;">
+                            <div class="form-floating" id="insured">
+                                <select class="form-select" id="insured" name="insured"required>
+                                    <option selected value disabled=""> </option>
+                                    <option value="Yes">Yes</option>
+                                    <option value="No">No</option>
+                                </select>
+                                <label for="insured"> insured</label>
+                            </div>
+                        </div>
+                    </div>
+                </div><br>
 
-				</div> <!--End row 2-->
-
+                <div class="form-control"><!-- start reliable section-->
+                    <div class="row">
+                        <div class="col-md-8" style="text-align: left;">
+                            <label for="driverL">
+                                <span class="standardRowHieght">
+                                    Would you be willing to use your vehicle for work purposes?
+                                </span>
+                            </label>
+                        </div>
+                        <div class="col-md-4" style="padding-right: 5px;">
+                            <div class="form-floating" id="driverL">
+                                <select class="form-select" id="driverL" name="driverL"required>
+                                    <option selected value disabled=""> </option>
+                                    <option value="Yes">Yes</option>
+                                    <option value="No">No</option>
+                                </select>
+                                <label for="driverL"> willing to</label>
+                            </div>
+                        </div>
+                    </div>
+                </div><br>
 				<!--Start of row 3-->
 				<div class="row">
 
 					<!--Radio button group for Car question-->
-					<div class="col-md-3">
 
-						<p>Have you served in the military?</p>
-
-					</div>
-
-					<div class="col-md-3">
-						<br>
-						<input type="radio" id="yes" name="ms" value="y">
-						<label for="yes">Yes</label>
-
-						<input type="radio" id="no" name="ms" value="n">
-						<label for="no">No</label>
-
-					</div>
 
 					<!--Radio button group for Car question 1-->
 					<div class="col-md-3">
@@ -988,7 +1009,7 @@
 					<!--Radio button group for Car question 2-->
 					<div class="col-md-3">
 
-						<p>Are you willing to use your vehicle for work purposes?</p>
+						<p>Would you be willing to use your vehicle for work purposes?</p>
 
 					</div>
 
