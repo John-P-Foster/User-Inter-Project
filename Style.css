@@ -1,3 +1,8 @@
+html{
+	scroll-behavior: smooth;
+}
+
+
 .ourhorizontal-list {
 	list-style: none; 
 	padding: 0; 
@@ -22,6 +27,7 @@ body{
 	border-style: solid;
 	border-radius: 5px;
 	border-color: #1a1a1a;
+	box-shadow: #070707;
 
 }
 .ourhorizontal-list li {
@@ -97,18 +103,48 @@ body{
 	margin-bottom: 15px;
 	margin-left: 100px;
 }
-.is-incorrect{
-	outline: 2px solid;
-	outline-width: 5px;
-	outline-color: rgb(243, 117, 117);
-	opacity: 60%;
-	
+
+.is-incorrect {
+
 	.exampleText{
 		color: red;
 		font-size: medium;
 	}
+	
+}
+.is-incorrect input{
+	border: none;
+	outline-style: solid;
+	outline-width: 1px;
+	outline-color: rgb(248, 1, 1);	
+}
+.is-incorrect textarea{
+	border: none;
+	outline-style: solid;
+	outline-width: 1px;
+	outline-color: rgb(248, 1, 1);	
 }
 
+.is-incorrect input:focus-within, textarea:focus-within{
+	outline-style: solid;
+	outline-width: 5px;
+	outline-color: rgb(247, 157, 157);
+	opacity: 80%;
+	transition: .05s;
+	
+}
+.is-incorrect textarea:focus-within{
+	outline-style: solid;
+	outline-width: 5px;
+	outline-color: rgb(247, 157, 157);
+	opacity: 80%;
+	transition: .05s;
+	
+}
+.was-validated textarea{
+	outline: green;
+
+}
 .complete{
 	background-color: green;
 	transition: 0.2s;
