@@ -133,6 +133,7 @@ body{
 	transition: .05s;
 	
 }
+
 .is-incorrect textarea:focus-within{
 	outline-style: solid;
 	outline-width: 5px;
@@ -141,14 +142,22 @@ body{
 	transition: .05s;
 	
 }
+
 .was-validated textarea{
 	outline: green;
 
 }
+
 .complete{
 	background-color: green;
 	transition: 0.2s;
 }
+
+.complete:hover{
+	color: black;
+	background-color: rgb(3, 160, 3) !important;
+}
+
 .incomplete{
 	background-color: black;
 	transition: 0.2s;
