@@ -553,5 +553,27 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
+    var thresholdWidth = 990;
+    var previousWidth = window.innerWidth;
+    window.onresize = function() {
+    
+        let navbar = document.getElementById("ourNavList");
+      var movedUpThroughThreshold = previousWidth < thresholdWidth &&
+        window.innerWidth >= thresholdWidth;
+      var movedDownThroughThreshold = previousWidth >= thresholdWidth &&
+        window.innerWidth <= thresholdWidth;
+    
+      if (movedUpThroughThreshold ) {
+        navbar.classList.remove("ourNavList")
+        console.log("Screen got biger", previousWidth, "->", window.innerWidth)
+      }
+      if (movedDownThroughThreshold) {
+        console.log("screen got smaller", previousWidth, "->", window.innerWidth)
+        navbar.classList.add("ourNavList")
+      }
+    
+      previousWidth = window.innerWidth;
+    }
+
 
 });

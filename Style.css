@@ -6,7 +6,7 @@ html{
 .ourhorizontal-list {
 	list-style: none; 
 	padding: 0; 
-	margin: 0; 
+	margin: 1px; 
 	display: flex; 
 	justify-content: center;
 	align-items: center;
@@ -34,8 +34,10 @@ body{
 	margin-right: 0px; 
 }
 
+
+
 .ourNavBar {
-	position: fixed;
+	position: fixed !important;
 	top: 0;
 	left: 0;
 	display: flex;
@@ -43,7 +45,7 @@ body{
 	text-align: center;
 	background-color:rgb(222, 233, 242,.0); 
 	padding: 10px;
-	padding-bottom: 0px;
+	padding-bottom: 1px;
 	width: 100%;
 	justify-content: center;
 	z-index:10;
@@ -64,6 +66,23 @@ body{
 	border-right: 1px solid #737373;
 	z-index: 0;
 }
+.ourNavList{
+	gap: 15px;
+	padding-top: 10px;
+	background-color: #070707;
+	border-radius: 5px;
+	border-style: solid;
+	border-color: #737373;
+	border-width: 3px;
+}
+.ourNavList a{
+	display: inline-block;
+	width: 200px;
+	border-left: 0px solid #737373;
+	border-right: 0px solid #737373;
+	z-index: 0;
+}
+
 
 .content {
 	padding: 20px;
