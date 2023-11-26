@@ -50,6 +50,8 @@ body{
 	justify-content: center;
 	z-index:10;
 	transition: 0.2s;
+	
+	
 }
 
 .ourNavBar a:hover {
@@ -70,7 +72,7 @@ body{
 	gap: 15px;
 	padding-top: 10px;
 	background-color: #070707;
-	border-radius: 5px;
+	border-radius: 0px;
 	border-style: solid;
 	border-color: #737373;
 	border-width: 3px;

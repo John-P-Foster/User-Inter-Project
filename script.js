@@ -553,14 +553,14 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    var thresholdWidth = 990;
+    var thresholdWidth = 1200;
     var previousWidth = window.innerWidth;
     window.onresize = function() {
     
         let navbar = document.getElementById("ourNavList");
-      var movedUpThroughThreshold = previousWidth < thresholdWidth &&
+        var movedUpThroughThreshold = previousWidth < thresholdWidth &&
         window.innerWidth >= thresholdWidth;
-      var movedDownThroughThreshold = previousWidth >= thresholdWidth &&
+        var movedDownThroughThreshold = previousWidth >= thresholdWidth &&
         window.innerWidth <= thresholdWidth;
     
       if (movedUpThroughThreshold ) {
