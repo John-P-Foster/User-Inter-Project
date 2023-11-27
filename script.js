@@ -272,6 +272,18 @@ document.addEventListener("DOMContentLoaded", function () {
         let workExNav = document.getElementById("workExNav");
         workExNav.classList.add('incomplete');
         workExNav.classList.remove('complete');
+
+        let validations = document.querySelectorAll(".was-validated");
+
+        Array.from(validations).forEach(validation => {
+            validation.classList.remove('was-validated');
+               
+        });
+
+        let incorrects = document.querySelectorAll('.is-incorrect');
+        Array.from(incorrects).forEach(incorrect => {
+            incorrect.classList.remove('is-incorrect');
+        });
         
         window["nameValidBool"] = false;
 
@@ -468,8 +480,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
        
     }
-
-
 
 
         // Listens to changes and updates the progress bar at the top.
