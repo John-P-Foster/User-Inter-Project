@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const regPhone = /^\d\d\d-\d\d\d-\d\d\d\d$/;
     const regEmail = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
     
-
+ /* testing*/
     //start checks for General info section
     var nameValidBool = false;
     checkInput("firstName","nameValid","nameValidBool");
