@@ -90,6 +90,26 @@ document.addEventListener("DOMContentLoaded", function () {
         input.addEventListener('input',function(e){ validateInput(e,BooleanName,controlForm)});
     }
 
+    function checkInput2(){
+        let inputs = document.querySelectorAll("inputNeedsValidation")
+
+        Array.from(inputs).forEach(input => {
+            input.addEventListener('input', event => {
+            if (event.target.value.length <= 1) {
+                input.classList.remove('was-validated')
+                input.classList.add('is-incorrect')
+                
+                
+            }
+            else{
+                input.classList.add('was-validated')
+                input.classList.remove('is-incorrect')
+           
+            }
+        }, false)
+        })
+    }
+
     function checkRegXInput(inputId,controlFormId,BooleanName,kind,regX){
         var input = document.getElementById(inputId);
         var controlForm = document.getElementById(controlFormId);
@@ -119,6 +139,8 @@ document.addEventListener("DOMContentLoaded", function () {
         var controlForm = document.getElementById(controlFormId);
         input.addEventListener(kind,function(e){validateSelectionWithSubsection(e,BooleanName,controlForm,subInputID,subControlID,subBoolean)})
     }
+
+
 
     function validateInput(e,valueBool,inputVaild){
         if(e.target.value.length > 1){
@@ -451,23 +473,17 @@ document.addEventListener("DOMContentLoaded", function () {
                 form.classList.remove('is-incorrect')
            
             }
-            let newEntry = document.getElementById("workExperienceContainer")
-            let correctFields = newEntry.querySelectorAll(".was-validated");
-            let count = 0;
-            correctFields.forEach(function (input) {
-                count ++;
-                console.log("Plus" + count);
-            });
-            completedWorkEx = count;
         }, false)
         })
     }
 
     var workEPForms = 13;
-    var completedWorkEx = 0;
+
     function checkWorkExSection(){
         let workExNav = document.getElementById("workExNav");
-        if(workEPForms == completedWorkEx)
+        let newEntry = document.getElementById("workExperienceContainer")
+        let correctFields = newEntry.querySelectorAll(".was-validated");
+        if(workEPForms == correctFields.length)
         {
             workExNav.classList.remove('incomplete');
             workExNav.classList.add('complete');
@@ -477,8 +493,7 @@ document.addEventListener("DOMContentLoaded", function () {
             workExNav.classList.add('incomplete');
             workExNav.classList.remove('complete');
             return false;
-        }
-       
+        } 
     }
 
 
