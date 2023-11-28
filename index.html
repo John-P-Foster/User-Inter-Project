@@ -567,56 +567,105 @@
 
                 <div class="container mt-4">
                     <h2>References</h2>
-                    <table class="table table-bordered" id="referenceTable">
-                        <thead class="thead-dark">
-                            <tr>
-                                <th>Name</th>
-                                <th>Title</th>
-                                <th>Company</th>
-                                <th>Phone</th>
-                                <th>Email</th>
-                                <th>Description</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <!-- Initial row -->
-                            <tr>
-                                <td class="align-middle"><input type="text" class="form-control mx-auto"></td>
-                                <td class="align-middle"><input type="text" class="form-control mx-auto"></td>
-                                <td class="align-middle"><input type="text" class="form-control mx-auto"></td>
-                                <td class="align-middle"><input type="text" class="form-control mx-auto"></td>
-                                <td class="align-middle"><input type="email" class="form-control mx-auto"></td>
-                                <td class="align-middle"><textarea style="resize:none" class="form-control mx-auto"></textarea></td>
-                            </tr>
-                        </tbody>
-                    </table>
 
-                    <button type="button" class="btn btn-primary" id="addRow">Add Row</button>
+                    <!-- Container for Reference Entries -->
+                    <div id="referenceContainer">
+                        <!-- Initial Reference Entry -->
+                        <div class="reference-entry row">
+                            <div class="col-md-4">
+                                <div class="form-floating mb-3">
+                                    <input type="text" class="form-control" name="name" placeholder="Name">
+                                    <label for="name">Name</label>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-floating mb-3">
+                                    <input type="text" class="form-control" name="title" placeholder="Title">
+                                    <label for="title">Title</label>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-floating mb-3">
+                                    <input type="text" class="form-control" name="company" placeholder="Company">
+                                    <label for="company">Company</label>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-floating mb-3">
+                                    <input type="text" class="form-control" name="phone" placeholder="Phone" oninput="maskPhoneNumber(this)">
+                                    <label for="phone">Phone</label>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-floating mb-3">
+                                    <input type="email" class="form-control" name="email" placeholder="Email">
+                                    <label for="email">Email</label>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-floating mb-3">
+                                    <textarea class="form-control" name="description" placeholder="Description" style="resize:none"></textarea>
+                                    <label for="description">Description</label>
+                                </div>
+                            </div>
+                        </div>
+                        <hr> <!-- Separator -->
+                    </div>
+
+                    <button type="button" class="btn btn-primary" id="addReference">Add Reference</button>
                 </div>
 
                 <script>
-                    // Add row dynamically
-                    document.getElementById('addRow').addEventListener('click', function () {
-                        var table = document.getElementById('referenceTable').getElementsByTagName('tbody')[0];
-                        var newRow = table.insertRow(table.rows.length);
+                    // Add reference entry dynamically
+                    document.getElementById('addReference').addEventListener('click', function () {
+                        var referenceContainer = document.getElementById('referenceContainer');
 
-                        var cell1 = newRow.insertCell(0);
-                        var cell2 = newRow.insertCell(1);
-                        var cell3 = newRow.insertCell(2);
-                        var cell4 = newRow.insertCell(3);
-                        var cell5 = newRow.insertCell(4);
-                        var cell6 = newRow.insertCell(5);
+                        var newReferenceEntry = document.createElement('div');
+                        newReferenceEntry.classList.add('reference-entry', 'row');
 
-                        cell1.innerHTML = '<input type="text" class="form-control" name="name[]">';
-                        cell2.innerHTML = '<input type="text" class="form-control" name="title[]">';
-                        cell3.innerHTML = '<input type="text" class="form-control" name="company[]">';
-                        cell4.innerHTML = '<input type="text" class="form-control" name="phone[]">';
-                        cell5.innerHTML = '<input type="email" class="form-control" name="email[]">';
-                        cell6.innerHTML = '<textarea style ="resize:none" class="form-control" name="description[]"></textarea>';
+                        newReferenceEntry.innerHTML = `
+                            <div class="col-md-4">
+                                <div class="form-floating mb-3">
+                                    <input type="text" class="form-control" name="name" placeholder="Name">
+                                    <label for="name">Name</label>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-floating mb-3">
+                                    <input type="text" class="form-control" name="title" placeholder="Title">
+                                    <label for="title">Title</label>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-floating mb-3">
+                                    <input type="text" class="form-control" name="company" placeholder="Company">
+                                    <label for="company">Company</label>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-floating mb-3">
+                                    <input type="text" class="form-control" name="phone" placeholder="Phone" oninput="maskPhoneNumber(this)">
+                                    <label for="phone">Phone</label>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-floating mb-3">
+                                    <input type="email" class="form-control" name="email" placeholder="Email">
+                                    <label for="email">Email</label>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-floating mb-3">
+                                    <textarea class="form-control" name="description" placeholder="Description" style="resize:none"></textarea>
+                                    <label for="description">Description</label>
+                                </div>
+                            </div>
+                        `;
+
+                        referenceContainer.appendChild(newReferenceEntry);
+                        referenceContainer.appendChild(document.createElement('hr')); // Add separator
                     });
                 </script>
-
-                <!-- End References-->
 
 
                 <p id="education" class="jumpTo"></p> <!-- Start Education-->

@@ -282,7 +282,7 @@ document.addEventListener("DOMContentLoaded", function () {
         inputFields.forEach(function (input) {
             input.value = "";
         });
-        
+
         var editFields = newEntry.querySelectorAll(".was-validated");
         editFields.forEach(function (input) {
             input.classList.remove("was-validated");
@@ -354,6 +354,50 @@ document.addEventListener("DOMContentLoaded", function () {
     
       previousWidth = window.innerWidth;
     }
+
+    //Masking Functions
+
+function maskNumeric(input) {
+    // Remove non-numeric characters using regex
+    input.value = input.value.replace(/[^0-9]/g, '');
+}
+function maskSSN(input) {
+    // Remove non-numeric characters using regex
+    var cleanedInput = input.value.replace(/\D/g, '');
+
+    // Apply SSN format (XXX-XX-XXXX)
+    if (cleanedInput.length > 5) {
+        cleanedInput = cleanedInput.substring(0, 3) + '-' + cleanedInput.substring(3, 5) + '-' + cleanedInput.substring(5, 9);
+    } else if (cleanedInput.length > 3) {
+        cleanedInput = cleanedInput.substring(0, 3) + '-' + cleanedInput.substring(3, 5);
+    }
+
+    // Update the input value
+    input.value = cleanedInput;
+
+}
+function maskPhoneNumber(input) {
+    // Remove non-numeric characters using regex
+    var cleanedInput = input.value.replace(/\D/g, '');
+
+    // Apply phone number format (XXX) XXX-XXXX
+    if (cleanedInput.length >= 10) {
+        cleanedInput = '(' + cleanedInput.substring(0, 3) + ') ' + cleanedInput.substring(3, 6) + '-' + cleanedInput.substring(6, 10);
+    } 
+
+    // Update the input value
+    input.value = cleanedInput;
+}
+function maskZipCode(input) {
+    // Remove non-numeric characters using regex
+    var cleanedInput = input.value.replace(/\D/g, '');
+
+    // Enforce 5-digit limit
+    cleanedInput = cleanedInput.substring(0, 5);
+
+    // Update the input value
+    input.value = cleanedInput;
+}
 
 
 });
