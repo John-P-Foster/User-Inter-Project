@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const regPhone = /^\d\d\d-\d\d\d-\d\d\d\d$/;
     const regEmail = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
     
- /* testing*/
+    /* 
     //start checks for General info section
     var nameValidBool = false;
     checkInput("firstName","nameValid","nameValidBool");
@@ -81,63 +81,166 @@ document.addEventListener("DOMContentLoaded", function () {
     //end checks for Job Specifications info section
 
 
+*/
+    var firedFromJobValidBool = false;
+    var firedFromJobDescriptionValidBool = true;
+    checkSelectionWithSubsection("firedFromJob","firedFromJobValid","firedFromJobDescription","firedFromJobDescriptionValid","change");
 
-
+    var felonyConvictionValidBool = false;
+    var FelonyDiscritptionValidBool = true;
+    checkSelectionWithSubsection("felonyConviction","felonyConvictionValid","FelonyDiscritption","FelonyDiscritptionValid","change");
+    //end checks for General info section
     
-    function checkInput(inputId,controlFormId,BooleanName){
+   /* function checkInput(inputId,controlFormId,BooleanName){
         var input = document.getElementById(inputId);
         var controlForm = document.getElementById(controlFormId);
         input.addEventListener('input',function(e){ validateInput(e,BooleanName,controlForm)});
     }
-
-    function checkInput2(){
-        let inputs = document.querySelectorAll("inputNeedsValidation")
-
+    */
+    function checkInput(){
+        let inputs = document.querySelectorAll(".inputNeedsValidation")
+        
         Array.from(inputs).forEach(input => {
             input.addEventListener('input', event => {
-            if (event.target.value.length <= 1) {
-                input.classList.remove('was-validated')
-                input.classList.add('is-incorrect')
                 
-                
-            }
-            else{
-                input.classList.add('was-validated')
-                input.classList.remove('is-incorrect')
-           
-            }
-        }, false)
+                if (event.target.value.length <= 1) {
+                    input.classList.remove('was-validated')
+                    input.classList.add('is-incorrect')
+                }
+                else{
+                    input.classList.add('was-validated')
+                    input.classList.remove('is-incorrect')
+                }
+            })
         })
     }
+    checkInput();
 
+    /*
     function checkRegXInput(inputId,controlFormId,BooleanName,kind,regX){
         var input = document.getElementById(inputId);
         var controlForm = document.getElementById(controlFormId);
         input.addEventListener(kind,function(e){validateReg(e,BooleanName,controlForm,regX)})
     }
+    */
+    function checkRegXInput(regXitem, regX){
+        let inputs = document.querySelectorAll(regXitem)
+        
+        Array.from(inputs).forEach(input => {
+            input.addEventListener('input', e => {
+                
+                if( regX.test(e.target.value)){
+                    input.classList.add('was-validated');
+                    input.classList.remove('is-incorrect');
+                }
+                else if(e.target.value.length > 1){
+                    input.classList.remove('was-validated');
+                    input.classList.add('is-incorrect');
+                }
+            })
+        })
+    }
+    checkRegXInput(".ssnNeedsValidation", regSSN);
+    checkRegXInput(".zipNeedsValidation", regZIP);
+    checkRegXInput(".phoneNeedsValidation", regPhone);
+    checkRegXInput(".emailNeedsValidation", regEmail);
 
+
+    /*
     function checkSelection(inputId,controlFormId,BooleanName,kind){
         var input = document.getElementById(inputId);
         var controlForm = document.getElementById(controlFormId);
         input.addEventListener(kind,function(e){validateSelection(e,BooleanName,controlForm)})
     }
+    */
+    function checkSelection(){
+        let inputs = document.querySelectorAll(".selectionNeedsValidation")
+        console.log("check selection");
+        Array.from(inputs).forEach(input => {
+            input.addEventListener('change', event => {
+                
+                if(event.target.value != ""){
+                    input.classList.add('was-validated');
+                    input.classList.remove('is-incorrect');
+                    
+                }
+                else{
+                    input.classList.remove('was-validated');
+                    input.classList.add('is-incorrect');
+                    
+                }
+            })
+        })
+    }
+    checkSelection();
 
+    /*
     function checkDate(inputId,controlFormId,BooleanName,kind){
         var input = document.getElementById(inputId);
         var controlForm = document.getElementById(controlFormId);
         input.addEventListener(kind,function(e){validateDate(e,BooleanName,controlForm)})
     }
+    */
+    function checkDate(){
+        let inputs = document.querySelectorAll(".dateNeedsValidation")
 
+        Array.from(inputs).forEach(input => {
+            input.addEventListener('change', e => {
+                
+                let today = new Date();
+                let dd = String(today.getDate()).padStart(2, '0');
+                let mm = String(today.getMonth() + 1).padStart(2, '0');
+                let yyyy = today.getFullYear();
+                today = yyyy + '-' + mm + '-' + dd;
+        
+                if(e.target.value > today ){
+                    input.classList.add('was-validated');
+                    input.classList.remove('is-incorrect');
+                }
+                else{
+                    input.classList.remove('was-validated');
+                    input.classList.add('is-incorrect');
+                }
+            })
+        })
+    }
+    checkDate();
+
+    /*
     function checkDateMonth(inputId,controlFormId,BooleanName,kind){
         var input = document.getElementById(inputId);
         var controlForm = document.getElementById(controlFormId);
         input.addEventListener(kind,function(e){validateDateMonth(e,BooleanName,controlForm)})
     }
+    */
+    function checkDateMonth(){
+        let inputs = document.querySelectorAll(".dateNeedsValidation")
+        
+        Array.from(inputs).forEach(input => {
+            input.addEventListener('change', e => {
+                
+                let today = new Date();
+                let mm = String(today.getMonth() + 1).padStart(2, '0');
+                let yyyy = today.getFullYear();
+                today = yyyy + '-' + mm;
+        
+                if(e.target.value < today ){
+                    input.classList.add('was-validated');
+                    input.classList.remove('is-incorrect');
+                }
+                else{
+                    input.classList.remove('was-validated');
+                    input.classList.add('is-incorrect');
+                }
+            })
+        })
+    }
+    checkDateMonth();
 
-    function checkSelectionWithSubsection(inputId,controlFormId,BooleanName,subInputID,subControlID,subBoolean,kind){
+    function checkSelectionWithSubsection(inputId,controlFormId,subInputID,subControlID,kind){
         var input = document.getElementById(inputId);
         var controlForm = document.getElementById(controlFormId);
-        input.addEventListener(kind,function(e){validateSelectionWithSubsection(e,BooleanName,controlForm,subInputID,subControlID,subBoolean)})
+        input.addEventListener(kind,function(e){validateSelectionWithSubsection(e,controlForm,subInputID,subControlID)})
     }
 
 
@@ -168,13 +271,13 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    function validateSelectionWithSubsection(e,valueBool,inputVaild, subInputID,subControlID,subBoolean){
+    function validateSelectionWithSubsection(e,inputVaild, subInputID,subControlID){
         let input = document.getElementById(subInputID);
         let formControl = document.getElementById(subControlID)
         if(e.target.value != ""){
             inputVaild.classList.add('was-validated');
             inputVaild.classList.remove('is-incorrect');
-            window[valueBool] = true;
+           
         }
         else{
             inputVaild.classList.remove('was-validated');
@@ -182,7 +285,7 @@ document.addEventListener("DOMContentLoaded", function () {
             window[valueBool] = false;
         }
         if(e.target.value === "Yes"){
-            window[subBoolean] = false;
+            
             //input.removeAttribute("disabled");
 
 
@@ -199,11 +302,11 @@ document.addEventListener("DOMContentLoaded", function () {
             text = document.createTextNode(" Please describe all situations here. (include dates)");
             newLabel.appendChild(text);
             formControl.appendChild(newLabel);
+            formControl.classList.add("inputNeedsValidation")
             
-            checkInput(subInputID,subControlID,subBoolean);   
+            checkInput();   
         }
         else{
-            window[subBoolean] = true;
             input.setAttribute("disabled","");
             input.value = "";
             let label = document.getElementById("label"+subInputID);

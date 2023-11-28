@@ -84,7 +84,7 @@
                             </div>
                         </div>
                         <div class="col-md-4">
-                            <div class="form-floating mb-3" id="SSNValid">
+                            <div class="form-floating mb-3 ssnNeedsValidation" id="SSNValid">
                                 <input type="text" class="form-control" id="SSN" name="SSN" placeholder="Social Security Number" required>
                                 <label for="SSN">SSN # <span class="exampleText"> (XXX-XX-XXXX)</span></label>
                             </div>
@@ -93,21 +93,21 @@
                     <!-- start contact information section-->
                     <div class="row">
                         <div class="col-md">
-                            <div class="form-floating mb-3" id="phoneValid">
+                            <div class="form-floating mb-3 phoneNeedsValidation" id="phoneValid">
                                 <input type="text" class="form-control" id="phoneNumber" name="phoneNUmber" placeholder="(XXX) - XXX - XXXX" required>
                                 <label for="phoneNumber">Phone Number <span class="exampleText"> (xxx-xxx-xxxx)</span></label>
                             </div>
                         </div>
 
                         <div class="col-md">
-                            <div class="form-floating mb-3" id="altPhoneValid">
+                            <div class="form-floating mb-3 phoneNeedsValidation" id="altPhoneValid">
                                 <input type="text" class="form-control" id="altPhoneNumber" name="altPhoneNUmber" placeholder="(XXX) - XXX - XXXX">
                                 <label for="altPhoneNumber">Alt Phone Number <span class="exampleText"> ( *optional)</span></label>
                             </div>
                         </div>
 
                         <div class="col-md">
-                            <div class="form-floating mb-3" id="emailValid">
+                            <div class="form-floating mb-3 emailNeedsValidation" id="emailValid">
                                 <input type="email" class="form-control" id="email" name="email" placeholder="addess@provider.com" required>
                                 <label for="email">Email <span class="exampleText"> (email@provider.com)</span></label>
                             </div>
@@ -116,21 +116,21 @@
 
                     <div class="row"><!-- start address section-->
                         <div class="col-md-4" style="text-align: left;">
-                            <div class="form-floating mb-3" id="streetAddressValid">
+                            <div class="form-floating mb-3 inputNeedsValidation" id="streetAddressValid">
                                 <input type="text" class="form-control" id="streetAddress" name="streetAddress" placeholder="Street address" required>
                                 <label for="streetAddress">Current Address <span class="exampleText"> (street)</span></label>
                             </div>
                         </div>
 
                         <div class="col-md-3">
-                            <div class="form-floating mb-3" id="cityAddressValid">
+                            <div class="form-floating mb-3 inputNeedsValidation" id="cityAddressValid">
                                 <input type="text" class="form-control" id="cityAddress" name="cityAddress" placeholder="City" required>
                                 <label for="cityAddress">City</label>
                             </div>
                         </div>
 
                         <div class="col-md-3">
-                            <div class="form-floating mb-3" id="stateAddressValid">
+                            <div class="form-floating mb-3 selectionNeedsValidation" id="stateAddressValid">
                                 <select class="form-select" id="stateAddress" name="stateAddress" required>
                                     <option selected value="" disabled>State</option>
                                     <option value="AL">Alabama</option>
@@ -192,7 +192,7 @@
                         </div>
 
                         <div class="col-md-2">
-                            <div class="form-floating mb-3" id=zipAddressValid>
+                            <div class="form-floating mb-3 zipNeedsValidation" id=zipAddressValid>
                                 <input type="text" class="form-control" id="zipAddress" name="zipAddress" placeholder="ZIP" required>
                                 <label for="zipAddress">ZIP <span class="exampleText"> (xxxxx)</span></label>
                             </div>
@@ -208,7 +208,7 @@
                                     </span>
                                 </label>
                             </div>
-                            <div class="col-md-4 from-floating" id="moveInDateValid" style="padding-right: 5px; margin-top: 5px;">
+                            <div class="col-md-4 from-floating dateNeedsValidation" id="moveInDateValid" style="padding-right: 5px; margin-top: 5px;">
                                 <input type="month" class="form-control" style="padding-top: 15px;" id="moveInDate" name="moveInDate" required>
                             </div>
                         </div>
@@ -224,7 +224,7 @@
                                 </label>
                             </div>
                             <div class="col-md-4" style="padding-right: 5px;">
-                                <div class="form-floating" id="over18Valid">
+                                <div class="form-floating selectionNeedsValidation" id="over18Valid">
                                     <select class="form-select" id="over18" name="over18"required>
                                         <option selected value="" disabled> </option>
                                         <option value="Yes">Yes</option>
@@ -246,7 +246,7 @@
                                 </label>
                             </div>
                             <div class="col-md-4" style="padding-right: 5px;">
-                                <div class="form-floating" id="militaryServiceValid">
+                                <div class="form-floating selectionNeedsValidation" id="militaryServiceValid">
                                     <select class="form-select" id="militaryService" name="militaryService" required>
                                         <option selected value="" disabled></option>
                                         <option value="Yes">Yes</option>
@@ -327,7 +327,7 @@
                     <div class="row">
                         <!-- start position  section-->
                         <div class="col-md-12">
-                            <div class="form-floating mb-3" id="positionApplyingValid">
+                            <div class="form-floating mb-3 inputNeedsValidation" id="positionApplyingValid">
                                 <input type="text" class="form-control" id="positionApplying" name="positionApplying" placeholder="position" required>
                                 <label for="positionApplying" style="display: inline-block;margin-left: 100px;">What position are you applying for? <span class="exampleText"> (ex. Junior Developer)</span></label>
                             </div>
@@ -345,7 +345,7 @@
                                 </label>
                             </div>
                             <div class="col-md-4">
-                                <div class="form-floating" id="salaryDesiredValid">
+                                <div class="form-floating selectionNeedsValidation" id="salaryDesiredValid">
                                     <select class="form-select" id="salaryDesired" name="salaryDesired" required>
                                         <option selected value="" disabled></option>
                                         <option value="$30 - $40K">$30 - $40K</option>
@@ -378,7 +378,7 @@
                                 </label>
                             </div>
                             <div class="col-md-4" style="padding-right: 5px;">
-                                <div class="form-floating" id="employmentTypeValid">
+                                <div class="form-floating selectionNeedsValidation" id="employmentTypeValid">
                                     <select class="form-select" id="employmentType" name="employmentType" required>
                                         <option selected value=""disabled></option>
                                         <option value="Full Time">Full Time</option>
@@ -402,7 +402,7 @@
                                 </label>
                             </div>
                             <div class="col-md-4">
-                                <div class="form-floating" id="requirementsExplainedValid">
+                                <div class="form-floating selectionNeedsValidation" id="requirementsExplainedValid">
                                     <select class="form-select" id="requirementsExplained" name="requirementsExplained" required>
                                         <option selected value="" disabled></option>
                                         <option value="Yes">Yes</option>
@@ -425,7 +425,7 @@
                                 </label>
                             </div>
                             <div class="col-md-4" style="padding-right: 5px;">
-                                <div class="form-floating" id="meetRequirementsValid">
+                                <div class="form-floating selectionNeedsValidation" id="meetRequirementsValid">
                                     <select class="form-select" id="meetRequirements" name="meetRequirements" required>
                                         <option selected value="" disabled></option>
                                         <option value="Yes">Yes</option>
@@ -499,7 +499,7 @@
                                 </label>
                             </div>
                             <div class="col-md-4" style="padding-right: 5px;">
-                                <div class="form-floating" id="hoursPerWeekValid">
+                                <div class="form-floating selectionNeedsValidation" id="hoursPerWeekValid">
                                     <select class="form-select" id="hoursPerWeek" name="hoursPerWeek" required>
                                         <option selected value="" disabled></option>
                                         <option value="0 - 5hrs">0 - 5hrs</option>
@@ -532,7 +532,7 @@
                                 </label>
                             </div>
                             <div class="col-md-4" style="padding-right: 5px;">
-                                <div class="form-floating" id="workNightsValid">
+                                <div class="form-floating selectionNeedsValidation" id="workNightsValid">
                                     <select class="form-select" id="workNights" name="workNights" required>
                                         <option selected value="" disabled></option>
                                         <option value="Yes">Yes</option>
@@ -554,7 +554,7 @@
                                     </span>
                                 </label>
                             </div>
-                            <div  class="col-md-4 from-floating" id="startDateValid" style="padding-right: 5px; margin-top: 5px;">
+                            <div  class="col-md-4 from-floating dateNeedsValidation" id="startDateValid" style="padding-right: 5px; margin-top: 5px;">
                                 <input type="date" class="form-control" style="padding-top: 15px; padding-bottom: 15px;" id="startDate" name="startDate" required>
                             </div>
                         </div>
