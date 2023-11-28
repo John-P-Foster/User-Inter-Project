@@ -70,7 +70,7 @@
                 </div><!--End header-->
 
                 <!-- start General Infromation section-->
-                <div class="generalInfoSection">
+                <div class="generalInfoSection" id="generalInfoSection">
                     <h1 id="general" class="jumpTo" style="margin-top: 0px; padding-bottom: 20px;"></h1>
                     <h2>General Information</h2>
                     <br>
@@ -208,7 +208,7 @@
                                     </span>
                                 </label>
                             </div>
-                            <div class="col-md-4 from-floating dateNeedsValidation" id="moveInDateValid" style="padding-right: 5px; margin-top: 5px;">
+                            <div class="col-md-4 from-floating monthNeedsValidation" id="moveInDateValid" style="padding-right: 5px; margin-top: 5px;">
                                 <input type="month" class="form-control" style="padding-top: 15px;" id="moveInDate" name="moveInDate" required>
                             </div>
                         </div>
@@ -318,7 +318,7 @@
 
                 </div><!-- End General info section-->
 
-                <div class="jobSpecifications sections">
+                <div class="jobSpecifications" id="jobSpecificationsSection">
                     <!--Begin Job Specifications section-->
 
                     <p id="Expectations" class="jumpTo"></p>
@@ -629,19 +629,19 @@
                         <!-- Initial School Entry -->
                         <div class="school-entry row">
                             <div class="col-md-4">
-                                <div class="form-floating mb-3 degree-needs-validation">
+                                <div class="form-floating mb-3 inputNeedsValidation">
                                     <input type="text" class="form-control" name="degree" placeholder="Degree/Diploma" required>
                                     <label for="degree">Degree/Diploma</label>
                                 </div>
                             </div>
                             <div class="col-md-4">
-                                <div class="form-floating mb-3 degree-needs-validation">
+                                <div class="form-floating mb-3 inputNeedsValidation">
                                     <input type="text" class="form-control" name="school" placeholder="School" required>
                                     <label for="school">School</label>
                                 </div>
                             </div>
                             <div class="col-md-4">
-                                <div class="form-floating mb-3 degree-needs-validation">
+                                <div class="form-floating mb-3 inputNeedsValidation">
                                     <input type="text" class="form-control" name="location" placeholder="Location" required>
                                     <label for="location">Location</label>
                                 </div>
@@ -665,22 +665,22 @@
                 
                 <!--End Education-->
 
-                <p id="experience" class="jumpTo"></p>
 
+                <!-- Initial Work Experience Entry -->
+                <p id="experience" class="jumpTo"></p>
                 <h2>Work Experience</h2><br>
                 <div class="row">
                     <p>Please list work experience for the last five years starting with your most recent job</p>
                 </div>
                 <div id="workExperienceContainer">
-                    <!-- Initial Work Experience Entry -->
                     <div class="work-experience-entry">
                         <div class="row">
-                            <div class="col-md-3 from-floating workNeedsValidation" style="padding-right: 5px; margin-top: 5px;">
+                            <div class="col-md-3 from-floating monthNeedsValidation" style="padding-right: 5px; margin-top: 5px;">
                                 <label style="text-align: left;">Start Date
                                     <input type="month" class="form-control" style="margin-bottom: 15px;" id="startDate" name="moveInDate" required>
                                 </label>
                             </div>
-                            <div class="col-md-3 from-floating workNeedsValidation" style="padding-right: 5px; margin-top: 5px;">
+                            <div class="col-md-3 from-floating monthNeedsValidation" style="padding-right: 5px; margin-top: 5px;">
                                 <label  style="text-align: left;">End Date
                                 <input type="month" class="form-control" style="margin-bottom: 15px;" id="endDate" name="moveInDate" required>
                                 </label>
@@ -688,19 +688,19 @@
                         </div>
                         <div class="row">
                             <div class="col-md">
-                                <div class="form-floating mb-4 workNeedsValidation">
+                                <div class="form-floating mb-4 inputNeedsValidation">
                                     <input type="text" class="form-control" name="employerName" placeholder="placeholder" required>
                                     <label for="employerName">Company Name</label>
                                 </div>
                             </div>
                             <div class="col-md">
-                                <div class="form-floating mb-4 workNeedsValidation">
+                                <div class="form-floating mb-4 inputNeedsValidation">
                                     <input type="text" class="form-control" name="lastJobTitle" placeholder="placeholder" required>
                                     <label for="lastJobTitle">Your Last Job Title Held</label>
                                 </div>
                             </div>
                             <div class="col-md">
-                                <div class="form-floating mb-4 workNeedsValidation">
+                                <div class="form-floating mb-4 inputNeedsValidation">
                                     <input type="text" class="form-control" name="lastSupervisor" placeholder="placeholder" required>
                                     <label for="lastSupervisor">Last Supervisor Name</label>
                                 </div>
@@ -708,13 +708,13 @@
                         </div>
                         <div class="row">
                             <div class="col-md-6">
-                                <div class="form-floating mb-3 workNeedsValidation" id="CompPhoneValid">
+                                <div class="form-floating mb-3 phoneNeedsValidation" id="CompPhoneValid">
                                     <input type="text" class="form-control" id="compPhoneNumber" name="compPhoneNUmber" placeholder="(XXX) - XXX - XXXX" required>
                                     <label for="phoneNumber">Phone Number <span class="exampleText"> (xxx-xxx-xxxx)</span></label>
                                 </div>
                             </div>
                             <div class="col-md-6">
-                                <div class="form-floating mb-3 workNeedsValidation">
+                                <div class="form-floating mb-3 emailNeedsValidation">
                                     <input type="email" class="form-control" name="emailAddress" placeholder="placeholder" required>
                                     <label for="emailAddress">Company Email Address</label>
                                 </div>
@@ -723,19 +723,19 @@
                         </div>
                         <div class="row">
                             <div class="col-md-4">
-                                <div class="form-floating mb-3 workNeedsValidation">
+                                <div class="form-floating mb-3 inputNeedsValidation">
                                     <input type="text" class="form-control" name="employerAddress" placeholder="placeholder" required>
                                     <label for="employerAddress">Company Address <span class="exampleText"> (street)</span> </label>
                                 </div>
                             </div>
                             <div class="col-md-3">
-                                <div class="form-floating mb-3 workNeedsValidation">
+                                <div class="form-floating mb-3 inputNeedsValidation">
                                     <input type="text" class="form-control" name="employerCity" placeholder="placeholder" required>
                                     <label for="employerCity">City</label>
                                 </div>
                             </div>
                             <div class="col-md-3">
-                                <div class="form-floating mb-3 workNeedsValidation">
+                                <div class="form-floating mb-3 selectionNeedsValidation">
                                     <select class="form-control" name="employerState" placeholder="placeholder" required>
                                         <option value="" disabled selected>Select State</option>
                                             <option value="Alabama">Alabama</option>
@@ -794,20 +794,20 @@
                                 </div>
                             </div>
                             <div class="col-md-2">
-                                <div class="form-floating mb-3 workNeedsValidation">
+                                <div class="form-floating mb-3 zipNeedsValidation">
                                     <input type="text" class="form-control" name="employerZip" placeholder="placeholder" required>
                                     <label for="employerZip">ZIP Code</label>
                                 </div>
                             </div>
                         </div>
                         <div class="col-md">
-                            <div class="form-floating mb-3 workNeedsValidation">
+                            <div class="form-floating mb-3 inputNeedsValidation">
                                 <textarea class="form-control" name="dutiesSkillsAdvancements" rows="12" placeholder="placeholder" required></textarea>
                                 <label for="dutiesSkillsAdvancements">Duties, Skills, Advancements</label>
                             </div>
                         </div>
                         <div class="col-md">
-                            <div class="form-floating mb-3 workNeedsValidation">
+                            <div class="form-floating mb-3 inputNeedsValidation">
                                 <textarea class="form-control" name="reasonsForLeaving" rows="12" placeholder="placeholder" required></textarea>
                                 <label for="reasonsForLeaving">Reasons for Leaving</label>
                                 </div>

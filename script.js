@@ -6,97 +6,33 @@ document.addEventListener("DOMContentLoaded", function () {
     const regPhone = /^\d\d\d-\d\d\d-\d\d\d\d$/;
     const regEmail = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
     
-    /* 
-    //start checks for General info section
-    var nameValidBool = false;
-    checkInput("firstName","nameValid","nameValidBool");
+    //checking sections for compleations
 
-    var SSNValidBool = false;
-    checkRegXInput("SSN","SSNValid","SSNValidBool","input",regSSN);
+    var generalInfoFields = 14;
+   
+    function checkSection(numOfFields, navSectionId, sectionId){
+        let navSection = document.getElementById(navSectionId);
+        let section = document.getElementById(sectionId)
+        let correctFields = section.querySelectorAll(".was-validated");
 
-    var phoneValidBool = false;
-    checkRegXInput("phoneNumber","phoneValid","phoneValidBool","input",regPhone);
-
-    var altphoneValidBool = false;
-    checkRegXInput("altPhoneNumber","altPhoneValid","altphoneValidBool","input",regPhone);
-
-    var emailValidBool = false;
-    checkRegXInput("email","emailValid","emailValidBool","input",regEmail);
-
-    var streetAddressValidBool = false;
-    checkInput("streetAddress","streetAddressValid", "streetAddressValidBool");
-
-    var cityAddressValidBool = false;
-    checkInput("cityAddress","cityAddressValid", "cityAddressValidBool");
-
-    var stateAddressVaildBool = false;
-    checkSelection("stateAddress","stateAddressValid","stateAddressVaildBool","change");
-
-    var zipValidBool = false;
-    checkRegXInput("zipAddress","zipAddressValid","zipValidBool","input",regZIP);
-
-    var moveInDateValidBool =false;
-    checkDateMonth("moveInDate","moveInDateValid","moveInDateValidBool","change");
-
-    var over18ValidBool = false;
-    checkSelection("over18","over18Valid","over18VaildBool","change");
-
-    var militaryServiceValidBool = false;
-    checkSelection("militaryService","militaryServiceValid","militaryServiceValidBool","change");
-
-    var firedFromJobValidBool = false;
-    var firedFromJobDescriptionValidBool = true;
-    checkSelectionWithSubsection("firedFromJob","firedFromJobValid","firedFromJobValidBool","firedFromJobDescription","firedFromJobDescriptionValid","firedFromJobDescriptionValidBool","change");
-
-    var felonyConvictionValidBool = false;
-    var FelonyDiscritptionValidBool = true;
-    checkSelectionWithSubsection("felonyConviction","felonyConvictionValid","felonyConvictionValidBool","FelonyDiscritption","FelonyDiscritptionValid","FelonyDiscritptionValidBool","change");
-    //end checks for General info section
-
-    //start checks for Job Specifications
-    var positionApplyingValidBool = false;
-    checkInput("positionApplying","positionApplyingValid", "positionApplyingValidBool");
-
-    var salaryDesiredValidBool = false;
-    checkSelection("salaryDesired","salaryDesiredValid","salaryDesiredVaildBool","change");
-
-    var employmentTypeVaildBool = false;
-    checkSelection("employmentType","employmentTypeValid","employmentTypeVaildBool","change");
-
-    var requirementsExplainedVaildBool = false;
-    checkSelection("requirementsExplained","requirementsExplainedValid","requirementsExplainedVaildBool","change");
-
-    var meetRequirementsVaildBool = false;
-    checkSelection("meetRequirements","meetRequirementsValid","meetRequirementsVaildBool","change");
-
-    var hoursPerWeekVaildBool = false;
-    checkSelection("hoursPerWeek","hoursPerWeekValid","hoursPerWeekVaildBool","change");
-
-    var workNightsVaildBool = false;
-    checkSelection("workNights","workNightsValid","workNightsVaildBool","change");
-
-    var startDateValidBool =false;
-    checkDate("startDate","startDateValid","startDateValidBool","change");
-
-    //end checks for Job Specifications info section
-
-
-*/
-    var firedFromJobValidBool = false;
-    var firedFromJobDescriptionValidBool = true;
-    checkSelectionWithSubsection("firedFromJob","firedFromJobValid","firedFromJobDescription","firedFromJobDescriptionValid","change");
-
-    var felonyConvictionValidBool = false;
-    var FelonyDiscritptionValidBool = true;
-    checkSelectionWithSubsection("felonyConviction","felonyConvictionValid","FelonyDiscritption","FelonyDiscritptionValid","change");
-    //end checks for General info section
-    
-   /* function checkInput(inputId,controlFormId,BooleanName){
-        var input = document.getElementById(inputId);
-        var controlForm = document.getElementById(controlFormId);
-        input.addEventListener('input',function(e){ validateInput(e,BooleanName,controlForm)});
+        
+        if(numOfFields == correctFields.length)
+        {
+            navSection.classList.remove('incomplete');
+            navSection.classList.add('complete');
+            return true;
+        }
+     else{
+            navSection.classList.add('incomplete');
+            navSection.classList.remove('complete');
+            return false;
+        } 
     }
-    */
+
+    checkSelectionWithSubsection("firedFromJob","firedFromJobValid","firedFromJobDescription","firedFromJobDescriptionValid","change");
+    checkSelectionWithSubsection("felonyConviction","felonyConvictionValid","FelonyDiscritption","FelonyDiscritptionValid","change");
+
+    //start validation methods based on classnames
     function checkInput(){
         let inputs = document.querySelectorAll(".inputNeedsValidation")
         
@@ -116,13 +52,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     checkInput();
 
-    /*
-    function checkRegXInput(inputId,controlFormId,BooleanName,kind,regX){
-        var input = document.getElementById(inputId);
-        var controlForm = document.getElementById(controlFormId);
-        input.addEventListener(kind,function(e){validateReg(e,BooleanName,controlForm,regX)})
-    }
-    */
     function checkRegXInput(regXitem, regX){
         let inputs = document.querySelectorAll(regXitem)
         
@@ -140,19 +69,16 @@ document.addEventListener("DOMContentLoaded", function () {
             })
         })
     }
-    checkRegXInput(".ssnNeedsValidation", regSSN);
-    checkRegXInput(".zipNeedsValidation", regZIP);
-    checkRegXInput(".phoneNeedsValidation", regPhone);
-    checkRegXInput(".emailNeedsValidation", regEmail);
 
-
-    /*
-    function checkSelection(inputId,controlFormId,BooleanName,kind){
-        var input = document.getElementById(inputId);
-        var controlForm = document.getElementById(controlFormId);
-        input.addEventListener(kind,function(e){validateSelection(e,BooleanName,controlForm)})
+    function checkAllRegXInputs(){
+        checkRegXInput(".ssnNeedsValidation", regSSN);
+        checkRegXInput(".zipNeedsValidation", regZIP);
+        checkRegXInput(".phoneNeedsValidation", regPhone);
+        checkRegXInput(".emailNeedsValidation", regEmail);
     }
-    */
+    checkAllRegXInputs();
+
+
     function checkSelection(){
         let inputs = document.querySelectorAll(".selectionNeedsValidation")
         console.log("check selection");
@@ -174,13 +100,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     checkSelection();
 
-    /*
-    function checkDate(inputId,controlFormId,BooleanName,kind){
-        var input = document.getElementById(inputId);
-        var controlForm = document.getElementById(controlFormId);
-        input.addEventListener(kind,function(e){validateDate(e,BooleanName,controlForm)})
-    }
-    */
     function checkDate(){
         let inputs = document.querySelectorAll(".dateNeedsValidation")
 
@@ -206,15 +125,9 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     checkDate();
 
-    /*
-    function checkDateMonth(inputId,controlFormId,BooleanName,kind){
-        var input = document.getElementById(inputId);
-        var controlForm = document.getElementById(controlFormId);
-        input.addEventListener(kind,function(e){validateDateMonth(e,BooleanName,controlForm)})
-    }
-    */
+
     function checkDateMonth(){
-        let inputs = document.querySelectorAll(".dateNeedsValidation")
+        let inputs = document.querySelectorAll(".monthNeedsValidation")
         
         Array.from(inputs).forEach(input => {
             input.addEventListener('change', e => {
@@ -243,33 +156,6 @@ document.addEventListener("DOMContentLoaded", function () {
         input.addEventListener(kind,function(e){validateSelectionWithSubsection(e,controlForm,subInputID,subControlID)})
     }
 
-
-
-    function validateInput(e,valueBool,inputVaild){
-        if(e.target.value.length > 1){
-            inputVaild.classList.add('was-validated');
-            inputVaild.classList.remove('is-incorrect');
-            window[valueBool] = true;
-        }
-        else if(e.target.value.length == 1){
-            inputVaild.classList.remove('was-validated');
-            inputVaild.classList.add('is-incorrect');
-            window[valueBool] = false;
-        }
-    }
-
-    function validateSelection(e,valueBool,inputVaild){
-        if(e.target.value != ""){
-            inputVaild.classList.add('was-validated');
-            inputVaild.classList.remove('is-incorrect');
-            window[valueBool] = true;
-        }
-        else{
-            inputVaild.classList.remove('was-validated');
-            inputVaild.classList.add('is-incorrect');
-            window[valueBool] = false;
-        }
-    }
 
     function validateSelectionWithSubsection(e,inputVaild, subInputID,subControlID){
         let input = document.getElementById(subInputID);
@@ -303,7 +189,8 @@ document.addEventListener("DOMContentLoaded", function () {
             newLabel.appendChild(text);
             formControl.appendChild(newLabel);
             formControl.classList.add("inputNeedsValidation")
-            
+            generalInfoFields ++;
+            console.log(generalInfoFields);
             checkInput();   
         }
         else{
@@ -313,66 +200,10 @@ document.addEventListener("DOMContentLoaded", function () {
             let textArea =document.getElementById(subInputID);
             label.remove();
             textArea.remove();
+            generalInfoFields --;
         }
     }
-
-    function validateDate(e,valueBool,inputVaild){
-    
-        let today = new Date();
-        let dd = String(today.getDate()).padStart(2, '0');
-        let mm = String(today.getMonth() + 1).padStart(2, '0');
-        let yyyy = today.getFullYear();
-        today = yyyy + '-' + mm + '-' + dd;
-
-        if(e.target.value > today ){
-            inputVaild.classList.add('was-validated');
-            inputVaild.classList.remove('is-incorrect');
-            window[valueBool] = true;
-        }
-        else{
-            inputVaild.classList.remove('was-validated');
-            inputVaild.classList.add('is-incorrect');
-            window[valueBool] = false;
-        }
-    }
-
-    function validateDateMonth(e,valueBool,inputVaild){
-        let today = new Date();
-        let mm = String(today.getMonth() + 1).padStart(2, '0');
-        let yyyy = today.getFullYear();
-        today = yyyy + '-' + mm;
-
-
-        console.log(today);
-        console.log(e.target.value)
-        if(e.target.value < today ){
-            inputVaild.classList.add('was-validated');
-            inputVaild.classList.remove('is-incorrect');
-            window[valueBool] = true;
-        }
-        else{
-            inputVaild.classList.remove('was-validated');
-            inputVaild.classList.add('is-incorrect');
-            window[valueBool] = false;
-        }
-    }
-    
-    function validateReg(e,valueBool,inputVaild, regX){
- 
-        if( regX.test(e.target.value)){
-            inputVaild.classList.add('was-validated');
-            inputVaild.classList.remove('is-incorrect');
-            window[valueBool] = true;
-        }
-        else if(e.target.value.length > 1){
-            inputVaild.classList.remove('was-validated');
-            inputVaild.classList.add('is-incorrect');
-            window[valueBool] = false;
-        }
-    }
-
-    
-
+   //end validation methods based on classnames
 
     //reset button action
     document.getElementById("resetButton").addEventListener("click", function (){
@@ -409,56 +240,6 @@ document.addEventListener("DOMContentLoaded", function () {
         Array.from(incorrects).forEach(incorrect => {
             incorrect.classList.remove('is-incorrect');
         });
-        
-        window["nameValidBool"] = false;
-
-        window["SSNValidBool"] = false;
-
-        window["phoneValidBool"] = false;
-
-        window["altphoneValidBool"] = false;
-
-        window["emailValidBool"] = false;
-    
-        window["streetAddressValidBool"] = false;
-    
-        window["cityAddressValidBool"] = false;
-    
-        window["stateAddressVaildBool"] = false;
-    
-        window["zipValidBool"] = false;
-    
-        window["moveInDateValidBool"] = false;
-    
-        window["over18ValidBool"] = false;
-    
-        window["militaryServiceValidBool"] = false;
-    
-        window["firedFromJobValidBool"] = false;
-
-        window["firedFromJobDescriptionValidBool"] = false;
-    
-        window["felonyConvictionValidBool"] = false;
-
-        window["FelonyDiscritptionValidBool"] = false;
-
-        window["positionApplyingValidBool"] = false;
-    
-        window["salaryDesiredValidBool"] = false; 
-
-        window["employmentTypeVaildBool"] = false;
-    
-        window["requirementsExplainedVaildBool"] = false;
-    
-        window["meetRequirementsVaildBool"] = false;
-    
-        window["hoursPerWeekVaildBool"] = false;
-
-        window["workNightsVaildBool"] = false;
-        
-        window["startDateValidBool"] = false;
-
-
     });
 
 
@@ -507,36 +288,6 @@ document.addEventListener("DOMContentLoaded", function () {
        
     }
 
-    // Loop over them and prevent submission
-    function checkDegrees(){
-        let degrees = document.querySelectorAll(".degree-needs-validation")
-
-        Array.from(degrees).forEach(degree => {
-            degree.addEventListener('input', event => {
-            if (event.target.value.length <= 1) {
-                //degree.preventDefault()
-                //degree.stopPropagation()
-                degree.classList.remove('was-validated')
-                degree.classList.add('is-incorrect')
-                
-                
-            }
-            else{
-            degree.classList.add('was-validated')
-            degree.classList.remove('is-incorrect')
-           
-            }
-            let newEntry = document.getElementById("schoolContainer")
-            let correctFields = newEntry.querySelectorAll(".was-validated");
-            let count = 0;
-            correctFields.forEach(function (input) {
-                count ++;
-                console.log("Plus" + count);
-            });
-            completedEducation = count;
-        }, false)
-        })
-    }
 
     //start work EX sections
 
@@ -558,30 +309,8 @@ document.addEventListener("DOMContentLoaded", function () {
         workExperienceContainer.appendChild(separator);
     });
 
-    function checkWorkEx(){
-        let forms = document.querySelectorAll(".workNeedsValidation")
-
-        Array.from(forms).forEach(form => {
-            form.addEventListener('input', event => {
-            if (event.target.value.length <= 1) {
-                //degree.preventDefault()
-                //degree.stopPropagation()
-                form.classList.remove('was-validated')
-                form.classList.add('is-incorrect')
-                
-                
-            }
-            else{
-                form.classList.add('was-validated')
-                form.classList.remove('is-incorrect')
-           
-            }
-        }, false)
-        })
-    }
 
     var workEPForms = 13;
-
     function checkWorkExSection(){
         let workExNav = document.getElementById("workExNav");
         let newEntry = document.getElementById("workExperienceContainer")
@@ -607,14 +336,11 @@ document.addEventListener("DOMContentLoaded", function () {
               
                 let submitbttn = document.getElementById("submitFormBtn");
 
-                //check each sections function
-                checkDegrees();
-                checkWorkEx();
                 let generalInfoComplete = false;
-                generalInfoComplete = checkGeneralInfo();
+                generalInfoComplete = checkSection(generalInfoFields,"generalNav","generalInfoSection");
 
                 let JobSpecificationsComplete = false;
-                JobSpecificationsComplete = checkJobSpecifications();
+                JobSpecificationsComplete = checkSection(8,"jobspecificationsNav","jobSpecificationsSection");
 
                 let EducationSectionComplete = checkEducationSection();
 
@@ -636,51 +362,7 @@ document.addEventListener("DOMContentLoaded", function () {
             })
           })
 
-
-    function checkGeneralInfo(){
-        let general = document.getElementById("generalNav");
-
-        if(
-            window["nameValidBool"] & window["SSNValidBool"] 
-            & window["phoneValidBool"] & window["altphoneValidBool"]
-            &window["emailValidBool"] & window["streetAddressValidBool"] 
-            & window["cityAddressValidBool"] & window["stateAddressVaildBool"]
-            & window["zipValidBool"] & window["moveInDateValidBool"]
-            & window["over18VaildBool"] & window["militaryServiceValidBool"]
-            & window["firedFromJobValidBool"] & window["felonyConvictionValidBool"]
-            &window["FelonyDiscritptionValidBool"] & window["firedFromJobDescriptionValidBool"]){
-          
-           general.classList.remove('incomplete');
-           general.classList.add('complete');
-           return true;
-        }
-        else{
-            general.classList.add('incomplete');
-            general.classList.remove('complete');
-            return false;
-        }
-    }
-
-    function checkJobSpecifications(){
-        let jobspecNav = document.getElementById("jobspecificationsNav");
-
-        if(
-            window["positionApplyingValidBool"] & window["salaryDesiredVaildBool"]
-            & window["employmentTypeVaildBool"] & window["requirementsExplainedVaildBool"]
-            & window["meetRequirementsVaildBool"] & window["hoursPerWeekVaildBool"]
-            & window["workNightsVaildBool"] & window["startDateValidBool"]){
-          
-                jobspecNav.classList.remove('incomplete');
-                jobspecNav.classList.add('complete');
-                return true;
-        }
-        else{
-            jobspecNav.classList.add('incomplete');
-            jobspecNav.classList.remove('complete');
-            return false;
-        }
-    }
-
+    //Sets navbar collapse on screen adjust
     var thresholdWidth = 1200;
     var previousWidth = window.innerWidth;
     window.onresize = function() {
