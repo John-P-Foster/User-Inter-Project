@@ -282,6 +282,12 @@ document.addEventListener("DOMContentLoaded", function () {
         inputFields.forEach(function (input) {
             input.value = "";
         });
+        
+        var editFields = newEntry.querySelectorAll(".was-validated");
+        editFields.forEach(function (input) {
+            input.classList.remove("was-validated");
+            input.classList.add("is-incorrect");
+        });
 
         // Append the new entry to the container
         var workExperienceContainer = document.getElementById("workExperienceContainer");
