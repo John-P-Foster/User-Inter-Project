@@ -9,6 +9,8 @@ document.addEventListener("DOMContentLoaded", function () {
     //checking sections for compleations
 
     var generalInfoFields = 14;
+    var educationFields = 3;
+    var workExperienceFields = 13;
    
     function checkSection(numOfFields, navSectionId, sectionId){
         let navSection = document.getElementById(navSectionId);
@@ -310,25 +312,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 
-    var workEPForms = 13;
-    function checkWorkExSection(){
-        let workExNav = document.getElementById("workExNav");
-        let newEntry = document.getElementById("workExperienceContainer")
-        let correctFields = newEntry.querySelectorAll(".was-validated");
-        if(workEPForms == correctFields.length)
-        {
-            workExNav.classList.remove('incomplete');
-            workExNav.classList.add('complete');
-            return true;
-        }
-     else{
-            workExNav.classList.add('incomplete');
-            workExNav.classList.remove('complete');
-            return false;
-        } 
-    }
-
-
         // Listens to changes and updates the progress bar at the top.
         ['keyup', 'change'].forEach((type) => {
             
@@ -336,20 +319,18 @@ document.addEventListener("DOMContentLoaded", function () {
               
                 let submitbttn = document.getElementById("submitFormBtn");
 
-                let generalInfoComplete = false;
-                generalInfoComplete = checkSection(generalInfoFields,"generalNav","generalInfoSection");
+                let generalInfoComplete = checkSection(generalInfoFields,"generalNav","generalInfoSection");
 
-                let JobSpecificationsComplete = false;
-                JobSpecificationsComplete = checkSection(8,"jobspecificationsNav","jobSpecificationsSection");
+                let JobSpecificationsComplete = checkSection(8,"jobspecificationsNav","jobSpecificationsSection");
 
-                let EducationSectionComplete = checkEducationSection();
+                let eductionSectionComplete = checkSection(educationFields,"educationNav","schoolContainer")
 
-                let checkWorkExSectinComplete = checkWorkExSection();
+                let WorkExSectinComplete = checkSection(workExperienceFields,"workExNav","workExperienceContainer");
+
                 
-     
-
+                
             // If all sections are complete reable submit button.
-            if(generalInfoComplete & JobSpecificationsComplete & EducationSectionComplete & checkWorkExSectinComplete ){
+            if(generalInfoComplete & JobSpecificationsComplete & eductionSectionComplete & WorkExSectinComplete ){
                 submitbttn.removeAttribute("disabled");
                 submitbttn.classList.remove('btn-secondary');
                 submitbttn.classList.add('btn-success');
