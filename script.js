@@ -78,7 +78,7 @@ document.addEventListener("DOMContentLoaded", function () {
         checkRegXInput(".phoneNeedsValidation", regPhone);
         checkRegXInput(".emailNeedsValidation", regEmail);
     }
-    checkAllRegXInputs();
+    checkAllRegXInputs(); 
 
 
     function checkSelection(){
@@ -100,7 +100,7 @@ document.addEventListener("DOMContentLoaded", function () {
             })
         })
     }
-    checkSelection();
+    checkSelection(); 
 
     function checkDate(){
         let inputs = document.querySelectorAll(".dateNeedsValidation")
@@ -126,7 +126,6 @@ document.addEventListener("DOMContentLoaded", function () {
         })
     }
     checkDate();
-
 
     function checkDateMonth(){
         let inputs = document.querySelectorAll(".monthNeedsValidation")
@@ -268,29 +267,11 @@ document.addEventListener("DOMContentLoaded", function () {
         // Append a separator (hr) to the container
         var separator = document.createElement("hr");
         schoolContainer.appendChild(separator);
-        degreeForms += 3;
+        educationFields += 3;
+        checkInput();
         
     });
     
-    var degreeForms = 3;
-    var completedEducation = 0;
-    function checkEducationSection(){
-        let educationNav = document.getElementById("educationNav");
-        if(degreeForms == completedEducation)
-        {
-            educationNav.classList.remove('incomplete');
-            educationNav.classList.add('complete');
-            return true;
-        }
-     else{
-            educationNav.classList.add('incomplete');
-            educationNav.classList.remove('complete');
-            return false;
-        }
-       
-    }
-
-
     //start work EX sections
 
     document.getElementById("addWorkExperience").addEventListener("click", function () {
@@ -309,26 +290,28 @@ document.addEventListener("DOMContentLoaded", function () {
         // Append a separator (hr) to the container
         var separator = document.createElement("hr");
         workExperienceContainer.appendChild(separator);
+        workExperienceFields += 13;
+        checkDateMonth();checkDate();checkSelection(); checkAllRegXInputs(); checkInput();
+        
     });
 
-
         // Listens to changes and updates the progress bar at the top.
-        ['keyup', 'change'].forEach((type) => {
+    ['keyup', 'change'].forEach((type) => {
+        
+        ourForm.addEventListener(type, (event) => {
             
-            ourForm.addEventListener(type, (event) => {
-              
-                let submitbttn = document.getElementById("submitFormBtn");
+            let submitbttn = document.getElementById("submitFormBtn");
 
-                let generalInfoComplete = checkSection(generalInfoFields,"generalNav","generalInfoSection");
+            let generalInfoComplete = checkSection(generalInfoFields,"generalNav","generalInfoSection");
 
-                let JobSpecificationsComplete = checkSection(8,"jobspecificationsNav","jobSpecificationsSection");
+            let JobSpecificationsComplete = checkSection(8,"jobspecificationsNav","jobSpecificationsSection");
 
-                let eductionSectionComplete = checkSection(educationFields,"educationNav","schoolContainer")
+            let eductionSectionComplete = checkSection(educationFields,"educationNav","schoolContainer")
 
-                let WorkExSectinComplete = checkSection(workExperienceFields,"workExNav","workExperienceContainer");
+            let WorkExSectinComplete = checkSection(workExperienceFields,"workExNav","workExperienceContainer");
 
-                
-                
+            
+            
             // If all sections are complete reable submit button.
             if(generalInfoComplete & JobSpecificationsComplete & eductionSectionComplete & WorkExSectinComplete ){
                 submitbttn.removeAttribute("disabled");
@@ -340,8 +323,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 submitbttn.classList.remove('btn-success');
                 submitbttn.classList.add('btn-secondary');
             }
-            })
-          })
+        })
+    })
 
     //Sets navbar collapse on screen adjust
     var thresholdWidth = 1200;
