@@ -133,6 +133,14 @@ body{
 	}
 	
 }
+
+.is-incorrect{
+	.noSelection{
+		color: red;
+		font-size:small;
+	}
+}
+
 .is-incorrect input{
 	border: none;
 	outline-style: solid;
@@ -144,6 +152,22 @@ body{
 	outline-style: solid;
 	outline-width: 1px;
 	outline-color: rgb(248, 1, 1);	
+}
+.is-incorrect select{
+	border: none;
+	outline-style: solid;
+	outline-width: 1px;
+	outline-color: rgb(248, 1, 1);	
+
+}
+
+.is-incorrect select:focus{
+	outline-style: solid;
+	outline-width: 5px;
+	outline-color: rgb(247, 157, 157);
+	opacity: 80%;
+	transition: .05s;
+
 }
 
 .is-incorrect input:focus-within, textarea:focus-within{
@@ -162,6 +186,12 @@ body{
 	opacity: 80%;
 	transition: .05s;
 	
+}
+
+.noSelectionInfo{
+	color: red;
+	font-size:medium;
+	margin-left: 100px;
 }
 
 .was-validated textarea{

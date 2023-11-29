@@ -201,20 +201,20 @@
                     <div class="form-control"><!-- start over 18 section-->
                         <div class="row">
                             <div class="col-md-8" style="text-align: left;">
-                                <label for="over18">
-                                    <span class="standardRowHieght">
-                                        Are you over the age of 18?
-                                    </span>
+                                <label for="over18" id="over18Label">
+                                    <span class="standardRowHieght" style="margin-bottom: 0px;">
+                                         Are you over the age of 18?
+                                    </span><br>
                                 </label>
                             </div>
                             <div class="col-md-4" style="padding-right: 5px;">
-                                <div class="form-floating selectionNeedsValidation" id="over18Valid">
+                                <div class="form-floating selectionNeedsYesValidation " id="over18Valid">
                                     <select class="form-select" id="over18" name="over18"required>
                                         <option selected value="" disabled> </option>
                                         <option value="Yes">Yes</option>
                                         <option value="No">No</option>
                                     </select>
-                                    <label for="over18"> Age 18+</label>
+                                    <label for="over18" style="background-color: light"><span class="noSelection"> Age 18+</span></label>
                                 </div>
                             </div>
                         </div>
@@ -379,14 +379,14 @@
                         <!-- start work requirements section-->
                         <div class="row">
                             <div class="col-md-8" style="text-align: left;">
-                                <label for="requirementsExplained">
+                                <label for="requirementsExplained" id="requirementExplainedLabel">
                                     <span class="standardRowHieght" style="margin-bottom: 0px; margin-top: 0px;">
                                         Have the requirements of this position been explained in an understandable manner to you?
                                     </span>
                                 </label>
                             </div>
                             <div class="col-md-4">
-                                <div class="form-floating selectionNeedsValidation" id="requirementsExplainedValid">
+                                <div class="form-floating selectionNeedsYesValidation" id="requirementsExplainedValid">
                                     <select class="form-select" id="requirementsExplained" name="requirementsExplained" required>
                                         <option selected value="" disabled></option>
                                         <option value="Yes">Yes</option>
@@ -402,19 +402,18 @@
                     <div class="form-control">
                         <div class="row">
                             <div class="col-md-8" style="text-align: left;">
-                                <label for="meetRequirements">
-                                    <span class="standardRowHieght">
+                                <label for="meetRequirements" id="meetRequirementsLabel">
+                                    <span class="standardRowHieght" style="margin-bottom: 0px;">
                                         Can you meet these requirements?
-                                    </span>
+                                    </span><br>
                                 </label>
                             </div>
                             <div class="col-md-4" style="padding-right: 5px;">
-                                <div class="form-floating selectionNeedsValidation" id="meetRequirementsValid">
+                                <div class="form-floating selectionNeedsYesValidation" id="meetRequirementsValid">
                                     <select class="form-select" id="meetRequirements" name="meetRequirements" required>
                                         <option selected value="" disabled></option>
                                         <option value="Yes">Yes</option>
                                         <option value="No">No</option>
-                                        <option value="Unsure">Unsure</option>
                                     </select>
                                     <label for="meetRequirements">Meets Requirements</label>
                                 </div>
@@ -696,7 +695,7 @@
                             <div class="col-md-6">
                                 <div class="form-floating mb-3 emailNeedsValidation">
                                     <input type="email" class="form-control" name="emailAddress" placeholder="placeholder" required>
-                                    <label for="emailAddress">Company Email Address</label>
+                                    <label for="emailAddress">Company Email<span class="exampleText"> (address@provider.com)</span></label>
                                 </div>
                             </div>
                             
@@ -776,7 +775,7 @@
                             <div class="col-md-2">
                                 <div class="form-floating mb-3 zipNeedsValidation">
                                     <input type="text" class="form-control" name="employerZip" placeholder="placeholder" oninput="maskZip(this)" required>
-                                    <label for="employerZip">ZIP Code</label>
+                                    <label for="employerZip">ZIP <span class="exampleText"> (xxxxx)</span></label>
                                 </div>
                             </div>
                         </div>
@@ -929,20 +928,20 @@
                     <!-- start currently insured section-->
                     <div class="row" id="wavierSection">
                         <div class="col-md-8" style="text-align: left;">
-                            <label for="insured">
-                                <span class="standardRowHieght">
+                            <label for="waiver" id="wavierLabel" style="margin-bottom: 0px;">
+                                <span class="standardRowHieght" style="margin-bottom: 0px;">
                                     Do you agree to these terms?
-                                </span>
+                               </span><br>
                             </label>
                         </div>
                         <div class="col-md-4" style="padding-right: 5px;">
-                            <div class="form-floating selectionNeedsValidation" id="insured">
-                                <select class="form-select" id="insured" name="insured" required>
+                            <div class="form-floating selectionNeedsYesValidation" id="insured">
+                                <select class="form-select" id="wavierSelection" name="insured" required>
                                     <option selected value disabled=""> </option>
                                     <option value="Yes">Yes</option>
                                     <option value="No">No</option>
                                 </select>
-                                <label for="insured">Agree</label>
+                                <label for="waiver"><span class="noSelection">agree</span></label>
                             </div>
                         </div>
                     </div>

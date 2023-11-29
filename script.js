@@ -85,7 +85,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function checkSelection(){
         let inputs = document.querySelectorAll(".selectionNeedsValidation")
-        console.log("check selection");
         Array.from(inputs).forEach(input => {
             input.addEventListener('change', event => {
                 
@@ -103,6 +102,26 @@ document.addEventListener("DOMContentLoaded", function () {
         })
     }
     checkSelection(); 
+
+    function checkYesSelection(){
+        let inputs = document.querySelectorAll(".selectionNeedsYesValidation")
+        Array.from(inputs).forEach(input => {
+            input.addEventListener('change', event => {
+                
+                if(event.target.value == "Yes"){
+                    input.classList.add('was-validated');
+                    input.classList.remove('is-incorrect');
+                    
+                }
+                else{
+                    input.classList.remove('was-validated');
+                    input.classList.add('is-incorrect');
+                    
+                }
+            })
+        })
+    }
+    checkYesSelection(); 
 
     function checkDate(){
         let inputs = document.querySelectorAll(".dateNeedsValidation")
@@ -450,9 +469,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 <div class=" col-md-6">
                     <div class="row form-control" style="display: inline-flex;">
                         <div class="col-md" style="text-align: left; margin-left: 5px;">
-                            <label for="exp" style="display: inline-block;">
+                            <label for="exp" style="display: inline-block; margin-top: 20px;">
                                 <span>
-                                    Expirationd Date
+                                    Expiration Date
                                 </span>
                             </label>
                         </div>
@@ -542,7 +561,72 @@ document.addEventListener("DOMContentLoaded", function () {
         // Check if refCount is 3, then update the button style
     });
 
-});
+    document.getElementById("over18").addEventListener('change', event => {
+
+        if( event.target.value == "No"){
+            let over18Lable = document.getElementById("over18Label");
+            let newEntry = document.createElement('span');
+            newEntry.classList.add("noSelectionInfo");
+            newEntry.setAttribute("id","18InfoInsert");
+            newEntry.innerHTML =`You must be over the age of 18 to apply to UNFinished`;
+            over18Lable.appendChild(newEntry);
+        }
+        else{
+            let remove = document.getElementById("18InfoInsert");
+            remove.remove();
+        }
+    });
+
+
+    document.getElementById("requirementsExplained").addEventListener('change', event => {
+        if( event.target.value == "No"){
+            let over18Lable = document.getElementById("requirementExplainedLabel");
+            let newEntry = document.createElement('span');
+            newEntry.classList.add("noSelectionInfo");
+            newEntry.setAttribute("id","requirementExplainedInsert");
+            newEntry.innerHTML =`Please contact our HR Department for detailed requirements.`;
+            over18Lable.appendChild(newEntry);
+        }
+        else{
+            let remove = document.getElementById("requirementExplainedInsert");
+            remove.remove();
+        }
+    });
+
+    document.getElementById("meetRequirements").addEventListener('change', event => {
+        if( event.target.value == "No"){
+            let over18Lable = document.getElementById("meetRequirementsLabel");
+            let newEntry = document.createElement('span');
+            newEntry.classList.add("noSelectionInfo");
+            newEntry.setAttribute("id","meetRequirementsInsert");
+            newEntry.innerHTML =`Please contact HR Department for possible accomidations.`;
+            over18Lable.appendChild(newEntry);
+        }
+        else{
+            let remove = document.getElementById("meetRequirementsInsert");
+            remove.remove();
+        }
+    });
+
+    document.getElementById("wavierSelection").addEventListener('change', event => {
+        console.log("test");
+        if( event.target.value == "No"){
+            let over18Lable = document.getElementById("wavierLabel");
+            let newEntry = document.createElement('span');
+            newEntry.classList.add("noSelectionInfo");
+            newEntry.setAttribute("id","waiverInsert");
+            newEntry.innerHTML =`You must agree to the terms of the waiver to apply.`;
+            over18Lable.appendChild(newEntry);
+        }
+        else{
+            let remove = document.getElementById("waiverInsert");
+            remove.remove();
+        }
+    });
+
+
+
+});//end document load check 
 
 //moving script 
 // Add reference entry dynamically
