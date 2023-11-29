@@ -392,7 +392,7 @@ function maskPhoneNumber(input) {
     // Update the input value
     input.value = cleanedInput;
 }
-function maskZipCode(input) {
+function maskZip(input) {
     // Remove non-numeric characters using regex
     var cleanedInput = input.value.replace(/\D/g, '');
 
