@@ -30,7 +30,7 @@
                             <li><a href="#education" id="educationNav" class="incomplete">Education</a></li>
                             <li><a href="#experience" id="workExNav" class="incomplete">Work Experience</a></li>
                             <li><a href="#background" id="transportationNav" class="incomplete">Transportation</a></li>
-                            <li><a href="#waiver" class="incomplete">Waiver</a></li>
+                            <li><a href="#waiver" id="wavierNav" class="incomplete">Waiver</a></li>
                             <li><button type="submit" form="ourForm" class="btn btn-secondary" id="submitFormBtn" style="border-bottom-right-radius: 25px;border-top-right-radius: 25px; border-top-left-radius: 0px; border-bottom-left-radius: 0px; padding:6px;" disabled >Submit Application</button>
                         </ul>
                         <button type="reset" form="ourForm" id="resetButton" class="btn btn-danger" value="Reset" style="margin-left: 100px; position: fixed; bottom:25px; right: 1%;">Reset Application</button>
@@ -811,121 +811,142 @@
 				<!--Row #1-->
                 
               
-            <br>  
-            <div id="TransportationSection">        
-                <div class="form-control"><!-- start reliable section-->
-                    <div class="row">
-                        <div class="col-md-8" style="text-align: left;">
-                            <label for="transport">
-                                <span class="standardRowHieght">
-                                    Do you have access to reliable transportion?
-                                </span>
-                            </label>
+                <br>  
+                <div id="TransportationSection">        
+                    <div class="form-control"><!-- start reliable section-->
+                        <div class="row">
+                            <div class="col-md-8" style="text-align: left;">
+                                <label for="transport">
+                                    <span class="standardRowHieght">
+                                        Do you have access to reliable transportion?
+                                    </span>
+                                </label>
+                            </div>
+                            <div class="col-md-4" style="padding-right: 5px;">
+                                <div class="form-floating selectionNeedsValidation" id="transport">
+                                    <select class="form-select" id="transport" name="transport"required>
+                                        <option selected disabled=""> </option>
+                                        <option value="Yes">Yes</option>
+                                        <option value="No">No</option>
+                                    </select>
+                                    <label for="transport"> reliable transportion</label>
+                                </div>
+                            </div>
                         </div>
-                        <div class="col-md-4" style="padding-right: 5px;">
-                            <div class="form-floating selectionNeedsValidation" id="transport">
-                                <select class="form-select" id="transport" name="transport"required>
-                                    <option selected disabled=""> </option>
-                                    <option value="Yes">Yes</option>
-                                    <option value="No">No</option>
-                                </select>
-                                <label for="transport"> reliable transportion</label>
+                    </div><br>
+
+                    <div class="form-control"><!-- start driver license reformat section-->
+                        <div class="row">
+                            <div class="col-md-8" style="text-align: left;">
+                                <label for="driverL">
+                                    <span class="standardRowHieght">
+                                        Do you have a valid Driver License?
+                                    </span>
+                                </label>
+                            </div>
+                            <div class="col-md-4" style="padding-right: 5px;">
+                                <div class="form-floating selectionNeedsValidation" id="driverL">
+                                    <select class="form-select" id="validLicense" name="driverL"required>
+                                        <option selected value disabled=""> </option>
+                                        <option value="Yes">Yes</option>
+                                        <option value="No">No</option>
+                                    </select>
+                                    <label for="driverL"> valid license</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div><br><!-- end driver license reformat section-->
+
+
+                        <!--Start of Row 2-->
+
+                    <div id="licenseInfo">
+                        
+                    </div>
+
+                    <div class="form-control"><!-- start currently insured section-->
+                        <div class="row">
+                            <div class="col-md-8" style="text-align: left;">
+                                <label for="insured">
+                                    <span class="standardRowHieght">
+                                        Are you currently insured?
+                                    </span>
+                                </label>
+                            </div>
+                            <div class="col-md-4" style="padding-right: 5px;">
+                                <div class="form-floating selectionNeedsValidation" id="insured">
+                                    <select class="form-select" id="insured" name="insured"required>
+                                        <option selected value disabled=""> </option>
+                                        <option value="Yes">Yes</option>
+                                        <option value="No">No</option>
+                                    </select>
+                                    <label for="insured"> insured</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div><br>
+
+                    <div class="form-control"><!-- start reliable section-->
+                        <div class="row">
+                            <div class="col-md-8" style="text-align: left;">
+                                <label for="driverL">
+                                    <span class="standardRowHieght">
+                                        Would you be willing to use your vehicle for work purposes?
+                                    </span>
+                                </label>
+                            </div>
+                            <div class="col-md-4" style="padding-right: 5px;">
+                                <div class="form-floating selectionNeedsValidation" id="driverL">
+                                    <select class="form-select" id="driverL" name="driverL"required>
+                                        <option selected value disabled=""> </option>
+                                        <option value="Yes">Yes</option>
+                                        <option value="No">No</option>
+                                    </select>
+                                    <label for="driverL"> willing to</label>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div><br>
-
-                <div class="form-control"><!-- start driver license reformat section-->
-                    <div class="row">
-                        <div class="col-md-8" style="text-align: left;">
-                            <label for="driverL">
-                                <span class="standardRowHieght">
-                                    Do you have a valid Driver License?
-                                </span>
-                            </label>
-                        </div>
-                        <div class="col-md-4" style="padding-right: 5px;">
-                            <div class="form-floating selectionNeedsValidation" id="driverL">
-                                <select class="form-select" id="validLicense" name="driverL"required>
-                                    <option selected value disabled=""> </option>
-                                    <option value="Yes">Yes</option>
-                                    <option value="No">No</option>
-                                </select>
-                                <label for="driverL"> valid license</label>
-                            </div>
-                        </div>
-                    </div>
-                </div><br><!-- end driver license reformat section-->
-
-
-                    <!--Start of Row 2-->
-
-                <div id="licenseInfo">
-                    
-                </div>
-
-                <div class="form-control"><!-- start currently insured section-->
-                    <div class="row">
-                        <div class="col-md-8" style="text-align: left;">
-                            <label for="insured">
-                                <span class="standardRowHieght">
-                                    Are you currently insured?
-                                </span>
-                            </label>
-                        </div>
-                        <div class="col-md-4" style="padding-right: 5px;">
-                            <div class="form-floating selectionNeedsValidation" id="insured">
-                                <select class="form-select" id="insured" name="insured"required>
-                                    <option selected value disabled=""> </option>
-                                    <option value="Yes">Yes</option>
-                                    <option value="No">No</option>
-                                </select>
-                                <label for="insured"> insured</label>
-                            </div>
-                        </div>
-                    </div>
-                </div><br>
-
-                <div class="form-control"><!-- start reliable section-->
-                    <div class="row">
-                        <div class="col-md-8" style="text-align: left;">
-                            <label for="driverL">
-                                <span class="standardRowHieght">
-                                    Would you be willing to use your vehicle for work purposes?
-                                </span>
-                            </label>
-                        </div>
-                        <div class="col-md-4" style="padding-right: 5px;">
-                            <div class="form-floating selectionNeedsValidation" id="driverL">
-                                <select class="form-select" id="driverL" name="driverL"required>
-                                    <option selected value disabled=""> </option>
-                                    <option value="Yes">Yes</option>
-                                    <option value="No">No</option>
-                                </select>
-                                <label for="driverL"> willing to</label>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div><br>
             
 
                 <p id="waiver" class="jumpTo"></p>
                 <h2>Waiver</h2>
 
                 <p>To be considered for employment by Unfinished Business, you must agree that:</p>
-
-                <ol>
-
-                    <li>Unfinished Business may terminate your employment without notice or reason.  </li>
-                    <li>The conditions of your employment; such as benefits, policies, and conditions are subject to change at the will of Unfinished Business. </li>
-                    <li>Unfinished Business is authorized to investigate all the content of this application and verify its validity. </li>
-                    <li>Unfinished Business has a zero drug and alcohol policy, and you give them permission to drug test you as a means of pre-employment screening. </li>
-                    <li>You may be asked to take a pre-employment physical to confirm you are capable of the required job-related tasks. </li>
-                    <li>You agree that Unfinished Business has the right to request from a consumer reporting agency an investigative consumer report. Such a report would include information relating to your credit score, character, general reputation, personal characteristics, and mode of living.  </li>
-                    <li>You understand that your employment would begin in a state of probation. The probationary period will last 60 days, during which Unfinished Business retains the right to terminate your employment for any reason.</li>
-
+                <div class="form-control">
+                    <ol style="text-align: left; padding-left: 100px; padding-right: 100px; margin-top: 20px;">
+                        <li>Unfinished Business may terminate your employment without notice or reason.  </li><br>
+                        <li>The conditions of your employment; such as benefits, policies, and conditions are subject to change at the will of Unfinished Business. </li><br>
+                        <li>Unfinished Business is authorized to investigate all the content of this application and verify its validity. </li><br>
+                        <li>Unfinished Business has a zero drug and alcohol policy, and you give them permission to drug test you as a means of pre-employment screening. </li><br>
+                        <li>You may be asked to take a pre-employment physical to confirm you are capable of the required job-related tasks. </li><br>
+                        <li>You agree that Unfinished Business has the right to request from a consumer reporting agency an investigative consumer report. Such a report would include information relating to your credit score, character, general reputation, personal characteristics, and mode of living.  </li><br>
+                        <li>You understand that your employment would begin in a state of probation. The probationary period will last 60 days, during which Unfinished Business retains the right to terminate your employment for any reason.</li><br>
                     <ol>
+                </div><br>
+                <div class="form-control">
+                    <!-- start currently insured section-->
+                    <div class="row" id="wavierSection">
+                        <div class="col-md-8" style="text-align: left;">
+                            <label for="insured">
+                                <span class="standardRowHieght">
+                                    Do you agree to these terms?
+                                </span>
+                            </label>
+                        </div>
+                        <div class="col-md-4" style="padding-right: 5px;">
+                            <div class="form-floating selectionNeedsValidation" id="insured">
+                                <select class="form-select" id="insured" name="insured" required>
+                                    <option selected value disabled=""> </option>
+                                    <option value="Yes">Yes</option>
+                                    <option value="No">No</option>
+                                </select>
+                                <label for="insured">Agree</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </form><!--End Form Section -->
         </div><br><br><br><br><!--End Main Container-->
     </body>

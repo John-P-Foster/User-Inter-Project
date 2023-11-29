@@ -326,11 +326,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
             let transportationSectinComplete = checkSection(transportaionFields,"transportationNav","TransportationSection");
 
-            
+            let wavierSectinComplete = checkSection(1,"wavierNav","wavierSection");
+
             
             // If all sections are complete reable submit button.
             if(generalInfoComplete & JobSpecificationsComplete & eductionSectionComplete & WorkExSectinComplete 
-                & referenceSectionComplete & transportationSectinComplete){
+                & referenceSectionComplete & transportationSectinComplete & wavierSectinComplete){
                 submitbttn.removeAttribute("disabled");
                 submitbttn.classList.remove('btn-secondary');
                 submitbttn.classList.add('btn-success');
