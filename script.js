@@ -356,9 +356,76 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     
+    var refCount = 0;
 
+    document.getElementById("addReference").addEventListener('click', function () {
+        if (refCount <= 3) {  
+            var referenceContainer = document.getElementById('referenceContainer');
+    
+            var newReferenceEntry = document.createElement('div');
+            newReferenceEntry.classList.add('reference-entry', 'row');
+    
+            newReferenceEntry.innerHTML = `
+                <div class="col-md-4">
+                    <div class="form-floating mb-3 inputNeedsValidation">
+                        <input type="text" class="form-control" name="name" placeholder="Name">
+                        <label for="name">Name</label>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-floating mb-3 inputNeedsValidation">
+                        <input type="text" class="form-control" name="title" placeholder="Title">
+                        <label for="title">Title</label>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-floating mb-3 inputNeedsValidation">
+                        <input type="text" class="form-control" name="company" placeholder="Company">
+                        <label for="company">Company</label>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-floating mb-3 phoneNeedsValidation">
+                        <input type="text" class="form-control" name="phone" placeholder="Phone" oninput="maskPhoneNumber(this)">
+                        <label for="phone">Phone</label>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-floating mb-3 emailNeedsValidation">
+                        <input type="email" class="form-control" name="email" placeholder="Email">
+                        <label for="email">Email</label>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-floating mb-3">
+                        <textarea class="form-control" name="description" placeholder="Description" style="resize:none"></textarea>
+                        <label for="description">Description</label>
+                    </div>
+                </div>
+            `;
+            
+            refCount++;
+    
+            referenceContainer.appendChild(newReferenceEntry);
+            referenceContainer.appendChild(document.createElement('hr')); // Add separator
+            checkAllRegXInputs(); checkInput();
+        }
+    
+        // Check if refCount is 3, then update the button style
+        if (refCount === 3) {
+            var addButton = document.getElementById('addReference');
+            addButton.style.backgroundColor = 'grey';
+            addButton.style.color = 'white';
+            addButton.disabled = true;  // Disable the button
+        }
+    });
 
 });
+
+//moving script 
+// Add reference entry dynamically
+
+
 //Masking Functions
 
 function maskNumeric(input) {
