@@ -188,6 +188,16 @@ body{
 	background-color: #737373;
 	transition: 0.2s;
 }
+.btn-success{
+	box-shadow: 0 10px 30px rgb(16, 14, 14);
+	outline-style: solid;
+	outline-color: #ffffff;
+	background-color: rgb(124, 206, 124) !important;
+	color:#070707 !important;
+}
+.btn-success:hover{
+	background-color: rgb(148, 240, 148) !important;
+}
 
 /* End of John Foster CSS code */
 
