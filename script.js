@@ -344,6 +344,13 @@ document.addEventListener("DOMContentLoaded", function () {
         })
     })
 
+    let submitbttn = document.getElementById("submitFormBtn").addEventListener("click", function () {
+        alert("Application submitted successfully.")
+
+    });
+
+   
+
     //Sets navbar collapse on screen adjust
     var thresholdWidth = 1200;
     var previousWidth = window.innerWidth;
