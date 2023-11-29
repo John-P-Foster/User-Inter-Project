@@ -11,6 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
     var generalInfoFields = 14;
     var educationFields = 3;
     var workExperienceFields = 13;
+    var referencesFields = 5;
    
     function checkSection(numOfFields, navSectionId, sectionId){
         let navSection = document.getElementById(navSectionId);
@@ -222,6 +223,10 @@ document.addEventListener("DOMContentLoaded", function () {
         jobspecNav.classList.add('incomplete');
         jobspecNav.classList.remove('complete');
 
+        let referenceNav = document.getElementById("referenceNav");
+        referenceNav.classList.add('incomplete');
+        referenceNav.classList.remove('complete');
+
         let educationNav = document.getElementById("educationNav");
         educationNav.classList.add('incomplete');
         educationNav.classList.remove('complete');
@@ -302,7 +307,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
         // Listens to changes and updates the progress bar at the top.
-    ['keyup', 'change'].forEach((type) => {
+    ['keyup', 'change','click'].forEach((type) => {
         
         ourForm.addEventListener(type, (event) => {
             
@@ -312,14 +317,19 @@ document.addEventListener("DOMContentLoaded", function () {
 
             let JobSpecificationsComplete = checkSection(8,"jobspecificationsNav","jobSpecificationsSection");
 
-            let eductionSectionComplete = checkSection(educationFields,"educationNav","schoolContainer")
+            let referenceSectionComplete = checkSection(referencesFields,"referenceNav","referenceContainer");
+
+            let eductionSectionComplete = checkSection(educationFields,"educationNav","schoolContainer");
 
             let WorkExSectinComplete = checkSection(workExperienceFields,"workExNav","workExperienceContainer");
+
+            let transportationSectinComplete = checkSection(7,"transportationNav","TransportationSection");
 
             
             
             // If all sections are complete reable submit button.
-            if(generalInfoComplete & JobSpecificationsComplete & eductionSectionComplete & WorkExSectinComplete ){
+            if(generalInfoComplete & JobSpecificationsComplete & eductionSectionComplete & WorkExSectinComplete 
+                & referenceSectionComplete & transportationSectinComplete){
                 submitbttn.removeAttribute("disabled");
                 submitbttn.classList.remove('btn-secondary');
                 submitbttn.classList.add('btn-success');
@@ -408,6 +418,7 @@ document.addEventListener("DOMContentLoaded", function () {
     
             referenceContainer.appendChild(newReferenceEntry);
             referenceContainer.appendChild(document.createElement('hr')); // Add separator
+            referencesFields += 5;
             checkAllRegXInputs(); checkInput();
         }
     

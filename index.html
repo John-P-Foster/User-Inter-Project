@@ -26,10 +26,10 @@
                             <li><a href="#topOfPage" class="complete" style="border-bottom-left-radius: 25px;border-top-left-radius: 25px;">Start</a></li>
                             <li><a href="#general" id="generalNav" class="incomplete">Genera Information</a></li>
                             <li><a href="#Expectations" id="jobspecificationsNav" class="incomplete">Job Specifications</a></li>
-                            <li><a href="#references" class="incomplete">References</a></li>
+                            <li><a href="#references" id="referenceNav" class="incomplete">References</a></li>
                             <li><a href="#education" id="educationNav" class="incomplete">Education</a></li>
                             <li><a href="#experience" id="workExNav" class="incomplete">Work Experience</a></li>
-                            <li><a href="#background" class="incomplete">Background</a></li>
+                            <li><a href="#background" id="transportationNav" class="incomplete">Transportation</a></li>
                             <li><a href="#waiver" class="incomplete">Waiver</a></li>
                             <li><button type="submit" form="ourForm" class="btn btn-secondary" id="submitFormBtn" style="border-bottom-right-radius: 25px;border-top-right-radius: 25px; border-top-left-radius: 0px; border-bottom-left-radius: 0px; padding:6px;" disabled >Submit Application</button>
                         </ul>
@@ -806,59 +806,59 @@
                 <br><br>
 
                 <p id="background" class="jumpTo"></p>
-                <h2>Background</h2>
+                <h2>Transportation</h2>
 
 				<!--Row #1-->
                 
               
             <br>  
-
-            <div class="form-control"><!-- start reliable section-->
-                <div class="row">
-                    <div class="col-md-8" style="text-align: left;">
-                        <label for="transport">
-                            <span class="standardRowHieght">
-                                Do you have access to reliable transportion?
-                            </span>
-                        </label>
-                    </div>
-                    <div class="col-md-4" style="padding-right: 5px;">
-                        <div class="form-floating" id="transport">
-                            <select class="form-select" id="transport" name="transport"required>
-                                <option selected disabled=""> </option>
-                                <option value="Yes">Yes</option>
-                                <option value="No">No</option>
-                            </select>
-                            <label for="transport"> reliable transportion</label>
+            <div id="TransportationSection">        
+                <div class="form-control"><!-- start reliable section-->
+                    <div class="row">
+                        <div class="col-md-8" style="text-align: left;">
+                            <label for="transport">
+                                <span class="standardRowHieght">
+                                    Do you have access to reliable transportion?
+                                </span>
+                            </label>
+                        </div>
+                        <div class="col-md-4" style="padding-right: 5px;">
+                            <div class="form-floating selectionNeedsValidation" id="transport">
+                                <select class="form-select" id="transport" name="transport"required>
+                                    <option selected disabled=""> </option>
+                                    <option value="Yes">Yes</option>
+                                    <option value="No">No</option>
+                                </select>
+                                <label for="transport"> reliable transportion</label>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div><br>
+                </div><br>
 
-            <div class="form-control"><!-- start driver license reformat section-->
-                <div class="row">
-                    <div class="col-md-8" style="text-align: left;">
-                        <label for="driverL">
-                            <span class="standardRowHieght">
-                                Do you have a valid Driver License?
-                            </span>
-                        </label>
-                    </div>
-                    <div class="col-md-4" style="padding-right: 5px;">
-                        <div class="form-floating" id="driverL">
-                            <select class="form-select" id="driverL" name="driverL"required>
-                                <option selected value disabled=""> </option>
-                                <option value="Yes">Yes</option>
-                                <option value="No">No</option>
-                            </select>
-                            <label for="driverL"> valid license</label>
+                <div class="form-control"><!-- start driver license reformat section-->
+                    <div class="row">
+                        <div class="col-md-8" style="text-align: left;">
+                            <label for="driverL">
+                                <span class="standardRowHieght">
+                                    Do you have a valid Driver License?
+                                </span>
+                            </label>
+                        </div>
+                        <div class="col-md-4" style="padding-right: 5px;">
+                            <div class="form-floating selectionNeedsValidation" id="driverL">
+                                <select class="form-select" id="driverL" name="driverL"required>
+                                    <option selected value disabled=""> </option>
+                                    <option value="Yes">Yes</option>
+                                    <option value="No">No</option>
+                                </select>
+                                <label for="driverL"> valid license</label>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div><br><!-- end driver license reformat section-->
+                </div><br><!-- end driver license reformat section-->
 
 
-				<!--Start of Row 2-->
+                    <!--Start of Row 2-->
 
                 <div class="row">
                     <div class=" col-md-6">
@@ -870,76 +870,76 @@
                                     </span>
                                 </label>
                             </div>
-                        <div class="col-md" style="padding-right: 5px;">
-                            <div class="form-floating">
-                                <input type="date" class="form-control" style="padding-top: 15px; padding-bottom: 15px; display: inline-block;" id="exp" name="exp" value="2023-11-01">
+                            <div class="col-md" style="padding-right: 5px;">
+                                <div class="form-floating dateNeedsValidation">
+                                    <input type="date" class="form-control" style="padding-top: 15px; padding-bottom: 15px; display: inline-block;" id="exp" name="exp" value="2023-11-01">
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
                     <div class="col-md-3">
-                        <div class="form-floating mb-3" >
+                        <div class="form-floating mb-3 inputNeedsValidation" >
                             <input type="text" class="form-control" id="dlnum" placeholder="Full name" style="height: 72px;" required>
                             <label for="dlnum">Driver's License#:</label>
                         </div>
                     </div>
                     <div class="col-md-3">
-                        <div class="form-floating mb-3" >
+                        <div class="form-floating mb-3 selectionNeedsValidation" >
                             <select class="form-select" id="dlstate" name="soi" style="height: 72px;">
-								<option selected value="" disabled>State</option>
-								<option value="AL">Alabama</option>
-								<option value="AK">Alaska</option>
-								<option value="AZ">Arizona</option>
-								<option value="AR">Arkansas</option>
-								<option value="CA">California</option>
-								<option value="CO">Colorado</option>
-								<option value="CT">Connecticut</option>
-								<option value="DE">Delaware</option>
-								<option value="DC">District Of Columbia</option>
-								<option value="FL">Florida</option>
-								<option value="GA">Georgia</option>
-								<option value="HI">Hawaii</option>
-								<option value="ID">Idaho</option>
-								<option value="IL">Illinois</option>
-								<option value="IN">Indiana</option>
-								<option value="IA">Iowa</option>
-								<option value="KS">Kansas</option>
-								<option value="KY">Kentucky</option>
-								<option value="LA">Louisiana</option>
-								<option value="ME">Maine</option>
-								<option value="MD">Maryland</option>
-								<option value="MA">Massachusetts</option>
-								<option value="MI">Michigan</option>
-								<option value="MN">Minnesota</option>
-								<option value="MS">Mississippi</option>
-								<option value="MO">Missouri</option>
-								<option value="MT">Montana</option>
-								<option value="NE">Nebraska</option>
-								<option value="NV">Nevada</option>
-								<option value="NH">New Hampshire</option>
-								<option value="NJ">New Jersey</option>
-								<option value="NM">New Mexico</option>
-								<option value="NY">New York</option>
-								<option value="NC">North Carolina</option>
-								<option value="ND">North Dakota</option>
-								<option value="OH">Ohio</option>
-								<option value="OK">Oklahoma</option>
-								<option value="OR">Oregon</option>
-								<option value="PA">Pennsylvania</option>
-								<option value="RI">Rhode Island</option>
-								<option value="SC">South Carolina</option>
-								<option value="SD">South Dakota</option>
-								<option value="TN">Tennessee</option>
-								<option value="TX">Texas</option>
-								<option value="UT">Utah</option>
-								<option value="VT">Vermont</option>
-								<option value="VA">Virginia</option>
-								<option value="WA">Washington</option>
-								<option value="WV">West Virginia</option>
-								<option value="WI">Wisconsin</option>
-								<option value="WY">Wyoming</option>
-							</select>
-							<label for="soi">State of issuance</label>
+                                <option selected value="" disabled>State</option>
+                                <option value="AL">Alabama</option>
+                                <option value="AK">Alaska</option>
+                                <option value="AZ">Arizona</option>
+                                <option value="AR">Arkansas</option>
+                                <option value="CA">California</option>
+                                <option value="CO">Colorado</option>
+                                <option value="CT">Connecticut</option>
+                                <option value="DE">Delaware</option>
+                                <option value="DC">District Of Columbia</option>
+                                <option value="FL">Florida</option>
+                                <option value="GA">Georgia</option>
+                                <option value="HI">Hawaii</option>
+                                <option value="ID">Idaho</option>
+                                <option value="IL">Illinois</option>
+                                <option value="IN">Indiana</option>
+                                <option value="IA">Iowa</option>
+                                <option value="KS">Kansas</option>
+                                <option value="KY">Kentucky</option>
+                                <option value="LA">Louisiana</option>
+                                <option value="ME">Maine</option>
+                                <option value="MD">Maryland</option>
+                                <option value="MA">Massachusetts</option>
+                                <option value="MI">Michigan</option>
+                                <option value="MN">Minnesota</option>
+                                <option value="MS">Mississippi</option>
+                                <option value="MO">Missouri</option>
+                                <option value="MT">Montana</option>
+                                <option value="NE">Nebraska</option>
+                                <option value="NV">Nevada</option>
+                                <option value="NH">New Hampshire</option>
+                                <option value="NJ">New Jersey</option>
+                                <option value="NM">New Mexico</option>
+                                <option value="NY">New York</option>
+                                <option value="NC">North Carolina</option>
+                                <option value="ND">North Dakota</option>
+                                <option value="OH">Ohio</option>
+                                <option value="OK">Oklahoma</option>
+                                <option value="OR">Oregon</option>
+                                <option value="PA">Pennsylvania</option>
+                                <option value="RI">Rhode Island</option>
+                                <option value="SC">South Carolina</option>
+                                <option value="SD">South Dakota</option>
+                                <option value="TN">Tennessee</option>
+                                <option value="TX">Texas</option>
+                                <option value="UT">Utah</option>
+                                <option value="VT">Vermont</option>
+                                <option value="VA">Virginia</option>
+                                <option value="WA">Washington</option>
+                                <option value="WV">West Virginia</option>
+                                <option value="WI">Wisconsin</option>
+                                <option value="WY">Wyoming</option>
+                            </select>
+                            <label for="soi">State of issuance</label>
                         </div>
                     </div>
                 </div>
@@ -954,7 +954,7 @@
                             </label>
                         </div>
                         <div class="col-md-4" style="padding-right: 5px;">
-                            <div class="form-floating" id="insured">
+                            <div class="form-floating selectionNeedsValidation" id="insured">
                                 <select class="form-select" id="insured" name="insured"required>
                                     <option selected value disabled=""> </option>
                                     <option value="Yes">Yes</option>
@@ -976,7 +976,7 @@
                             </label>
                         </div>
                         <div class="col-md-4" style="padding-right: 5px;">
-                            <div class="form-floating" id="driverL">
+                            <div class="form-floating selectionNeedsValidation" id="driverL">
                                 <select class="form-select" id="driverL" name="driverL"required>
                                     <option selected value disabled=""> </option>
                                     <option value="Yes">Yes</option>
@@ -986,70 +986,9 @@
                             </div>
                         </div>
                     </div>
-                </div><br>
-				<!--Start of row 3-->
-				<div class="row">
-
-					<!--Radio button group for Car question-->
-
-
-					<!--Radio button group for Car question 1-->
-					<div class="col-md-3">
-
-						<p>Do you have reliable transportation?</p>
-
-					</div>
-
-					<div class="col-md-3">
-						<br>
-						<input type="radio" id="yes" name="transport" value="y">
-						<label for="yes">Yes</label>
-
-						<input type="radio" id="no" name="transport" value="n">
-						<label for="no">No</label>
-
-					</div>
-
-				</div><!--End row 3-->
-
-				<!--Start of row 4-->
-				<div class="row">
-
-					<!--Radio button group for Car question 2-->
-					<div class="col-md-3">
-
-						<p>Would you be willing to use your vehicle for work purposes?</p>
-
-					</div>
-
-					<div class="col-md-3">
-						<br>
-						<input type="radio" id="yes" name="workcar" value="y">
-						<label for="yes">Yes</label>
-
-						<input type="radio" id="no" name="workcar" value="n">
-						<label for="no">No</label>
-
-					</div>
-
-					<!--Radio button group for insurance question-->
-					<div class="col-md-3">
-
-						<p>Are you currently insured?</p>
-
-					</div>
-
-					<div class="col-md-3">
-						<br>
-						<input type="radio" id="yes" name="insured" value="y">
-						<label for="yes">Yes</label>
-
-						<input type="radio" id="no" name="insured" value="n">
-						<label for="no">No</label>
-
-					</div>
-
-				</div><!--End row 4-->
+                </div>
+            </div><br>
+            
 
                 <p id="waiver" class="jumpTo"></p>
                 <h2>Waiver</h2>
