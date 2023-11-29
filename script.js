@@ -12,6 +12,7 @@ document.addEventListener("DOMContentLoaded", function () {
     var educationFields = 3;
     var workExperienceFields = 13;
     var referencesFields = 5;
+    var transportaionFields = 4;
    
     function checkSection(numOfFields, navSectionId, sectionId){
         let navSection = document.getElementById(navSectionId);
@@ -323,7 +324,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             let WorkExSectinComplete = checkSection(workExperienceFields,"workExNav","workExperienceContainer");
 
-            let transportationSectinComplete = checkSection(7,"transportationNav","TransportationSection");
+            let transportationSectinComplete = checkSection(transportaionFields,"transportationNav","TransportationSection");
 
             
             
@@ -429,6 +430,108 @@ document.addEventListener("DOMContentLoaded", function () {
             addButton.style.color = 'white';
             addButton.disabled = true;  // Disable the button
         }
+    });
+
+    document.getElementById("validLicense").addEventListener('change', function () {
+        let validLicense = document.getElementById("validLicense");
+        if (validLicense.value == "Yes") {  
+            let container = document.getElementById('licenseInfo');
+            let newEntry = document.createElement('div');
+            newEntry.innerHTML =`
+            <div class="row" id="insertedLicenseInfo">
+                <div class=" col-md-6">
+                    <div class="row form-control" style="display: inline-flex;">
+                        <div class="col-md" style="text-align: left; margin-left: 5px;">
+                            <label for="exp" style="display: inline-block;">
+                                <span>
+                                    Expirationd Date
+                                </span>
+                            </label>
+                        </div>
+                        <div class="col-md" style="padding-right: 5px;">
+                            <div class="form-floating dateNeedsValidation">
+                                <input type="date" class="form-control" style="padding-top: 15px; padding-bottom: 15px; display: inline-block;" id="exp" name="exp" value="2023-11-01">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-floating mb-3 inputNeedsValidation" >
+                        <input type="text" class="form-control" id="dlnum" placeholder="Full name" style="height: 72px;" required>
+                        <label for="dlnum">Driver's License#:</label>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-floating mb-3 selectionNeedsValidation" >
+                        <select class="form-select" id="dlstate" name="soi" style="height: 72px;">
+                            <option selected value="" disabled>State</option>
+                            <option value="AL">Alabama</option>
+                            <option value="AK">Alaska</option>
+                            <option value="AZ">Arizona</option>
+                            <option value="AR">Arkansas</option>
+                            <option value="CA">California</option>
+                            <option value="CO">Colorado</option>
+                            <option value="CT">Connecticut</option>
+                            <option value="DE">Delaware</option>
+                            <option value="DC">District Of Columbia</option>
+                            <option value="FL">Florida</option>
+                            <option value="GA">Georgia</option>
+                            <option value="HI">Hawaii</option>
+                            <option value="ID">Idaho</option>
+                            <option value="IL">Illinois</option>
+                            <option value="IN">Indiana</option>
+                            <option value="IA">Iowa</option>
+                            <option value="KS">Kansas</option>
+                            <option value="KY">Kentucky</option>
+                            <option value="LA">Louisiana</option>
+                            <option value="ME">Maine</option>
+                            <option value="MD">Maryland</option>
+                            <option value="MA">Massachusetts</option>
+                            <option value="MI">Michigan</option>
+                            <option value="MN">Minnesota</option>
+                            <option value="MS">Mississippi</option>
+                            <option value="MO">Missouri</option>
+                            <option value="MT">Montana</option>
+                            <option value="NE">Nebraska</option>
+                            <option value="NV">Nevada</option>
+                            <option value="NH">New Hampshire</option>
+                            <option value="NJ">New Jersey</option>
+                            <option value="NM">New Mexico</option>
+                            <option value="NY">New York</option>
+                            <option value="NC">North Carolina</option>
+                            <option value="ND">North Dakota</option>
+                            <option value="OH">Ohio</option>
+                            <option value="OK">Oklahoma</option>
+                            <option value="OR">Oregon</option>
+                            <option value="PA">Pennsylvania</option>
+                            <option value="RI">Rhode Island</option>
+                            <option value="SC">South Carolina</option>
+                            <option value="SD">South Dakota</option>
+                            <option value="TN">Tennessee</option>
+                            <option value="TX">Texas</option>
+                            <option value="UT">Utah</option>
+                            <option value="VT">Vermont</option>
+                            <option value="VA">Virginia</option>
+                            <option value="WA">Washington</option>
+                            <option value="WV">West Virginia</option>
+                            <option value="WI">Wisconsin</option>
+                            <option value="WY">Wyoming</option>
+                        </select>
+                        <label for="soi">State of issuance</label>
+                    </div>
+                </div>
+            </div>
+            `;
+            container.appendChild(newEntry);
+            transportaionFields += 3;
+            checkAllRegXInputs(); checkInput();checkDate(); checkSelection();
+        }
+        else{
+            let remove = document.getElementById("insertedLicenseInfo");
+            remove.remove();
+            transportaionFields -= 3;
+        }
+        // Check if refCount is 3, then update the button style
     });
 
 });
