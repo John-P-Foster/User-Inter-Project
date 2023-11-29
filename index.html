@@ -85,7 +85,7 @@
                         </div>
                         <div class="col-md-4">
                             <div class="form-floating mb-3 ssnNeedsValidation" id="SSNValid">
-                                <input type="text" class="form-control" id="SSN" name="SSN" placeholder="Social Security Number" required>
+                                <input type="text" class="form-control" id="SSN" name="SSN" placeholder="Social Security Number" oninput="maskSSN(this)" required>
                                 <label for="SSN">SSN # <span class="exampleText"> (XXX-XX-XXXX)</span></label>
                             </div>
                         </div>
@@ -94,14 +94,14 @@
                     <div class="row">
                         <div class="col-md">
                             <div class="form-floating mb-3 phoneNeedsValidation" id="phoneValid">
-                                <input type="text" class="form-control" id="phoneNumber" name="phoneNUmber" placeholder="(XXX) - XXX - XXXX" required>
+                                <input type="text" class="form-control" id="phoneNumber" name="phoneNUmber" placeholder="(XXX) - XXX - XXXX" oninput="maskPhoneNumber(this)" required>
                                 <label for="phoneNumber">Phone Number <span class="exampleText"> (xxx-xxx-xxxx)</span></label>
                             </div>
                         </div>
 
                         <div class="col-md">
                             <div class="form-floating mb-3 phoneNeedsValidation" id="altPhoneValid">
-                                <input type="text" class="form-control" id="altPhoneNumber" name="altPhoneNUmber" placeholder="(XXX) - XXX - XXXX">
+                                <input type="text" class="form-control" id="altPhoneNumber" name="altPhoneNUmber" placeholder="(XXX) - XXX - XXXX" oninput="maskPhoneNumber(this)">
                                 <label for="altPhoneNumber">Alt Phone Number <span class="exampleText"> ( *optional)</span></label>
                             </div>
                         </div>
@@ -193,7 +193,7 @@
 
                         <div class="col-md-2">
                             <div class="form-floating mb-3 zipNeedsValidation" id=zipAddressValid>
-                                <input type="text" class="form-control" id="zipAddress" name="zipAddress" placeholder="ZIP" required>
+                                <input type="text" class="form-control" id="zipAddress" name="zipAddress" placeholder="ZIP" oninput="maskZip(this)" required>
                                 <label for="zipAddress">ZIP <span class="exampleText"> (xxxxx)</span></label>
                             </div>
                         </div>
@@ -758,7 +758,7 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-floating mb-3 phoneNeedsValidation" id="CompPhoneValid">
-                                    <input type="text" class="form-control" id="compPhoneNumber" name="compPhoneNUmber" placeholder="(XXX) - XXX - XXXX" required>
+                                    <input type="text" class="form-control" id="compPhoneNumber" name="compPhoneNUmber" placeholder="(XXX) - XXX - XXXX" oninput="maskPhoneNumber(this)" required>
                                     <label for="phoneNumber">Phone Number <span class="exampleText"> (xxx-xxx-xxxx)</span></label>
                                 </div>
                             </div>
@@ -844,7 +844,7 @@
                             </div>
                             <div class="col-md-2">
                                 <div class="form-floating mb-3 zipNeedsValidation">
-                                    <input type="text" class="form-control" name="employerZip" placeholder="placeholder" required>
+                                    <input type="text" class="form-control" name="employerZip" placeholder="placeholder" oninput="maskZip(this)" required>
                                     <label for="employerZip">ZIP Code</label>
                                 </div>
                             </div>

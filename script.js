@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const ourForm = document.querySelector('#ourForm');
     const regSSN = /^\d\d\d-\d\d-\d\d\d\d$/;
     const regZIP = /^\d\d\d\d\d$/;
-    const regPhone = /^\d\d\d-\d\d\d-\d\d\d\d$/;
+    const regPhone = /^.{14}$/;
     const regEmail = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
     
     //checking sections for compleations
@@ -355,7 +355,11 @@ document.addEventListener("DOMContentLoaded", function () {
       previousWidth = window.innerWidth;
     }
 
-    //Masking Functions
+    
+
+
+});
+//Masking Functions
 
 function maskNumeric(input) {
     // Remove non-numeric characters using regex
@@ -383,7 +387,7 @@ function maskPhoneNumber(input) {
     // Apply phone number format (XXX) XXX-XXXX
     if (cleanedInput.length >= 10) {
         cleanedInput = '(' + cleanedInput.substring(0, 3) + ') ' + cleanedInput.substring(3, 6) + '-' + cleanedInput.substring(6, 10);
-    } 
+    }
 
     // Update the input value
     input.value = cleanedInput;
@@ -398,6 +402,3 @@ function maskZipCode(input) {
     // Update the input value
     input.value = cleanedInput;
 }
-
-
-});
