@@ -357,15 +357,21 @@ document.addEventListener("DOMContentLoaded", function () {
                 submitbttn.classList.add('sumbitComplete');
 
                 let submitfield = document.getElementById("altSubmitbutton");
-                let newEntry = document.createElement('button');
-                newEntry.classList.add("btn");
-                newEntry.classList.add("btn-success");
-                newEntry.setAttribute("id","submitFormBtn2");
-                newEntry.setAttribute("Style","margin: 10px; font-size: larger;");
-                newEntry.setAttribute("type","submit");
-                newEntry.setAttribute("form","ourForm");
-                newEntry.innerHTML =`Submit Application`;
-                submitfield.appendChild(newEntry);
+
+                if(document.getElementById('submitFormBtn2')){
+                    alert("test");
+                }
+                else{
+                    let newEntry = document.createElement('button');
+                    newEntry.classList.add("btn");
+                    newEntry.classList.add("btn-success");
+                    newEntry.setAttribute("id","submitFormBtn2");
+                    newEntry.setAttribute("Style","margin: 10px; font-size: larger;");
+                    newEntry.setAttribute("type","submit");
+                    newEntry.setAttribute("form","ourForm");
+                    newEntry.innerHTML =`Submit Application`;
+                    submitfield.appendChild(newEntry);
+                }
             }
             else{
                 submitbttn.removeAttribute("href");
