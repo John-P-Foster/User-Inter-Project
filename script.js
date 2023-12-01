@@ -351,6 +351,7 @@ document.addEventListener("DOMContentLoaded", function () {
             // If all sections are complete reable submit button.
             if(generalInfoComplete & JobSpecificationsComplete & eductionSectionComplete & WorkExSectinComplete 
                 & referenceSectionComplete & transportationSectinComplete & wavierSectinComplete){
+
                 submitbttn.setAttribute("href","#altSubmitbutton");
                 submitbttn.classList.remove('submitIncomplete');
                 submitbttn.classList.add('sumbitComplete');
