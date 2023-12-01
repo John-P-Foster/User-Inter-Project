@@ -357,9 +357,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 submitbttn.classList.add('sumbitComplete');
 
                 let submitfield = document.getElementById("altSubmitbutton");
-
+                    
                 if(document.getElementById('submitFormBtn2')){
-                    alert("test");
+                    
                 }
                 else{
                     let newEntry = document.createElement('button');
