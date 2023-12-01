@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
     
     //checking sections for compleations
 
-    var generalInfoFields = 14;
+    var generalInfoFields = 13;
     var educationFields = 3;
     var workExperienceFields = 13;
     var referencesFields = 5;
@@ -351,19 +351,33 @@ document.addEventListener("DOMContentLoaded", function () {
             // If all sections are complete reable submit button.
             if(generalInfoComplete & JobSpecificationsComplete & eductionSectionComplete & WorkExSectinComplete 
                 & referenceSectionComplete & transportationSectinComplete & wavierSectinComplete){
-                submitbttn.removeAttribute("disabled");
-                submitbttn.classList.remove('btn-secondary');
-                submitbttn.classList.add('btn-success');
+                submitbttn.setAttribute("href","#altSubmitbutton");
+                submitbttn.classList.remove('submitIncomplete');
+                submitbttn.classList.add('sumbitComplete');
+
+                let submitfield = document.getElementById("altSubmitbutton");
+                let newEntry = document.createElement('button');
+                newEntry.classList.add("btn");
+                newEntry.classList.add("btn-success");
+                newEntry.setAttribute("id","submitFormBtn2");
+                newEntry.setAttribute("Style","margin: 10px; font-size: larger;");
+                newEntry.setAttribute("type","submit");
+                newEntry.setAttribute("form","ourForm");
+                newEntry.innerHTML =`Submit Application`;
+                submitfield.appendChild(newEntry);
             }
             else{
-                submitbttn.setAttribute("disabled","");
-                submitbttn.classList.remove('btn-success');
-                submitbttn.classList.add('btn-secondary');
+                submitbttn.removeAttribute("href");
+                submitbttn.classList.remove('sumbitComplete');
+                submitbttn.classList.add('submitIncomplete');
+
+                let removebttn = document.getElementById("submitFormBtn2");
+                removebttn.remove();
             }
         })
     })
 
-    let submitbttn = document.getElementById("submitFormBtn").addEventListener("click", function () {
+    let submitbttn = document.getElementById("altSubmitbutton").addEventListener("click", function () {
         alert("Application submitted successfully.")
 
     });
@@ -615,10 +629,11 @@ document.addEventListener("DOMContentLoaded", function () {
             let newEntry = document.createElement('span');
             newEntry.classList.add("noSelectionInfo");
             newEntry.setAttribute("id","waiverInsert");
-            newEntry.innerHTML =`You must agree to the terms of the waiver to apply.`;
+            newEntry.innerHTML =`Must agree to apply.`;
             over18Lable.appendChild(newEntry);
         }
-        else{
+        if( event.target.value == "Yes"){
+   
             let remove = document.getElementById("waiverInsert");
             remove.remove();
         }

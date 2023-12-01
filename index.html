@@ -31,7 +31,7 @@
                             <li><a href="#experience" id="workExNav" class="incomplete">Work Experience</a></li>
                             <li><a href="#background" id="transportationNav" class="incomplete">Transportation</a></li>
                             <li><a href="#waiver" id="wavierNav" class="incomplete">Waiver</a></li>
-                            <li><button type="submit" form="ourForm" class="btn btn-secondary" id="submitFormBtn" style="border-bottom-right-radius: 25px;border-top-right-radius: 25px; border-top-left-radius: 0px; border-bottom-left-radius: 0px; padding:6px;" disabled >Submit Application</button>
+                            <li><a class="submitIncomplete" id="submitFormBtn" style="border-bottom-right-radius: 25px;border-top-right-radius: 25px; border-top-left-radius: 0px; border-bottom-left-radius: 0px; padding:10px;" disabled >Application Complete</a>
                         </ul>
                         <button type="reset" form="ourForm" id="resetButton" class="btn btn-danger" value="Reset" style="margin-left: 100px; position: fixed; bottom:25px; right: 1%;">Reset Application</button>
                     </div>
@@ -84,7 +84,7 @@
                         </div>
 
                         <div class="col-md">
-                            <div class="form-floating mb-3 phoneNeedsValidation" id="altPhoneValid">
+                            <div class="form-floating mb-3" id="altPhoneValid">
                                 <input type="text" class="form-control" id="altPhoneNumber" name="altPhoneNUmber" placeholder="(XXX) - XXX - XXXX" oninput="maskPhoneNumber(this)">
                                 <label for="altPhoneNumber">Alt Phone Number <span class="exampleText"> ( *optional)</span></label>
                             </div>
@@ -822,7 +822,7 @@
                                 </label>
                             </div>
                             <div class="col-md-4" style="padding-right: 5px;">
-                                <div class="form-floating selectionNeedsValidation" id="transport">
+                                <div class="form-floating selectionNeedsValidation" id="transportDiv">
                                     <select class="form-select" id="transport" name="transport"required>
                                         <option selected disabled=""> </option>
                                         <option value="Yes">Yes</option>
@@ -837,7 +837,7 @@
                     <div class="form-control"><!-- start driver license reformat section-->
                         <div class="row">
                             <div class="col-md-8" style="text-align: left;">
-                                <label for="driverL">
+                                <label for="validLicense">
                                     <span class="standardRowHieght">
                                         Do you have a valid Driver License?
                                     </span>
@@ -845,7 +845,7 @@
                             </div>
                             <div class="col-md-4" style="padding-right: 5px;">
                                 <div class="form-floating selectionNeedsValidation" id="driverL">
-                                    <select class="form-select" id="validLicense" name="driverL"required>
+                                    <select class="form-select" id="validLicense" name="driverLi"required>
                                         <option selected value disabled=""> </option>
                                         <option value="Yes">Yes</option>
                                         <option value="No">No</option>
@@ -866,7 +866,7 @@
                     <div class="form-control"><!-- start currently insured section-->
                         <div class="row">
                             <div class="col-md-8" style="text-align: left;">
-                                <label for="insured">
+                                <label for="insuredQ">
                                     <span class="standardRowHieght">
                                         Are you currently insured?
                                     </span>
@@ -874,7 +874,7 @@
                             </div>
                             <div class="col-md-4" style="padding-right: 5px;">
                                 <div class="form-floating selectionNeedsValidation" id="insured">
-                                    <select class="form-select" id="insured" name="insured"required>
+                                    <select class="form-select" id="insuredQ" name="insured"required>
                                         <option selected value disabled=""> </option>
                                         <option value="Yes">Yes</option>
                                         <option value="No">No</option>
@@ -888,15 +888,15 @@
                     <div class="form-control"><!-- start reliable section-->
                         <div class="row">
                             <div class="col-md-8" style="text-align: left;">
-                                <label for="driverL">
+                                <label for="workPurp">
                                     <span class="standardRowHieght">
-                                        Would you be willing to use your vehicle for work purposes?
+                                        If you had a vehicle, would you be willing to use it for work purposes?
                                     </span>
                                 </label>
                             </div>
                             <div class="col-md-4" style="padding-right: 5px;">
                                 <div class="form-floating selectionNeedsValidation" id="driverL">
-                                    <select class="form-select" id="driverL" name="driverL"required>
+                                    <select class="form-select" id="workPurp" name="driverL"required>
                                         <option selected value disabled=""> </option>
                                         <option value="Yes">Yes</option>
                                         <option value="No">No</option>
@@ -927,13 +927,14 @@
                 <div class="form-control">
                     <!-- start currently insured section-->
                     <div class="row" id="wavierSection">
-                        <div class="col-md-8" style="text-align: left;">
-                            <label for="waiver" id="wavierLabel" style="margin-bottom: 0px;">
+                        <div class="col-md-5" style="text-align: left;">
+                            <label for="wavierSelection" id="wavierLabel" style="margin-bottom: 0px;">
                                 <span class="standardRowHieght" style="margin-bottom: 0px;">
-                                    Do you agree to these terms?
+                                    Do you agree to the terms?
                                </span><br>
                             </label>
                         </div>
+                        <div class="col-md-3"></div>
                         <div class="col-md-4" style="padding-right: 5px;">
                             <div class="form-floating selectionNeedsYesValidation" id="insured">
                                 <select class="form-select" id="wavierSelection" name="insured" required>
@@ -945,7 +946,15 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div><br>
+          
+                    <!-- start currently insured section-->
+                    <div class="row" id="formcomplete">
+            
+                        <div class="col-md-12" style="height: 30 px;" id="altSubmitbutton"></div>
+                
+                    </div>
+
             </form><!--End Form Section -->
         </div><br><br><br><br><!--End Main Container-->
     </body>

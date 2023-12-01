@@ -19,6 +19,23 @@ body{
 
 }
 
+input:hover{
+	box-shadow: 0 2px 5px rgb(62, 54, 54);
+	transition: .2s;
+}
+select:hover{
+	box-shadow: 0 2px 5px rgb(62, 54, 54);
+	transition: .2s;
+}
+textarea:hover{
+	box-shadow: 0 2px 5px rgb(62, 54, 54);
+	transition: .2s;
+}
+button:hover{
+	box-shadow: 0 2px 5px rgb(62, 54, 54);
+	transition: .2s;
+}
+
 .ourForm{
 	max-width: 900px; 
 	margin: auto;
@@ -191,7 +208,7 @@ body{
 .noSelectionInfo{
 	color: red;
 	font-size:medium;
-	margin-left: 100px;
+	padding-left: 100px;
 }
 
 .was-validated textarea{
@@ -214,18 +231,42 @@ body{
 	transition: 0.2s;
 
 }
+
+.incomplete2{
+	background-color: black;
+	transition: 0.2s;
+
+}
+.incomplete2:hover{
+	background-color: black !important;
+
+}
+
+
 .submitIncomplete{
 	background-color: #737373;
 	transition: 0.2s;
 }
-.btn-success{
-	box-shadow: 0 10px 30px rgb(16, 14, 14);
+
+.sumbitComplete{
+	background-color: rgb(124, 206, 124);
+	color:#070707 !important;
 	outline-style: solid;
-	outline-color: #ffffff;
+	outline-color: white;
+	outline-width: 2px;
+}
+.sumbitComplete:hover{
+	box-shadow: 0 10px 30px rgb(16, 14, 14);
+	background-color: rgb(148, 240, 148) !important;
+}
+
+.btn-success{
+	
 	background-color: rgb(124, 206, 124) !important;
 	color:#070707 !important;
 }
 .btn-success:hover{
+	/*box-shadow: 0 10px 30px rgb(16, 14, 14);*/
 	background-color: rgb(148, 240, 148) !important;
 }
 
