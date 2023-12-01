@@ -230,11 +230,6 @@ document.addEventListener("DOMContentLoaded", function () {
     //reset button action
     document.getElementById("resetButton").addEventListener("click", function (){
 
-        let submitbttn = document.getElementById("submitFormBtn");
-        submitbttn.setAttribute("disabled","");
-        submitbttn.classList.remove('btn-success');
-        submitbttn.classList.add('btn-secondary');
-
         let general = document.getElementById("generalNav");
         general.classList.add('incomplete');
         general.classList.remove('complete');
@@ -256,6 +251,39 @@ document.addEventListener("DOMContentLoaded", function () {
         workExNav.classList.remove('complete');
 
         let validations = document.querySelectorAll(".was-validated");
+
+        let submitbttn = document.getElementById("submitFormBtn");
+        submitbttn.removeAttribute("href");
+        submitbttn.classList.remove('sumbitComplete');
+        submitbttn.classList.add('submitIncomplete');
+
+        if(document.getElementById("submitFormBtn2")){
+        let removebttn = document.getElementById("submitFormBtn2");
+        removebttn.remove();
+        }
+
+        if(document.getElementById("18InfoInsert")){
+            let removebttn = document.getElementById("18InfoInsert");
+            removebttn.remove();
+        }
+
+        if(document.getElementById("requirementExplainedInsert")){
+            let removebttn = document.getElementById("requirementExplainedInsert");
+            removebttn.remove();
+        }
+
+
+        if(document.getElementById("meetRequirementsInsert")){
+            let removebttn = document.getElementById("meetRequirementsInsert");
+            removebttn.remove();
+        }
+
+        if(document.getElementById("waiverInsert")){
+            let removebttn = document.getElementById("waiverInsert");
+            removebttn.remove();
+        }
+    
+
 
         Array.from(validations).forEach(validation => {
             validation.classList.remove('was-validated');
